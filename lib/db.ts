@@ -16,7 +16,7 @@ export async function getAllEventos() {
 }
 
 export async function createEventos(id: number, escopo: string, descricao: string, nome: string) {
-	await prisma.Eventos.create({
+	await prisma.eventos.create({
 		data: {
 			id,
             escopo,
