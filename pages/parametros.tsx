@@ -32,7 +32,7 @@ const PáginaDeParametros = ({ parametros }: PostProps) => {
 				</div>
 			</div>
 			{parametros.map((Parametros, index) => (
-				<div className="row border border-dark">
+				<div key={Parametros.id} className="row border border-dark">
 					<div className="col-sm">{Parametros.id}</div>
 					<div className="col-sm">{Parametros.nome}</div>
 					<div className="col-sm">{Parametros.escopo}</div>

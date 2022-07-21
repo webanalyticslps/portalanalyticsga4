@@ -31,7 +31,7 @@ const PáginaDeMetricas = ({ metricas }: PostProps) => {
 				</div>
 			</div>
 			{metricas.map((Metricas, index) => (
-				<div className="row border border-dark">
+				<div key={Metricas.id} className="row border border-dark">
 					<div className="col-sm">{Metricas.id}</div>
 					<div className="col-sm">{Metricas.nome}</div>
 					<div className="col-sm">{Metricas.descricao}</div>
