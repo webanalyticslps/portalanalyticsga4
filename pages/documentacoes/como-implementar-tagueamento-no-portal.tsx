@@ -57,7 +57,7 @@ const PaginaComoImplementarTagueamento = () => {
 						aria-labelledby="headingTwo"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">Utilize a função abaixo:</div>
+						<div className="accordion-body">Utilize a função abaixo:</div>
 					</div>
 				</div>
 				<div className="accordion-item">
