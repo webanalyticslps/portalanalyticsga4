@@ -65,8 +65,7 @@ const PaginaComoSolicitarTagueamento = () => {
 						data-bs-parent="#accordionExample"
 					>
 						<div className="accordion-body">
-							Na impossibilidade de acessar o Lopesnet, a solicitação poderá ser enviada
-							diretamente para o e-mail bi.lopeslabs@lopes.com.br.
+							Na impossibilidade de acessar o Lopesnet, a solicitação poderá ser enviada diretamente para o e-mail bi.lopeslabs@lopes.com.br.
 						</div>
 					</div>
 				</div>
