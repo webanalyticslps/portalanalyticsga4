@@ -84,6 +84,7 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 						<select id="formSubsessoes" className="form-control">
 							{subsessoes.map((Subsessoes, index) => (
 								<option
+									key={Subsessoes.valor}
 									id={Subsessoes.valor}
 									value={Subsessoes.valor}
 									onChange={(e) => setSubsessao(e.currentTarget.value)}
@@ -116,7 +117,7 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 					</div>
 				</div>
 				{listadecodigos.map((ListaDeCodigos, index) => (
-					<div className="row border border-dark">
+					<div key={ListaDeCodigos.codigo} className="row border border-dark">
 						<div className="col-sm">{ListaDeCodigos.codigo}</div>
 						<div className="col-sm">{ListaDeCodigos.evento}</div>
 						<div className="col-sm">{ListaDeCodigos.sessao}</div>
