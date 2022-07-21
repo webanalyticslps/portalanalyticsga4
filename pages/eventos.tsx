@@ -32,10 +32,10 @@ const PáginaDeEventos = ({ eventos }: PostProps) => {
 			</div>
 			{eventos.map((Eventos, index) => (
 				<div className="row border border-dark">
-					<div className="col-sm">{Eventos.id}</div>
-					<div className="col-sm">{Eventos.nome}</div>
-					<div className="col-sm">{Eventos.escopo}</div>
-					<div className="col-sm">{Eventos.descricao}</div>
+					<div key={Eventos.id} className="col-sm">{Eventos.id}</div>
+					<div key={Eventos.nome} className="col-sm">{Eventos.nome}</div>
+					<div key={Eventos.escopo} className="col-sm">{Eventos.escopo}</div>
+					<div key={Eventos.descricao} className="col-sm">{Eventos.descricao}</div>
 				</div>
 			))}
 		</div>
