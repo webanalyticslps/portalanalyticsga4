@@ -11,12 +11,12 @@ export interface Eventos {
 }
 
 export async function getAllEventos() {
-	const data = await prisma.eventos.findMany();
+	const data = await prisma.Eventos.findMany();
 	return data;
 }
 
 export async function createEventos(id: number, escopo: string, descricao: string, nome: string) {
-	await prisma.eventos.create({
+	await prisma.Eventos.create({
 		data: {
 			id,
             escopo,
@@ -37,12 +37,12 @@ export interface Metricas {
 }
 
 export async function getAllMetricas() {
-	const data = await prisma.metricas.findMany();
+	const data = await prisma.Metricas.findMany();
 	return data;
 }
 
 export async function createMetricas(escopo: string, descricao: string, nome: string) {
-	await prisma.metricas.create({
+	await prisma.Metricas.create({
 		data: {
 			escopo,
 			descricao,
@@ -62,12 +62,12 @@ export interface Parametros {
 }
 
 export async function getAllParametros() {
-	const data = await prisma.parametros.findMany();
+	const data = await prisma.Parametros.findMany();
 	return data;
 }
 
 export async function createParametros(escopo: string, descricao: string, nome: string) {
-	await prisma.parametros.create({
+	await prisma.Parametros.create({
 		data: {
 			escopo,
 			descricao,
@@ -87,12 +87,12 @@ export interface Codigos {
 }
 
 export async function getAllListaDeCodigos() {
-	const data = await prisma.listadecodigos.findMany();
+	const data = await prisma.ListaDeCodigos.findMany();
 	return data;
 }
 
 export async function createListaDeCodigos(codigo: string, evento: string, sessao: string, subsessao: string) {
-	await prisma.listadecodigos.create({
+	await prisma.ListaDeCodigos.create({
 		data: {
 			id,
 			codigo,
@@ -112,12 +112,12 @@ export interface Sessoes {
 }
 
 export async function getAllSessoes() {
-	const data = await prisma.sessoes.findMany();
+	const data = await prisma.Sessoes.findMany();
 	return data;
 }
 
 export async function createSessoes(id: string, valor: string, gtm: boolean) {
-	await prisma.sessoes.create({
+	await prisma.Sessoes.create({
 		data: {
 			id,
 			valor,
@@ -136,12 +136,12 @@ export interface Subsessoes {
 }
 
 export async function getAllSubsessoes() {
-	const data = await prisma.subsessoes.findMany();
+	const data = await prisma.Subsessoes.findMany();
 	return data;
 }
 
 export async function createSubsessoes(id: string, valor: string, gtm: boolean) {
-	await prisma.subsessoes.create({
+	await prisma.Subsessoes.create({
 		data: {
 			id,
 			valor,
