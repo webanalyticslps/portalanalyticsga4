@@ -36,7 +36,7 @@ const PaginaComoConsultarCodigoNoGa = () => {
 						data-bs-parent="#accordionExample"
 					>
 						<div className="accordion-body">
-							Para consultar um código no GA siga as intruções abaixo:
+							Para consultaar um código no GA siga as intruções abaixo:
 						</div>
 					</div>
 				</div>
