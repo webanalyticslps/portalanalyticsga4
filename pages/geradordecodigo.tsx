@@ -56,6 +56,7 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 						<select id="formEventos" className="form-control">
 							{eventos.map((Eventos, index) => (
 								<option
+									key={Eventos.nome}
 									id={Eventos.nome}
 									value={Eventos.nome}
 									onChange={(e) => setEvento(e.currentTarget.value)}
@@ -70,6 +71,7 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 						<select id="formSessoes" className="form-control">
 							{sessoes.map((Sessoes, index) => (
 								<option
+									key={Sessoes.valor}
 									id={Sessoes.valor}
 									value={Sessoes.valor}
 									onChange={(e) => setSessao(e.currentTarget.value)}
