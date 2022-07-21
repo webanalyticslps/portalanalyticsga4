@@ -65,7 +65,7 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 							))}
 						</select>
 
-						<label for="nomeDaSessao">Sessão do evento</label>
+						<label htmlFor="nomeDaSessao">Sessão do evento</label>
 
 						<select id="formSessoes" className="form-control">
 							{sessoes.map((Sessoes, index) => (
@@ -79,7 +79,7 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 							))}
 						</select>
 
-						<label for="nomeDaSessao">Subsessão do evento</label>
+						<label htmlFor="nomeDaSessao">Subsessão do evento</label>
 
 						<select id="formSubsessoes" className="form-control">
 							{subsessoes.map((Subsessoes, index) => (
