@@ -31,7 +31,7 @@ const PáginaDeEventos = ({ eventos }: PostProps) => {
 				</div>
 			</div>
 			{eventos.map((Eventos, index) => (
-				<div className="row border border-dark">
+				<div key={Eventos.id} className="row border border-dark">
 					<div key={Eventos.id} className="col-sm">{Eventos.id}</div>
 					<div key={Eventos.nome} className="col-sm">{Eventos.nome}</div>
 					<div key={Eventos.escopo} className="col-sm">{Eventos.escopo}</div>
