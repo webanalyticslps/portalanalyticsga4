@@ -1,0 +1,156 @@
+import { GetServerSideProps } from 'next';
+import { getAllEventos, Eventos } from '../lib/db';
+import Head from 'next/head';
+import { Container, Row, Card, Button } from 'react-bootstrap';
+import Image from 'next/image';
+import react from 'react';
+
+interface PostProps {
+	eventos: Evento[];
+}
+
+const PaginaTiposDeEstudos = () => {
+	return (
+		<div class="container">
+			<h2>
+				<p className="text-center font-weight-bold">TIPOS DE ESTUDOS</p>
+			</h2>
+			<div class="accordion" id="accordionExample">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOne">
+						<button
+							class="accordion-button collapse"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseOne"
+							aria-expanded="true"
+							aria-controls="collapseOne"
+						>
+							Estudo de funil
+						</button>
+					</h2>
+					<div
+						id="collapseOne"
+						class="accordion-collapse collapse"
+						aria-labelledby="headingOne"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">Descrição estudo de funil</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingTwo">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseTwo"
+							aria-expanded="false"
+							aria-controls="collapseTwo"
+						>
+							Recorrência dos usuários
+						</button>
+					</h2>
+					<div
+						id="collapseTwo"
+						class="accordion-collapse collapse"
+						aria-labelledby="headingTwo"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">Descrição estudo recorrência de usuários</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingThree">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseThree"
+							aria-expanded="false"
+							aria-controls="collapseThree"
+						>
+							Análise de fluxo do usuário (User Explorer)
+						</button>
+					</h2>
+					<div
+						id="collapseThree"
+						class="accordion-collapse collapse"
+						aria-labelledby="headingThree"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">Descrição estudo recorrência de usuário análise de fluxo do usuário (User Explorer)</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingFour">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseFour"
+							aria-expanded="false"
+							aria-controls="collapseFour"
+						>
+							Teste A/B
+						</button>
+					</h2>
+					<div
+						id="collapseFour"
+						class="accordion-collapse collapse"
+						aria-labelledby="headingFour"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">Descrição estudo teste a/b</div>
+					</div>
+				</div>
+                <div class="accordion-item">
+					<h2 class="accordion-header" id="headingFive">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseFive"
+							aria-expanded="false"
+							aria-controls="collapseFive"
+						>
+							Metas
+						</button>
+					</h2>
+					<div
+						id="collapseFive"
+						class="accordion-collapse collapse"
+						aria-labelledby="headingFive"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">Descrição estudo metas</div>
+					</div>
+				</div>
+                <div class="accordion-item">
+					<h2 class="accordion-header" id="headingSix">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseSix"
+							aria-expanded="false"
+							aria-controls="collapseSix"
+						>
+							Estudo de influência de eventos
+						</button>
+					</h2>
+					<div
+						id="collapseSix"
+						class="accordion-collapse collapse"
+						aria-labelledby="headingSix"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">Descrição estudo influencia de eventos</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default PaginaTiposDeEstudos;

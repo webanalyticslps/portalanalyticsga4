@@ -1,0 +1,73 @@
+/* ensure all pages have Bootstrap CSS */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.md-container {
+  max-width: 800px;
+  padding-top: 2rem;
+}
+
+.sml-card {
+  width: 22rem;
+  margin: 1rem 0;
+}
+
+.cntr-footer {
+  height: 80px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ccc;
+}
+
+.sml-logo {
+  height: 1em;
+  margin-left: 10px;
+}
+
+.card{
+    background-color: #FEFEFE;
+    margin-top:20px;
+    padding: 25px; 
+    box-shadow: 1px 4px 5px white;
+   
+}
+
+.basic {
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.4);
+  position: relative;
+}
+.blur {
+  position: absolute;
+  bottom: 25px;
+  right: 162px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(5px);
+}.basic {
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.4);
+  position: relative;
+}
+.blur {
+  position: absolute;
+  bottom: 25px;
+  right: 162px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(5px);
+}
+
+.accordion-button:not(.collapsed) {
+  color: #ffffff;
+  background-color: #eb194b;
+}
+
+.bg-lopes {
+  background-color: #eb194b;
+}

@@ -1,0 +1,47 @@
+import { GetServerSideProps } from 'next';
+import { getAllParametros, Metricas } from '../lib/db';
+import Head from 'next/head';
+import { Container, Row, Card, Button } from 'react-bootstrap';
+
+export const getServerSideProps: GetServerSideProps = async () => {
+	const parametros = await getAllParametros();
+	return {
+		props: {
+			parametros
+		}
+	};
+};
+
+interface PostProps {
+	parametros: Parametro[];
+}
+
+const PáginaDeParametros = ({ parametros }: PostProps) => {
+	return (
+		<div className="container">
+			<h2>
+				<p className="text-center font-weight-bold">PARÂMETROS</p>
+			</h2>
+			<div>
+				<div className="row text-light bg-lopes border border-dark">
+					<div className="col-sm">ID</div>
+					<div className="col-sm">Nome</div>
+					<div className="col-sm">Escopo</div>
+					<div className="col-sm">Descrição</div>
+                    <div className="col-sm">Exemplo de valores</div>
+				</div>
+			</div>
+			{parametros.map((Parametros, index) => (
+				<div className="row border border-dark">
+					<div className="col-sm">{Parametros.id}</div>
+					<div className="col-sm">{Parametros.nome}</div>
+					<div className="col-sm">{Parametros.escopo}</div>
+					<div className="col-sm">{Parametros.descricao}</div>
+                    <div className="col-sm">{Parametros.exemplos}</div>
+				</div>
+			))}
+		</div>
+	);
+};
+
+export default PáginaDeParametros;
