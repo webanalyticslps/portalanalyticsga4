@@ -11,7 +11,7 @@ export interface Eventos {
 }
 
 export async function getAllEventos() {
-	const data = await prisma.Eventos.findMany();
+	const data = await prisma.eventos.findMany();
 	return data;
 }
 
