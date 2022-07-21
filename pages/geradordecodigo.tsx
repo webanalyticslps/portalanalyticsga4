@@ -51,9 +51,9 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 				<div className="bg-gray-50 p-8 rounded-lg">
 					<h1 className="text-center mb-4">Gerador de Códigos</h1>
 					<div className="flex space-x-2 p-2 bg-white rounded-md">
-						<label for="nomeDoEvento">Nome do evento</label>
+						<label htmlFor="nomeDoEvento">Nome do evento</label>
 
-						<select id="formEventos" class="form-control">
+						<select id="formEventos" className="form-control">
 							{eventos.map((Eventos, index) => (
 								<option
 									id={Eventos.nome}
@@ -67,7 +67,7 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 
 						<label for="nomeDaSessao">Sessão do evento</label>
 
-						<select id="formSessoes" class="form-control">
+						<select id="formSessoes" className="form-control">
 							{sessoes.map((Sessoes, index) => (
 								<option
 									id={Sessoes.valor}
@@ -81,7 +81,7 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 
 						<label for="nomeDaSessao">Subsessão do evento</label>
 
-						<select id="formSubsessoes" class="form-control">
+						<select id="formSubsessoes" className="form-control">
 							{subsessoes.map((Subsessoes, index) => (
 								<option
 									id={Subsessoes.valor}
