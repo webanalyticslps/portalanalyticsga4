@@ -11,15 +11,15 @@ interface PostProps {
 
 const PaginaComoImplementarTagueamento = () => {
 	return (
-		<div class="container">
+		<div className="container">
 			<h2>
 				<p className="text-center font-weight-bold">COMO IMPLEMENTAR TAGUEAMENTO NO PORTAL</p>
 			</h2>
-			<div class="accordion" id="accordionExample">
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingOne">
+			<div className="accordion" id="accordionExample">
+				<div className="accordion-item">
+					<h2 className="accordion-header" id="headingOne">
 						<button
-							class="accordion-button collapsed"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseOne"
@@ -31,17 +31,17 @@ const PaginaComoImplementarTagueamento = () => {
 					</h2>
 					<div
 						id="collapseOne"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingOne"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">Utilize a função abaixo:</div>
+						<div className="accordion-body">Utilize a função abaixo:</div>
 					</div>
 				</div>
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingTwo">
+				<div className="accordion-item">
+					<h2 className="accordion-header" id="headingTwo">
 						<button
-							class="accordion-button collapsed"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseTwo"
@@ -53,17 +53,17 @@ const PaginaComoImplementarTagueamento = () => {
 					</h2>
 					<div
 						id="collapseTwo"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingTwo"
 						data-bs-parent="#accordionExample"
 					>
 						<div class="accordion-body">Utilize a função abaixo:</div>
 					</div>
 				</div>
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingThree">
+				<div className="accordion-item">
+					<h2 className="accordion-header" id="headingThree">
 						<button
-							class="accordion-button collapsed"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseThree"
@@ -75,17 +75,17 @@ const PaginaComoImplementarTagueamento = () => {
 					</h2>
 					<div
 						id="collapseThree"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingThree"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">Utilize a função abaixo:</div>
+						<div className="accordion-body">Utilize a função abaixo:</div>
 					</div>
 				</div>
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingFour">
+				<div className="accordion-item">
+					<h2 className="accordion-header" id="headingFour">
 						<button
-							class="accordion-button collapsed"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseFour"
@@ -97,11 +97,11 @@ const PaginaComoImplementarTagueamento = () => {
 					</h2>
 					<div
 						id="collapseFour"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingFour"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">Utilize a função abaixo:</div>
+						<div className="accordion-body">Utilize a função abaixo:</div>
 					</div>
 				</div>
 			</div>

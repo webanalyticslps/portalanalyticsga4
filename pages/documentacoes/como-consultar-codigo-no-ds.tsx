@@ -11,15 +11,15 @@ interface PostProps {
 
 const PaginaComoConsultarCodigoNoDS = () => {
 	return (
-		<div class="container">
+		<div className="container">
 			<h2>
 				<p className="text-center font-weight-bold">COMO CONSULTAR UM CÓDIGO NO DATA STUDIO</p>
 			</h2>
-			<div class="accordion" id="accordionExample">
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingOne">
+			<div className="accordion" id="accordionExample">
+				<div className="accordion-item">
+					<h2 className="accordion-header" id="headingOne">
 						<button
-							class="accordion-button collapsed"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseOne"
@@ -31,11 +31,11 @@ const PaginaComoConsultarCodigoNoDS = () => {
 					</h2>
 					<div
 						id="collapseOne"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingOne"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">
+						<div className="accordion-body">
 							Para consultar um código no Data Studio siga as intruções abaixo:
 						</div>
 					</div>

@@ -11,15 +11,15 @@ interface PostProps {
 
 const PaginaTiposDeEstudos = () => {
 	return (
-		<div class="container">
+		<div className="container">
 			<h2>
 				<p className="text-center font-weight-bold">TIPOS DE ESTUDOS</p>
 			</h2>
-			<div class="accordion" id="accordionExample">
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingOne">
+			<div className="accordion" id="accordionExample">
+				<div className="accordion-item">
+					<h2 className="accordion-header" id="headingOne">
 						<button
-							class="accordion-button collapse"
+							className="accordion-button collapse"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseOne"
@@ -31,17 +31,17 @@ const PaginaTiposDeEstudos = () => {
 					</h2>
 					<div
 						id="collapseOne"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingOne"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">Descrição estudo de funil</div>
+						<div className="accordion-body">Descrição estudo de funil</div>
 					</div>
 				</div>
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingTwo">
+				<div className="accordion-item">
+					<h2 className="accordion-header" id="headingTwo">
 						<button
-							class="accordion-button collapsed"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseTwo"
@@ -53,17 +53,17 @@ const PaginaTiposDeEstudos = () => {
 					</h2>
 					<div
 						id="collapseTwo"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingTwo"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">Descrição estudo recorrência de usuários</div>
+						<div className="accordion-body">Descrição estudo recorrência de usuários</div>
 					</div>
 				</div>
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingThree">
+				<div className="accordion-item">
+					<h2 className="accordion-header" id="headingThree">
 						<button
-							class="accordion-button collapsed"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseThree"
@@ -75,17 +75,17 @@ const PaginaTiposDeEstudos = () => {
 					</h2>
 					<div
 						id="collapseThree"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingThree"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">Descrição estudo recorrência de usuário análise de fluxo do usuário (User Explorer)</div>
+						<div className="accordion-body">Descrição estudo recorrência de usuário análise de fluxo do usuário (User Explorer)</div>
 					</div>
 				</div>
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingFour">
+				<div className="accordion-item">
+					<h2 className="accordion-header" id="headingFour">
 						<button
-							class="accordion-button collapsed"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseFour"
@@ -97,17 +97,17 @@ const PaginaTiposDeEstudos = () => {
 					</h2>
 					<div
 						id="collapseFour"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingFour"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">Descrição estudo teste a/b</div>
+						<div className="accordion-body">Descrição estudo teste a/b</div>
 					</div>
 				</div>
-                <div class="accordion-item">
-					<h2 class="accordion-header" id="headingFive">
+                <div className="accordion-item">
+					<h2 className="accordion-header" id="headingFive">
 						<button
-							class="accordion-button collapsed"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseFive"
@@ -119,17 +119,17 @@ const PaginaTiposDeEstudos = () => {
 					</h2>
 					<div
 						id="collapseFive"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingFive"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">Descrição estudo metas</div>
+						<div className="accordion-body">Descrição estudo metas</div>
 					</div>
 				</div>
-                <div class="accordion-item">
-					<h2 class="accordion-header" id="headingSix">
+                <div className="accordion-item">
+					<h2 className="accordion-header" id="headingSix">
 						<button
-							class="accordion-button collapsed"
+							className="accordion-button collapsed"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#collapseSix"
@@ -141,11 +141,11 @@ const PaginaTiposDeEstudos = () => {
 					</h2>
 					<div
 						id="collapseSix"
-						class="accordion-collapse collapse"
+						className="accordion-collapse collapse"
 						aria-labelledby="headingSix"
 						data-bs-parent="#accordionExample"
 					>
-						<div class="accordion-body">Descrição estudo influencia de eventos</div>
+						<div className="accordion-body">Descrição estudo influencia de eventos</div>
 					</div>
 				</div>
 			</div>
