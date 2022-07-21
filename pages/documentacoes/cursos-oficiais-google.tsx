@@ -82,7 +82,7 @@ const PaginaCursosOficiaisGoogle = () => {
 						<small className="text-muted">Inglês</small>
 					</div>
 					<p className="mb-1">
-                    After you're familiar with the range of features Analytics offers, learn and practice actionable analyses to track business performance and identify areas for business improvement.
+                    After you re familiar with the range of features Analytics offers, learn and practice actionable analyses to track business performance and identify areas for business improvement.
 					</p>
 					<small className="text-muted">#GoogleAnalytics</small>
 				</a>
