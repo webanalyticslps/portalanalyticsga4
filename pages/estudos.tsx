@@ -20,7 +20,7 @@ const PáginaDeEstudos = ({ metricas }: PostProps) => {
 	return (
 		<div className="container">
 			<h2>
-				<p className="text-center font-weight-bold">ESTUDO</p>
+				<p className="text-center font-weight-bold">ESTUDOS</p>
 			</h2>
 		</div>
 	);

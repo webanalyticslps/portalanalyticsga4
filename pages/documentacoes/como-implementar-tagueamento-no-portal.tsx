@@ -70,7 +70,7 @@ const PaginaComoImplementarTagueamento = () => {
 							aria-expanded="false"
 							aria-controls="collapseThree"
 						>
-							Como implementar eventos padrões sem parâmetros e métricas
+							Como impldementar eventos padrões sem parâmetros e métricas
 						</button>
 					</h2>
 					<div
