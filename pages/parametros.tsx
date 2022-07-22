@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import { getAllParametros, Metricas } from '../lib/db';
+import { getAllParametros, Parametros } from '../lib/db';
 import Head from 'next/head';
 import { Container, Row, Card, Button } from 'react-bootstrap';
 
