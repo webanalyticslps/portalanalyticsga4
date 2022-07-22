@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import { getAllEventos, Eventos } from '../lib/db';
+
 import Head from 'next/head';
 import { Container, Row, Card, Button } from 'react-bootstrap';
 import Image from 'next/image';
