@@ -89,12 +89,12 @@ export interface Codigos {
 }
 
 export async function getAllListaDeCodigos() {
-	const data = await prisma.codigos.findMany();
+	const data = await prisma.listadecodigos.findMany();
 	return data;
 }
 
 export async function createListaDeCodigos(id: number, codigo: string, evento: string, sessao: string, subsessao: string) {
-	await prisma.codigos.create({
+	await prisma.listadecodigos.create({
 		data: {
 			id,
 			codigo,
