@@ -89,7 +89,7 @@ export interface Codigos {
 }
 
 export async function getAllListaDeCodigos() {
-	const data = await prisma.listadecodigos.findMany();
+	const data = await prisma.codigos.findMany();
 	return data;
 }
 
