@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 interface PostProps {
 	listadecodigos: Codigos[];
 	eventos: Eventos[];
-	sessoes: Sessaos[];
+	sessoes: Sessoes[];
 	subsessoes: Subsessoes[];
 }
 
