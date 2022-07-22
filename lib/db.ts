@@ -32,7 +32,7 @@ export async function createEventos(id: number, escopo: string, descricao: strin
 export interface Metricas {
 	id: number;
 	nome: string;
-	escopo: string;
+	detalhe: string;
 	descricao: string;
 }
 
