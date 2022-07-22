@@ -8,6 +8,8 @@ import Head from 'next/head';
 import { Container, Row, Card, Button } from 'react-bootstrap';
 import Link from 'next/link';
 
+declare var formEventos: any
+
 export const getServerSideProps: GetServerSideProps = async () => {
 	const listadecodigos = await getAllListaDeCodigos();
 	const eventos = await getAllEventos();
