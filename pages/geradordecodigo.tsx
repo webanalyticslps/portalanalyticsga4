@@ -9,6 +9,8 @@ import { Container, Row, Card, Button } from 'react-bootstrap';
 import Link from 'next/link';
 
 declare var formEventos: any
+declare var formSessoes: any
+declare var formSubsessoes: any
 
 export const getServerSideProps: GetServerSideProps = async () => {
 	const listadecodigos = await getAllListaDeCodigos();
