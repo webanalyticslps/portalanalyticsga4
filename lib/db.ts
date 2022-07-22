@@ -11,12 +11,12 @@ export interface Eventos {
 }
 
 export async function getAllEventos() {
-	const data = await prisma.Eventos.findMany();
+	const data = await prisma.eventos.findMany();
 	return data;
 }
 
 export async function createEventos(id: number, escopo: string, descricao: string, nome: string) {
-	await prisma.Eventos.create({
+	await prisma.eventos.create({
 		data: {
 			id,
             escopo,
