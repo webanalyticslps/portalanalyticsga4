@@ -80,7 +80,7 @@ export async function createParametros(escopo: string, descricao: string, nome: 
 
 // CÓDIGOS
 
-export interface Codigos {
+export interface ListaDeCodigos {
 	id: int;
 	codigo: string;
 	evento: string;
