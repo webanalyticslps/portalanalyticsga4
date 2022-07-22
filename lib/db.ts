@@ -3,7 +3,7 @@ import { prisma } from './prisma';
 
 // EVENTOS
 
-export interface Eventos {
+export interface eventos {
 	id: number;
 	nome: string;
 	escopo: string;
@@ -29,7 +29,7 @@ export async function createEventos(id: number, escopo: string, descricao: strin
 // MÉTRICAS
 
 
-export interface Metricas {
+export interface metricas {
 	id: number;
 	nome: string;
 	escopo: string;
