@@ -41,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		console.log(idevento, idsessao, idsubsessao);
 		console.log("teste");
 
-		const codigocompleto = idevento.id + "." + idsessao.id + "." + idsubsessao.id;
+		const codigocompleto = idevento!.id + "." + idsessao.id + "." + idsubsessao.id;
 
 		const createevento = await prisma.listaDeCodigos.create({
 			data: {
