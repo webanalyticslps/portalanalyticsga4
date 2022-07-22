@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		try {
 			const novocodigo = JSON.parse(req.body);
 
-			const res = await prisma.ListaDeCodigos.create({
+			const res = await prisma.listaDeCodigos.create({
 				data: novocodigo
 			});
 
