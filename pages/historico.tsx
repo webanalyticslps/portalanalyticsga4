@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 interface PostProps {
-	metricas: Metrica[];
+	metricas: Metricas[];
 }
 
 const PáginaDeHistorico = ({ metricas }: PostProps) => {

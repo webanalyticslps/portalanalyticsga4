@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 interface PostProps {
-	parametros: Parametro[];
+	parametros: Parametros[];
 }
 
 const PáginaDeParametros = ({ parametros }: PostProps) => {

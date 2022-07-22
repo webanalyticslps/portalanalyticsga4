@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 interface PostProps {
-	eventos: Evento[];
+	eventos: Eventos[];
 }
 
 const PáginaDeEventos = ({ eventos }: PostProps) => {

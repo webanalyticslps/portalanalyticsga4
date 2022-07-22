@@ -24,10 +24,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 interface PostProps {
-	listadecodigos: Codigo[];
-	eventos: Evento[];
-	sessoes: Sessao[];
-	subsessoes: Subsessao[];
+	listadecodigos: Codigos[];
+	eventos: Eventos[];
+	sessoes: Sessaos[];
+	subsessoes: Subsessoes[];
 }
 
 const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }: PostProps) => {

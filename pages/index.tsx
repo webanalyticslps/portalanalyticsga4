@@ -6,7 +6,7 @@ import Image from 'next/image';
 import react from 'react';
 
 interface PostProps {
-	eventos: Evento[];
+	eventos: Eventos[];
 }
 
 const Home = () => {
