@@ -44,8 +44,8 @@ export async function getAllMetricas() {
 export async function createMetricas(escopo: string, descricao: string, nome: string) {
 	await prisma.metricas.create({
 		data: {
-			escopo,
 			descricao,
+			detalhe,
 			nome
 		}
 	});
