@@ -36,7 +36,7 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 	const [ sessao, setSessao ] = useState('');
 	const [ subsessao, setSubsessao ] = useState('');
 
-	const handleClick = async (nomeevento, nomesessao, nomesubsessao) => {
+	const handleClick = async (nomeevento: any, nomesessao: any, nomesubsessa: any) => {
 		const axios = require('axios');
 		const res = await axios.post('/api/1-find-evento-id-axios', {
 			nomeevento: nomeevento,
