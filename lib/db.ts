@@ -80,7 +80,7 @@ export async function createParametros(escopo: string, descricao: string, nome: 
 
 // CÓDIGOS
 
-export interface ListaDeCodigos {
+export interface Codigos {
 	id: number;
 	codigo: string;
 	evento: string;
@@ -94,7 +94,7 @@ export async function getAllListaDeCodigos() {
 }
 
 export async function createListaDeCodigos(id: number, codigo: string, evento: string, sessao: string, subsessao: string) {
-	await prisma.listadecodigos.create({
+	await prisma.codigos.create({
 		data: {
 			id,
 			codigo,
