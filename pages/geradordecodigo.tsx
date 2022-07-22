@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import { getAllListaDeCodigos, ListaDeCodigos } from '../lib/db';
+import { getAllListaDeCodigos, Codigos } from '../lib/db';
 import { getAllSubsessoes, Subsessoes } from '../lib/db';
 import { getAllEventos, Eventos } from '../lib/db';
 import { getAllSessoes, Sessoes } from '../lib/db';
