@@ -4,10 +4,6 @@ import { Container, Row, Card, Button } from 'react-bootstrap';
 import Image from 'next/image';
 import react from 'react';
 
-interface PostProps {
-	eventos: Evento[];
-}
-
 const PaginaConhecaNossosProcessos = () => {
 	return (
 		<div className="container">
