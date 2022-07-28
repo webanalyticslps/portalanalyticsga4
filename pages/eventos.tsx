@@ -16,7 +16,7 @@ interface PostProps {
 	eventos: Eventos[];
 }
 
-const PáginaDeEventos = ({ eventos }: PostProps) => {
+export default withPageAuthRequired(function Profile({ user }) {
 	return (
 		<div className="container">
 			<h2>
@@ -40,6 +40,4 @@ const PáginaDeEventos = ({ eventos }: PostProps) => {
 			))}
 		</div>
 	);
-};
-
-export default PáginaDeEventos;
+});

@@ -9,12 +9,10 @@ interface PostProps {
 	eventos: Eventos[];
 }
 
-const Home = () => {
+export default withPageAuthRequired(function Profile({ user }) {
 	return (
 		
 		<Image src="/background.png" alt="" title="" width="80%" height="40%" layout="responsive" />
 
 	);
-};
-
-export default Home;
+});
