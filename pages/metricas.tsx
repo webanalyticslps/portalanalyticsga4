@@ -31,7 +31,7 @@ export default withPageAuthRequired(function Profile({ metricas }) {
 					<div className="col-sm">Como é preenchida</div>
 				</div>
 			</div>
-			{metricas.map((Metricas, index) => (
+			{metricas.map((Metricas: any, index: any) => (
 				<div key={Metricas.id} className="row border border-dark">
 					<div className="col-sm">{Metricas.id}</div>
 					<div className="col-sm">{Metricas.nome}</div>
