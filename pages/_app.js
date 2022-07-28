@@ -16,11 +16,9 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<UserProvider>
-		<SSRProvider>
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
-		</SSRProvider>
 		</UserProvider>
 	);
 }
