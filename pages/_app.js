@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../style/index.css';
 import SSRProvider from 'react-bootstrap/SSRProvider';
+import { UserProvider } from '@auth0/nextjs-auth0';
 
 
 import { useEffect } from 'react';
@@ -14,11 +15,13 @@ function MyApp({ Component, pageProps }) {
 	}, []);
 
 	return (
+		<UserProvider>
 		<SSRProvider>
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
 		</SSRProvider>
+		</UserProvider>
 	);
 }
 
