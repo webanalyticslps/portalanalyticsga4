@@ -2,7 +2,6 @@ import { GetServerSideProps } from 'next';
 import { getAllEventos, Eventos } from '../lib/db';
 import Head from 'next/head';
 import { Container, Row, Card, Button } from 'react-bootstrap';
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
 export const getServerSideProps: GetServerSideProps = async () => {
 	const eventos = await getAllEventos();
@@ -18,6 +17,7 @@ interface PostProps {
 }
 
 export default withPageAuthRequired(function Profile({ user }) {
+const PáginaDeEventos = ({ eventos }: PostProps) => {
 	return (
 		<div className="container">
 			<h2>
@@ -41,4 +41,5 @@ export default withPageAuthRequired(function Profile({ user }) {
 			))}
 		</div>
 	);
+};
 });
