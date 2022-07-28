@@ -94,7 +94,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 									key={Sites.valor}
 									id={Sites.valor}
 									value={Sites.valor}
-									onChange={(e) => setSessao(e.currentTarget.value)}
+									onChange={(e) => setSite(e.currentTarget.value)}
 								>
 									{Sites.valor}
 								</option>
@@ -109,7 +109,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 									key={Containers1.valor}
 									id={Containers1.valor}
 									value={Containers1.valor}
-									onChange={(e) => setSubsessao(e.currentTarget.value)}
+									onChange={(e) => setContainer1(e.currentTarget.value)}
 								>
 									{Containers1.valor}
 								</option>
@@ -124,7 +124,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 									key={Containers2.valor}
 									id={Containers2.valor}
 									value={Containers2.valor}
-									onChange={(e) => setSubsessao(e.currentTarget.value)}
+									onChange={(e) => setContainer2(e.currentTarget.value)}
 								>
 									{Containers2.valor}
 								</option>
@@ -139,7 +139,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 									key={Identificadores.valor}
 									id={Identificadores.valor}
 									value={Identificadores.valor}
-									onChange={(e) => setSubsessao(e.currentTarget.value)}
+									onChange={(e) => setIdentificador(e.currentTarget.value)}
 								>
 									{Identificadores.valor}
 								</option>
