@@ -35,13 +35,25 @@ model Parametros {
   exemplos    String @db.Text()
 }
 
-model Sessoes {
+model Sites {
   id          String   @unique()
   valor       String   @unique()
   gtm         Boolean  @default(false)
 }
 
-model Subsessoes {
+model Containers1 {
+  id          String   @unique()
+  valor       String   @unique()
+  gtm         Boolean  @default(false)
+}
+
+model Containers2 {
+  id          String   @unique()
+  valor       String   @unique()
+  gtm         Boolean  @default(false)
+}
+
+model Identificadores {
   id          String   @unique()
   valor       String   @unique()
   gtm         Boolean  @default(false)
@@ -53,6 +65,8 @@ model ListaDeCodigos {
   id          Int     @id @default(autoincrement())
   codigo      String  @unique()
   evento      String  @db.Text()
-  sessao      String  @db.Text()
-  subsessao   String  @db.Text()
+  site      String  @db.Text()
+  container1   String  @db.Text()
+  container2   String  @db.Text()
+  identificador   String  @db.Text()
 }

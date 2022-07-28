@@ -5,11 +5,13 @@ import { NextApiRequest, NextApiResponse } from 'next';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	const prisma = new PrismaClient();
 	const nomeevento = req.body.nomeevento;
-	const nomesessao = req.body.nomesessao;
-	const nomesubsessao = req.body.nomesubsessao;
+	const nomesite = req.body.nomesite;
+	const nomecontainer1 = req.body.nomecontainer1;
+	const nomecontainer2 = req.body.nomecontainer2;
+	const nomeidentificador = req.body.nomeidentificador;
 
 	async function main() {
-		console.log(nomeevento, nomesessao, nomesubsessao);
+		console.log(nomeevento, nomesite, nomecontainer1, nomecontainer2, nomeidentificador);
 
 		const idevento = await prisma.eventos.findUnique({
 			where: {
@@ -20,35 +22,55 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 			}
 		});
 
-		const idsessao = await prisma.sessoes.findUnique({
+		const idsite = await prisma.sites.findUnique({
 			where: {
-				valor: nomesessao
+				valor: nomesite
 			},
 			select: {
 				id: true
 			}
 		});
 
-		const idsubsessao = await prisma.subsessoes.findUnique({
+		const idcontainer1 = await prisma.containers1.findUnique({
 			where: {
-				valor: nomesubsessao
+				valor: nomecontainer1
 			},
 			select: {
 				id: true
 			}
 		});
 
-		console.log(idevento, idsessao, idsubsessao);
+		const idcontainer2 = await prisma.containers2.findUnique({
+			where: {
+				valor: nomecontainer2
+			},
+			select: {
+				id: true
+			}
+		});
+
+		const ididentificador = await prisma.identificadores.findUnique({
+			where: {
+				valor: nomeidentificador
+			},
+			select: {
+				id: true
+			}
+		});
+
+		console.log(idevento, idsite, idcontainer1, idcontainer2, ididentificador);
 		console.log("teste");
 
-		const codigocompleto = idevento!.id + "." + idsessao!.id + "." + idsubsessao!.id;
+		const codigocompleto = idevento!.id + "." + idsite!.id + "." + idcontainer1!.id + "." + idcontainer2!.id + "." + ididentificador!.id; 
 
 		const createevento = await prisma.listaDeCodigos.create({
 			data: {
 				codigo: codigocompleto,
 				evento: nomeevento,
-				sessao: nomesessao,
-				subsessao: nomesubsessao
+				site: nomesite,
+				container1: nomecontainer1,
+				container2: nomecontainer2,
+				identificador: nomeidentificador
 			}
 		});
 

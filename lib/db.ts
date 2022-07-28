@@ -84,8 +84,10 @@ export interface Codigos {
 	id: number;
 	codigo: string;
 	evento: string;
-	sessao: string;
-	subsessao: string;
+	site: string;
+	container1: string;
+	container2: string;
+	identificador: string;
 }
 
 export async function getAllListaDeCodigos() {
@@ -93,33 +95,35 @@ export async function getAllListaDeCodigos() {
 	return data;
 }
 
-export async function createListaDeCodigos(id: number, codigo: string, evento: string, sessao: string, subsessao: string) {
+export async function createListaDeCodigos(id: number, codigo: string, evento: string, site: string, container1: string, container2: string, identificador: string ) {
 	await prisma.listaDeCodigos.create({
 		data: {
 			id,
 			codigo,
 			evento,
-			sessao,
-			subsessao
+			site,
+			container1,
+			container2,
+			identificador
 		}
 	});
 }
 
-// SESSOES
+// SITES
 
-export interface Sessoes {
+export interface Sites {
 	id: string;
 	valor: string;
 	gtm: boolean;
 }
 
-export async function getAllSessoes() {
-	const data = await prisma.sessoes.findMany();
+export async function getAllSites() {
+	const data = await prisma.sites.findMany();
 	return data;
 }
 
-export async function createSessoes(id: string, valor: string, gtm: boolean) {
-	await prisma.sessoes.create({
+export async function createSites(id: string, valor: string, gtm: boolean) {
+	await prisma.sites.create({
 		data: {
 			id,
 			valor,
@@ -129,21 +133,67 @@ export async function createSessoes(id: string, valor: string, gtm: boolean) {
 }
 
 
-// SUBSESSOES
+// CONTAINERS 1
 
-export interface Subsessoes {
+export interface Containers1 {
 	id: string;
 	valor: string;
 	gtm: boolean;
 }
 
-export async function getAllSubsessoes() {
-	const data = await prisma.subsessoes.findMany();
+export async function getAllContainers1() {
+	const data = await prisma.containers1.findMany();
 	return data;
 }
 
-export async function createSubsessoes(id: string, valor: string, gtm: boolean) {
-	await prisma.subsessoes.create({
+export async function createContainers1(id: string, valor: string, gtm: boolean) {
+	await prisma.containers1.create({
+		data: {
+			id,
+			valor,
+			gtm
+		}
+	});
+}
+
+// CONTAINERS 2
+
+export interface Containers2 {
+	id: string;
+	valor: string;
+	gtm: boolean;
+}
+
+export async function getAllContainers2() {
+	const data = await prisma.containers2.findMany();
+	return data;
+}
+
+export async function createContainers2(id: string, valor: string, gtm: boolean) {
+	await prisma.containers2.create({
+		data: {
+			id,
+			valor,
+			gtm
+		}
+	});
+}
+
+// IDENTIFICADORES
+
+export interface Identificadores {
+	id: string;
+	valor: string;
+	gtm: boolean;
+}
+
+export async function getAllIdentificadores() {
+	const data = await prisma.identificadores.findMany();
+	return data;
+}
+
+export async function createIdentificadores(id: string, valor: string, gtm: boolean) {
+	await prisma.identificadores.create({
 		data: {
 			id,
 			valor,

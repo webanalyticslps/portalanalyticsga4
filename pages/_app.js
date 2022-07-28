@@ -15,11 +15,13 @@ function MyApp({ Component, pageProps }) {
 	}, []);
 
 	return (
+		<SSRProvider> 
 		<UserProvider>
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
 		</UserProvider>
+		</SSRProvider> 
 	);
 }
 

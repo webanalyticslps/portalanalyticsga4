@@ -22,8 +22,20 @@ const Menu = () => {
               <NavDropdown.Item href="/metricas" title="Métricas">
                 Métricas
               </NavDropdown.Item>
+              <NavDropdown.Item href="/site" title="Site">
+                Site
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/container1" title="Container 1">
+                Container 1
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/container2" title="Container 2">
+                Container 2
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/identificador" title="Identificador">
+                Identificador
+              </NavDropdown.Item>
               <NavDropdown.Item href="/parametros" title="Parâmetros">
-                Parâmetros
+                Parâmetros Adicionais
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link title="Gerador de Código" href="/geradordecodigo">
