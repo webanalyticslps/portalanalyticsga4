@@ -27,4 +27,4 @@ export default withPageAuthRequired(function Profile({ user }) {
 	);
 });
 
-export default PáginaDeHistorico;
+
