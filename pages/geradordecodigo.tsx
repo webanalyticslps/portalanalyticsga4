@@ -59,7 +59,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 						<label htmlFor="nomeDoEvento">Nome do evento</label>
 
 						<select id="formEventos" className="form-control">
-							{eventos.map((Eventos, index) => (
+							{eventos.map((Eventos: any, index: any) => (
 								<option
 									key={Eventos.nome}
 									id={Eventos.nome}
@@ -74,7 +74,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 						<label htmlFor="nomeDaSessao">Sessão do evento</label>
 
 						<select id="formSessoes" className="form-control">
-							{sessoes.map((Sessoes, index) => (
+							{sessoes.map((Sessoes: any, index: any) => (
 								<option
 									key={Sessoes.valor}
 									id={Sessoes.valor}
@@ -89,7 +89,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 						<label htmlFor="nomeDaSessao">Subsessão do evento</label>
 
 						<select id="formSubsessoes" className="form-control">
-							{subsessoes.map((Subsessoes, index) => (
+							{subsessoes.map((Subsessoes: any, index: any) => (
 								<option
 									key={Subsessoes.valor}
 									id={Subsessoes.valor}
@@ -123,7 +123,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 						<div className="col-sm">Sub Sessão</div>
 					</div>
 				</div>
-				{listadecodigos.map((ListaDeCodigos, index) => (
+				{listadecodigos.map((ListaDeCodigos: any, index: any) => (
 					<div key={ListaDeCodigos.codigo} className="row border border-dark">
 						<div className="col-sm">{ListaDeCodigos.codigo}</div>
 						<div className="col-sm">{ListaDeCodigos.evento}</div>
