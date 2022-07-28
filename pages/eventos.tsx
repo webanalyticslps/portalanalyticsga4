@@ -31,7 +31,7 @@ export default withPageAuthRequired(function Profile({ eventos }) {
           <div className="col-sm">Descrição</div>
         </div>
       </div>
-      {eventos.map((Eventos, index) => (
+      {eventos.map((Eventos: any, index) => (
         <div key={Eventos.id} className="row border border-dark">
           <div className="col-sm">{Eventos.id}</div>
           <div className="col-sm">{Eventos.nome}</div>
