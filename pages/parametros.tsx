@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 import { getAllParametros, Parametros } from '../lib/db';
 import Head from 'next/head';
 import { Container, Row, Card, Button } from 'react-bootstrap';
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 export const getServerSideProps: GetServerSideProps = async () => {
 	const parametros = await getAllParametros();
@@ -16,7 +17,7 @@ interface PostProps {
 	parametros: Parametros[];
 }
 
-const PáginaDeParametros = ({ parametros }: PostProps) => {
+export default withPageAuthRequired(function Profile({ parametros }) {
 	return (
 		<div className="container">
 			<h2>
@@ -42,6 +43,4 @@ const PáginaDeParametros = ({ parametros }: PostProps) => {
 			))}
 		</div>
 	);
-};
-
-export default PáginaDeParametros;
+});

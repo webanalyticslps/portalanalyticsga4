@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 import { getAllMetricas, Metricas } from '../lib/db';
 import Head from 'next/head';
 import { Container, Row, Card, Button } from 'react-bootstrap';
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 export const getServerSideProps: GetServerSideProps = async () => {
 	const metricas = await getAllMetricas();
@@ -16,7 +17,7 @@ interface PostProps {
 	metricas: Metricas[];
 }
 
-const PáginaDeMetricas = ({ metricas }: PostProps) => {
+export default withPageAuthRequired(function Profile({ metricas }) {
 	return (
 		<div className="container">
 			<h2>
@@ -40,6 +41,4 @@ const PáginaDeMetricas = ({ metricas }: PostProps) => {
 			))}
 		</div>
 	);
-};
-
-export default PáginaDeMetricas;
+});

@@ -3,8 +3,9 @@ import Head from 'next/head';
 import { Container, Row, Card, Button } from 'react-bootstrap';
 import Image from 'next/image';
 import react from 'react';
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
-const PaginaComoConsultarCodigoNoDataLake = () => {
+export default withPageAuthRequired(function Profile({ user }) {
 	return (
 		<div className="container">
 			<h2>
@@ -38,6 +39,4 @@ const PaginaComoConsultarCodigoNoDataLake = () => {
 			</div>
 		</div>
 	);
-};
-
-export default PaginaComoConsultarCodigoNoDataLake;
+});

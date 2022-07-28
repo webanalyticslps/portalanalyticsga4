@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { Container, Row, Card, Button } from 'react-bootstrap';
 import Link from 'next/link';
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 declare var formEventos: any
 declare var formSessoes: any
@@ -34,7 +35,7 @@ interface PostProps {
 	subsessoes: Subsessoes[];
 }
 
-const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }: PostProps) => {
+export default withPageAuthRequired(function Profile({ listadecodigos, eventos, sessoes, subsessoes }) {
 	const [ codigo, setCodigo ] = useState('');
 	const [ evento, setEvento ] = useState('');
 	const [ sessao, setSessao ] = useState('');
@@ -133,6 +134,4 @@ const PaginaGeradorDeCodigos = ({ listadecodigos, eventos, sessoes, subsessoes }
 			</div>
 		</div>
 	);
-};
-
-export default PaginaGeradorDeCodigos;
+});
