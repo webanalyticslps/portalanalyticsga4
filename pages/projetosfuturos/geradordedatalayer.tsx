@@ -4,15 +4,17 @@ import { Container, Row, Card, Button } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 export default withPageAuthRequired(function Profile({ user }) {
-  function copy() {
-    if (document.getElementById("textarea") != null) {
-      let textarea = document.getElementById("textarea");
-      textarea.onselect();
-      document.execCommand("copy");
-    }
-  }
+
+    function copy() {
+        let textarea = document.getElementById("textarea");
+        textarea?.select();
+        document.execCommand("copy");
+      }
 
   return (
+
+
+
     <div className="container">
       <form>
         <div className="form-group">
