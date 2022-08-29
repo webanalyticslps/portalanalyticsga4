@@ -7,7 +7,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 
     function copy() {
         let textarea = document.getElementById("textarea");
-        textarea?.select();
+        textarea?.onselect();
         document.execCommand("copy");
       }
 
