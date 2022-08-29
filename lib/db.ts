@@ -8,7 +8,7 @@ export interface Eventos {
 	nome: string;
 	descricao: string;
 	parametros: string;
-	coletaAutomatica: boleean;
+	coletaAutomatica: boolean;
 }
 
 export async function getAllEventos() {
