@@ -9,22 +9,23 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
 model Eventos {
   id          Int    @id @default(autoincrement())
-  descricao   String @db.Text()
-  escopo      String @db.Text()
   nome        String @unique()
+  descricao   String @db.Text()
+  parametros  String @db.Text()
+  coletaAutomatica         Boolean  @default(false)
 }
 
 model Metricas {
   id          Int    @id @default(autoincrement())
+  nome        String @db.Text()
   descricao   String @db.Text()
   detalhe     String @db.Text()
-  nome        String @db.Text()
+  tipo        String @db.Text()
 }
 
 model Parametros {

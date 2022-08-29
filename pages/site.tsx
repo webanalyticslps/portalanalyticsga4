@@ -27,12 +27,14 @@ export default withPageAuthRequired(function Profile({ sites }) {
         <div className="row text-light bg-lopes border border-dark">
           <div className="col-sm">ID</div>
           <div className="col-sm">Valor</div>
+          <div className="col-sm">GTM</div>
         </div>
       </div>
       {sites.map((Sites: any, index: any) => (
         <div key={Sites.id} className="row border border-dark">
           <div className="col-sm">{Sites.id}</div>
           <div className="col-sm">{Sites.valor}</div>
+          <div className="col-sm">{String(Sites.gtm)}</div>
         </div>
       ))}
     </div>

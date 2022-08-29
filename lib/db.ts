@@ -6,8 +6,9 @@ import { prisma } from './prisma';
 export interface Eventos {
 	id: number;
 	nome: string;
-	escopo: string;
 	descricao: string;
+	parametros: string;
+	coletaAutomatica: boleean;
 }
 
 export async function getAllEventos() {
@@ -15,13 +16,14 @@ export async function getAllEventos() {
 	return data;
 }
 
-export async function createEventos(id: number, escopo: string, descricao: string, nome: string) {
+export async function createEventos(id: number, nome: string, descricao: string, parametros: string, coletaAutomatica: boolean) {
 	await prisma.eventos.create({
 		data: {
 			id,
-            escopo,
+            nome,
 			descricao,
-			nome
+			parametros,
+			coletaAutomatica
 		}
 	});
 }
@@ -32,8 +34,9 @@ export async function createEventos(id: number, escopo: string, descricao: strin
 export interface Metricas {
 	id: number;
 	nome: string;
-	detalhe: string;
 	descricao: string;
+	detalhe: string;
+	tipo: string;
 }
 
 export async function getAllMetricas() {
@@ -41,12 +44,13 @@ export async function getAllMetricas() {
 	return data;
 }
 
-export async function createMetricas(detalhe: string, descricao: string, nome: string) {
+export async function createMetricas(detalhe: string, descricao: string, nome: string, tipo: string) {
 	await prisma.metricas.create({
 		data: {
 			descricao,
 			detalhe,
-			nome
+			nome,
+			tipo
 		}
 	});
 }
@@ -109,7 +113,7 @@ export async function createListaDeCodigos(id: number, codigo: string, evento: s
 	});
 }
 
-// SITES
+// 
 
 export interface Sites {
 	id: string;

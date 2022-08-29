@@ -27,12 +27,14 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
         <div className="row text-light bg-lopes border border-dark">
           <div className="col-sm">ID</div>
           <div className="col-sm">Valor</div>
+          <div className="col-sm">GTM</div>
         </div>
       </div>
       {containers1.map((Containers1: any, index: any) => (
         <div key={Containers1.id} className="row border border-dark">
           <div className="col-sm">{Containers1.id}</div>
           <div className="col-sm">{Containers1.valor}</div>
+          <div className="col-sm">{String(Containers1.gtm)}</div>
         </div>
       ))}
     </div>

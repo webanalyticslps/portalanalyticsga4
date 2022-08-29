@@ -31,7 +31,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 						aria-labelledby="headingOne"
 						data-bs-parent="#accordionExample"
 					>
-						<div className="accordion-body">Utilize a função abaixo:</div>
+						<div className="accordion-body">Utilize a função abaixo no momento do disparo do evento preenchendo os campos de acordo com os parâmetros indicados na documentação do Confluence:</div>
 					</div>
 				</div>
 				<div className="accordion-item">

@@ -150,8 +150,11 @@ const Menu = () => {
               <NavDropdown.Item href="/projetosfuturos/rededenos" title="Rede de nós">
                 Rede de nós
               </NavDropdown.Item>
-              <NavDropdown.Item href="/projetosfuturos/rededenos" title="Rede de nós">
+              <NavDropdown.Item href="/projetosfuturos/alerta" title="Alerta">
                 Alerta (Slack)
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/projetosfuturos/geradordedatalayer" title="Gerador de Data Layer">
+                Gerador de  dataLayer
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

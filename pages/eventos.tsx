@@ -25,18 +25,20 @@ export default withPageAuthRequired(function Profile({ eventos }) {
       </h2>
       <div>
         <div className="row text-light bg-lopes border border-dark">
-          <div className="col-sm">ID</div>
-          <div className="col-sm">Nome</div>
-          <div className="col-sm">Escopo</div>
-          <div className="col-sm">Descrição</div>
+          <div className="col-sm-2">ID</div>
+          <div className="col-sm-2">Nome</div>
+          <div className="col-sm-2">Quando é disparado</div>
+          <div className="col-sm-2">Parâmetros</div>
+          <div className="col-sm-2">Coleta automática</div>
         </div>
       </div>
       {eventos.map((Eventos: any, index: any) => (
         <div key={Eventos.id} className="row border border-dark">
-          <div className="col-sm">{Eventos.id}</div>
-          <div className="col-sm">{Eventos.nome}</div>
-          <div className="col-sm">{Eventos.escopo}</div>
-          <div className="col-sm">{Eventos.descricao}</div>
+          <div className="col-sm-2">{Eventos.id}</div>
+          <div className="col-sm-2">{Eventos.nome}</div>
+          <div className="col-sm-2">{Eventos.descricao}</div>
+          <div className="col-sm-2">{Eventos.parametros}</div>
+          <div className="col-sm-2">{String(Eventos.coletaAutomatica)}</div>
         </div>
       ))}
     </div>

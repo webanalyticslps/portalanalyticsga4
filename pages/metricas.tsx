@@ -29,6 +29,7 @@ export default withPageAuthRequired(function Profile({ metricas }) {
 					<div className="col-sm">Nome</div>
 					<div className="col-sm">Descrição</div>
 					<div className="col-sm">Como é preenchida</div>
+					<div className="col-sm">Tipo</div>
 				</div>
 			</div>
 			{metricas.map((Metricas: any, index: any) => (
@@ -37,6 +38,7 @@ export default withPageAuthRequired(function Profile({ metricas }) {
 					<div className="col-sm">{Metricas.nome}</div>
 					<div className="col-sm">{Metricas.descricao}</div>
 					<div className="col-sm">{Metricas.detalhe}</div>
+					<div className="col-sm">{Metricas.tipo}</div>
 				</div>
 			))}
 		</div>
