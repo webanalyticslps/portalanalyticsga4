@@ -5,8 +5,8 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 export default withPageAuthRequired(function Profile({ user }) {
   function copy() {
-    let textarea = document.getElementById("textarea");
-    if (textarea != null) {
+    if (document.getElementById("textarea") != null) {
+      let textarea = document.getElementById("textarea");
       textarea.onselect();
       document.execCommand("copy");
     }
