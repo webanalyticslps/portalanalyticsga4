@@ -39,13 +39,13 @@ export default withPageAuthRequired(function Profile({ user }) {
               principais que cada evento possui, como ilustra a imagem abaixo:
               <img
                 src="/codigodedisparo.png"
-                class="img-fluid"
+                className="img-fluid"
                 alt="Responsive image"
               />
               <p>
                 <ins>Ele é composto por 5 parâmetros obrigatórios:</ins>
               </p>
-              <ul class="list-unstyled">
+              <ul className="list-unstyled">
                   <ul>
                     <li>Evento: tipo de evento disparo. Os eventos mais comuns são visualizações de página, cliques, envios de formulário, etc.</li>
                     <li>Site: qual o site em que o evento foi disparo.</li>
