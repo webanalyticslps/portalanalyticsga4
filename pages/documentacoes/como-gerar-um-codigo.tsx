@@ -44,13 +44,13 @@ export default withPageAuthRequired(function Profile({ user }) {
                 de disparo" e siga as instruções abaixo:
               </p>
 
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">1) Selecione o tipo de evento que irá ser tagueado. Você pode consultar todos os possíveis eventos na aba "Documentações -> Eventos" do portal.</li>
-                <li class="list-group-item">2) Selecione o site em que o seu evento será disparado.</li>
-                <li class="list-group-item">3) Selecione o container em que o seu evento será disparado.</li>
-                <li class="list-group-item">4) Selecione o subcontainer em que o seu evento será disparado.</li>
-                <li class="list-group-item">5) Selecione o identificador do seu evento.</li>
-				<li class="list-group-item">6) Clique no botão "Criar" e atualize a página.</li>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">1) Selecione o tipo de evento que irá ser tagueado. Você pode consultar todos os possíveis eventos na aba "Documentações -> Eventos" do portal.</li>
+                <li className="list-group-item">2) Selecione o site em que o seu evento será disparado.</li>
+                <li className="list-group-item">3) Selecione o container em que o seu evento será disparado.</li>
+                <li className="list-group-item">4) Selecione o subcontainer em que o seu evento será disparado.</li>
+                <li className="list-group-item">5) Selecione o identificador do seu evento.</li>
+				<li className="list-group-item">6) Clique no botão "Criar" e atualize a página.</li>
               </ul>
 				<p/>
 			  <p> <ins>Observação:</ins> caso já exista um código criado com os mesmos parâmetros que você selecionou o código não será criado. Nesse caso, escolha outros parâmetros para compor o seu evento. </p>
