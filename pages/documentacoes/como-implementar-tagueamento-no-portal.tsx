@@ -61,7 +61,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 
 			  <p>
                 {" "}
-                Observação 1: para que o tagueamento funcione, é necessário que o GTM esteja instalado corretamente no site. Para saber como realizar a implementação do GTM, acesse a aba do portal "Tutoriais -> Como implementar o GTM"{" "}
+                Observação 1: para que o tagueamento funcione, é necessário que o GTM esteja instalado corretamente no site. Para saber como realizar a implementação do GTM, acesse a aba do portal "Tutoriais - Como implementar o GTM"{" "}
               </p>
 
               <p>
