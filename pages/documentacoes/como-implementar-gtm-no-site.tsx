@@ -100,8 +100,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <textarea
                 id="w3review"
                 name="w3review"
-                rows="9"
-                cols="50"
+                rows={9}
+                cols={50}
                 value="<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -117,8 +117,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <textarea
                 id="w3review"
                 name="w3review"
-                rows="4"
-                cols="50"
+                rows={4}
+                cols={50}
                 value='<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NW5CWVM"
                 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>'
               />
