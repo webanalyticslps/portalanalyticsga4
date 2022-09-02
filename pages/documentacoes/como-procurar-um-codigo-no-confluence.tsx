@@ -32,7 +32,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 						data-bs-parent="#accordionExample"
 					>
 						<div className="accordion-body">
-							Para procurar um código no confluence siga as intruções abaixo:
+							<p>Você pode procurar um código nas nossas documentações do Confluence na pasta <ins>Data Analytics - Digital Analytics - Lista de Códigos de Disparo GA4</ins> dentro do espaço <ins>Big Data</ins>.</p>
 						</div>
 					</div>
 				</div>

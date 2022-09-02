@@ -9,7 +9,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 	return (
 		<div className="container">
 			<h2>
-				<p className="text-center font-weight-bold">COMO SOCOLITAR ACESSO DO GA4</p>
+				<p className="text-center font-weight-bold">COMO SOLICITAR ACESSO DO GA4</p>
 			</h2>
 			<div className="accordion" id="accordionExample">
 				<div className="accordion-item">
