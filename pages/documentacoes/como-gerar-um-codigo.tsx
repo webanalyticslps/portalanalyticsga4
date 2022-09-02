@@ -45,11 +45,11 @@ export default withPageAuthRequired(function Profile({ user }) {
               </p>
 
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">1) Selecione o tipo de evento que irá ser tagueado. Você pode consultar todos os possíveis eventos na aba "Documentações -> Eventos" do portal.</li>
-                <li className="list-group-item">2) Selecione o site em que o seu evento será disparado.</li>
-                <li className="list-group-item">3) Selecione o container em que o seu evento será disparado.</li>
-                <li className="list-group-item">4) Selecione o subcontainer em que o seu evento será disparado.</li>
-                <li className="list-group-item">5) Selecione o identificador do seu evento.</li>
+                <li className="list-group-item">1&gt; Selecione o tipo de evento que irá ser tagueado. Você pode consultar todos os possíveis eventos na aba "Documentações -> Eventos" do portal.</li>
+                <li className="list-group-item">2&gt; Selecione o site em que o seu evento será disparado.</li>
+                <li className="list-group-item">3&gt; Selecione o container em que o seu evento será disparado.</li>
+                <li className="list-group-item">4&gt; Selecione o subcontainer em que o seu evento será disparado.</li>
+                <li className="list-group-item">5&gt; Selecione o identificador do seu evento.</li>
 				<li className="list-group-item">6) Clique no botão "Criar" e atualize a página.</li>
               </ul>
 				<p/>
