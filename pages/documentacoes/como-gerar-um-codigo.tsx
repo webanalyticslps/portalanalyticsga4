@@ -50,7 +50,7 @@ export default withPageAuthRequired(function Profile({ user }) {
                 <li className="list-group-item">3&gt; Selecione o container em que o seu evento será disparado.</li>
                 <li className="list-group-item">4&gt; Selecione o subcontainer em que o seu evento será disparado.</li>
                 <li className="list-group-item">5&gt; Selecione o identificador do seu evento.</li>
-				<li className="list-group-item">6) Clique no botão "Criar" e atualize a página.</li>
+				<li className="list-group-item">6&gt; Clique no botão "Criar" e atualize a página.</li>
               </ul>
 				<p/>
 			  <p> <ins>Observação:</ins> caso já exista um código criado com os mesmos parâmetros que você selecionou o código não será criado. Nesse caso, escolha outros parâmetros para compor o seu evento. </p>
