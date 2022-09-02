@@ -34,7 +34,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 						<div className="accordion-body">
 							As solicitações de atendimento ao time de BI/Data Analytics, deverão ser feitas única e
 							exclusivamente pelo link de suporte dentro do sistema Lopesnet, através do ícone
-							Relatórios -> Metabase e Web Analytics. Detalhe com o máximo de informações o evento que gostaria de taguear.
+							Relatórios - Metabase e Web Analytics. Detalhe com o máximo de informações o evento que gostaria de taguear.
 						</div>
 					</div>
 				</div>
