@@ -44,10 +44,47 @@ export default withPageAuthRequired(function Profile({ user }) {
                 de disparo" e siga as instruções abaixo:
               </p>
 
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">
+                  {" "}
+                  Selecione o tipo de evento que irá ser tagueado. Você pode
+                  consultar todos os possíveis eventos na aba "Documentações -
+                  Eventos" do portal.
+                </li>
+                <li className="list-group-item">
+                  {" "}
+                  Selecione o site em que o seu evento será disparado.
+                </li>
+                <li className="list-group-item">
+                  {" "}
+                  Selecione o container em que o seu evento será disparado.
+                </li>
+                <li className="list-group-item">
+                  {" "}
+                  Selecione o subcontainer em que o seu evento será disparado.
+                </li>
+                <li className="list-group-item">
+                  {" "}
+                  Selecione o identificador do seu evento.
+                </li>
+                <li className="list-group-item">
+                  {" "}
+                  Clique no botão "Criar" e atualize a página.
+                </li>
+              </ul>
 
-				<p/>
-			  <p> <ins>Observação:</ins> caso já exista um código criado com os mesmos parâmetros que você selecionou o código não será criado. Nesse caso, escolha outros parâmetros para compor o seu evento. </p>
-			  <p> Caso precise de mais detalhes para entender o que cada parâmetro do código significa, acesse a aba do portal "Tutoriais -> O que é um código de disparo" </p>
+              <p>
+                {" "}
+                <ins>Observação:</ins> caso já exista um código criado com os
+                mesmos parâmetros que você selecionou o código não será criado.
+                Nesse caso, escolha outros parâmetros para compor o seu evento.{" "}
+              </p>
+              <p>
+                {" "}
+                Caso precise de mais detalhes para entender o que cada parâmetro
+                do código significa, acesse a aba do portal "Tutoriais - O que é
+                um código de disparo"{" "}
+              </p>
             </div>
           </div>
         </div>
