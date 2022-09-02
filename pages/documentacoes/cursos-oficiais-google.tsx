@@ -12,7 +12,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 				<p className="text-center font-weight-bold">CURSOS OFICIAIS DO GOOGLE</p>
 			</h2>
 			<div className="list-group">
-				<a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+				<a href="https://analytics.google.com/analytics/academy/course/6" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Google Analytics para iniciantes</h5>
 						<small>Português</small>
@@ -22,7 +22,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small>#GoogleAnalytics</small>
 				</a>
-				<a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+				<a href="http://localhost:3000/documentacoes/cursos-oficiais-google#" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Curso avançado do Google Analytics</h5>
 						<small className="text-muted">Português</small>
@@ -32,7 +32,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small className="text-muted">#GoogleAnalytics</small>
 				</a>
-				<a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+				<a href="https://analytics.google.com/analytics/academy/course/8" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Começar a usar o Google Analytics 360</h5>
 						<small className="text-muted">Português</small>
@@ -42,7 +42,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small className="text-muted">#GoogleAnalytics</small>
 				</a>
-                <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="https://analytics.google.com/analytics/academy/course/5" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Fundamentos do Gerenciador de tags do Google</h5>
 						<small className="text-muted">Português</small>
@@ -52,7 +52,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small className="text-muted">#GTM</small>
 				</a>
-                <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="https://analytics.google.com/analytics/academy/course/6" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Google Analytics for Beginners</h5>
 						<small className="text-muted">Inglês</small>
@@ -62,7 +62,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small className="text-muted">#GoogleAnalytics</small>
 				</a>
-                <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="https://analytics.google.com/analytics/academy/course/7" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Advanced Google Analytics</h5>
 						<small className="text-muted">Inglês</small>
@@ -72,7 +72,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small className="text-muted">#GoogleAnalytics</small>
 				</a>
-                <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="https://analytics.google.com/analytics/academy/course/9" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Google Analytics for Power Users</h5>
 						<small className="text-muted">Inglês</small>
@@ -82,7 +82,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small className="text-muted">#GoogleAnalytics</small>
 				</a>
-                <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="https://analytics.google.com/analytics/academy/course/8" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Getting Started With Google Analytics 360</h5>
 						<small className="text-muted">Inglês</small>
@@ -92,7 +92,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small className="text-muted">#GoogleAnalytics</small>
 				</a>
-                <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="https://analytics.google.com/analytics/academy/course/10" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Introduction to Data Studio</h5>
 						<small className="text-muted">Inglês</small>
@@ -102,7 +102,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small className="text-muted">#DataStudio</small>
 				</a>
-                <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="https://analytics.google.com/analytics/academy/course/5" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Google Tag Manager Fundamentals</h5>
 						<small className="text-muted">Inglês</small>
@@ -112,7 +112,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small className="text-muted">#GTM</small>
 				</a>
-                <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="https://skillshop.exceedlms.com/student/path/381941-measure-your-marketing-with-google-analytics" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Measure Your Marketing with Google Analytics</h5>
 						<small className="text-muted">Inglês</small>
@@ -122,7 +122,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small className="text-muted">#GA4</small>
 				</a>
-                <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="https://skillshop.exceedlms.com/student/path/468350-go-further-with-your-google-analytics-data" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Go Further with Your Google Analytics Data</h5>
 						<small className="text-muted">Inglês</small>

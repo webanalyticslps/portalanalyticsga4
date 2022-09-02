@@ -9,7 +9,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 	return (
 		<div className="container">
 			<h2>
-				<p className="text-center font-weight-bold">COMO SOCOLITAR ACESSO DOS RELATÓRIOS</p>
+				<p className="text-center font-weight-bold">COMO SOLICITAR ACESSO DOS RELATÓRIOS</p>
 			</h2>
 			<div className="accordion" id="accordionExample">
 				<div className="accordion-item">
@@ -31,7 +31,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 						aria-labelledby="headingOne"
 						data-bs-parent="#accordionExample"
 					>
-						<div className="accordion-body">Processo de solicitação de acesso.</div>
+						<div className="accordion-body">Os acessos dos relatórios do Data Studio com a tag [Digital Analytics] podem ser solicitados diretamente com um dos membros da equipe de Digital Analytics. Caso o relatório não possua a tag, o acesso deverá ser solicitado diretamente com o dono do relatório.</div>
 					</div>
 				</div>
 			</div>

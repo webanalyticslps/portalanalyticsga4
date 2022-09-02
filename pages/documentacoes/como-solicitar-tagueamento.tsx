@@ -34,10 +34,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 						<div className="accordion-body">
 							As solicitações de atendimento ao time de BI/Data Analytics, deverão ser feitas única e
 							exclusivamente pelo link de suporte dentro do sistema Lopesnet, através do ícone
-							Relatórios, selecionando em seguida a subcategoria desejada. Obs: Em breve teremos duas
-							novas categorias dentro do ícone Relatórios: Metabase e Web Analytics. Enquanto essas
-							novas categorias não são implementadas, as solicitações para essas categorias, podem ser
-							enviadas para o e-mail acima citado.
+							Relatórios -> Metabase e Web Analytics. Detalhe com o máximo de informações o evento que gostaria de taguear.
 						</div>
 					</div>
 				</div>

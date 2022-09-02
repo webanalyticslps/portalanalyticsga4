@@ -1,6 +1,6 @@
-import MyApp from 'next';
+import MyApp from "next";
 
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const Menu = () => {
   return (
@@ -48,12 +48,20 @@ const Menu = () => {
               >
                 O que é um código de disparo
               </NavDropdown.Item>
+
+              <NavDropdown.Item
+                href="/documentacoes/como-implementar-gtm-no-site"
+                title="Como implementar tagueamento no portal"
+              >
+                Como implementar GTM no site
+              </NavDropdown.Item>
               <NavDropdown.Item
                 href="/documentacoes/como-implementar-tagueamento-no-portal"
                 title="Como implementar tagueamento no portal"
               >
                 Como implementar tagueamento no portal
               </NavDropdown.Item>
+
               <NavDropdown.Item
                 href="/documentacoes/como-consultar-codigo-no-ga"
                 title="Como consultar um código no GA4"
@@ -90,12 +98,7 @@ const Menu = () => {
               >
                 Conheça nossa equipe
               </NavDropdown.Item>
-              <NavDropdown.Item
-                href="/documentacoes/conheca-nossos-processos"
-                title="Conheça nossos processos"
-              >
-                Conheça nossos processos
-              </NavDropdown.Item>
+
               <NavDropdown.Item
                 href="/documentacoes/como-solicitar-acesso-do-ga4"
                 title="Como solicitar acesso do GA4"
@@ -144,17 +147,26 @@ const Menu = () => {
               Histórico
             </Nav.Link>
             <NavDropdown title="Projetos futuros" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/projetosfuturos/validador" title="Validador">
+              <NavDropdown.Item
+                href="/projetosfuturos/validador"
+                title="Validador"
+              >
                 Validador
               </NavDropdown.Item>
-              <NavDropdown.Item href="/projetosfuturos/rededenos" title="Rede de nós">
+              <NavDropdown.Item
+                href="/projetosfuturos/rededenos"
+                title="Rede de nós"
+              >
                 Rede de nós
               </NavDropdown.Item>
               <NavDropdown.Item href="/projetosfuturos/alerta" title="Alerta">
                 Alerta (Slack)
               </NavDropdown.Item>
-              <NavDropdown.Item href="/projetosfuturos/geradordedatalayer" title="Gerador de Data Layer">
-                Gerador de  dataLayer
+              <NavDropdown.Item
+                href="/projetosfuturos/geradordedatalayer"
+                title="Gerador de Data Layer"
+              >
+                Gerador de dataLayer
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
