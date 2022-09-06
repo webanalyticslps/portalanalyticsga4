@@ -22,7 +22,7 @@ export default withPageAuthRequired(function Profile({ user }) {
 					</p>
 					<small>#GoogleAnalytics</small>
 				</a>
-				<a href="http://localhost:3000/documentacoes/cursos-oficiais-google#" className="list-group-item list-group-item-action flex-column align-items-start">
+				<a href="https://analytics.google.com/analytics/academy/course/7" className="list-group-item list-group-item-action flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h5 className="mb-1">Curso avançado do Google Analytics</h5>
 						<small className="text-muted">Português</small>
