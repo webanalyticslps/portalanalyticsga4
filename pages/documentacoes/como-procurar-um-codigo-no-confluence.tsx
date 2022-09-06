@@ -54,17 +54,20 @@ export default withPageAuthRequired(function Profile({ user }) {
                 className="img-fluid"
                 alt="Responsive image"
               />
+              <p></p>
               <p>
                 {" "}
                 Após isso, verifique na documentação qual evento referência seu
-                código e descubra quando ele dispara, quais parâmetros ele possui e qual o status dele em cada ambiente.{" "}
+                código e descubra quando ele dispara, quais parâmetros ele
+                possui e qual o status dele em cada ambiente.{" "}
               </p>
-			  <p></p>
-			  <img
+              <p></p>
+              <img
                 src="/eventos.png"
                 className="img-fluid"
                 alt="Responsive image"
               />
+              <p></p>
             </div>
           </div>
         </div>
