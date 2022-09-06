@@ -17,44 +17,8 @@ export default withPageAuthRequired(function Profile({ user }) {
 							Relatório construído para acompanhar a jornada de geração de leads do produto Sherlopes Home.
 						</div>
 					</div>
-					<div className="col">
-						<div className="card text-center">
-							teste
-							<Image src="/background.png" alt="" title="" width="300" height="400" layout="responsive" />
-							teste
-						</div>
-					</div>
-					<div className="col">
-						<div className="card text-center">
-							teste
-							<Image src="/background.png" alt="" title="" width="300" height="400" layout="responsive" />
-							teste
-						</div>
-					</div>
 				</div>
-                <div className="row">
-					<div className="col">
-						<div className="card text-center">
-							teste
-							<Image src="/background.png" alt="" title="" width="300" height="400" layout="responsive" />
-							teste
-						</div>
-					</div>
-					<div className="col">
-						<div className="card text-center">
-							teste
-							<Image src="/background.png" alt="" title="" width="300" height="400" layout="responsive" />
-							teste
-						</div>
-					</div>
-					<div className="col">
-						<div className="card text-center">
-							teste
-							<Image src="/background.png" alt="" title="" width="300" height="400" layout="responsive" />
-							teste
-						</div>
-					</div>
-				</div>
+                
 			</div>
 		</div>
 	);
