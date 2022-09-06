@@ -12,9 +12,9 @@ export default withPageAuthRequired(function Profile({ user }) {
 				<div className="row">
 					<div className="col">
 						<div className="card text-center">
-							teste
-							<Image src="/background.png" alt="" title="" width="300" height="400" layout="responsive" />
-							teste
+							[Digital Analytics] [UA] Dashboard Sherlopes Home
+							<Image src="/sherlopes.png" alt="" title="" width="300" height="400" layout="responsive" />
+							Relatório construído para acompanhar a jornada de geração de leads do produto Sherlopes Home.
 						</div>
 					</div>
 					<div className="col">
