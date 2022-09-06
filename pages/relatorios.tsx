@@ -20,6 +20,7 @@ export default withPageAuthRequired(function Profile({ user }) {
                 width="300"
                 height="400"
                 layout="responsive"
+				href="https://datastudio.google.com/u/0/reporting/10e69f92-8ba0-441e-aa26-f0233d32b402/page/7BuKC"
               />
               Relatório construído para acompanhar a jornada de geração de leads
               do produto Sherlopes Home.
