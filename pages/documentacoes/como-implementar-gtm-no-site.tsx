@@ -24,7 +24,7 @@ export default withPageAuthRequired(function Profile({ user }) {
               aria-expanded="false"
               aria-controls="collapseOne"
             >
-              Como implementar GTM no ambiente de produção
+              Como implementar GTM no ambiente de desenvolvimento
             </button>
           </h2>
           <div
@@ -81,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Como implementar GTM no ambiente de desenvolvimento
+              Como implementar GTM no ambiente de produção
             </button>
           </h2>
           <div
