@@ -29,7 +29,7 @@ export default withPageAuthRequired(function Profile({ user }) {
           </div>
           <div className="col">
             <div className="card text-center">
-              Vazio
+            [Digital Analytics] [UA] Dashboard Produtos Recomendados
               <Image
                 src="/background.png"
                 alt=""
@@ -38,7 +38,7 @@ export default withPageAuthRequired(function Profile({ user }) {
                 height="400"
                 layout="responsive"
               />
-              Vazio
+              Relatório construído para acompanhar os indicadores do produto de dados "Imóveis Recomendados".
             </div>
           </div>
           <div className="col">
