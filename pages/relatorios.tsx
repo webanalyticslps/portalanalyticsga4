@@ -31,7 +31,7 @@ export default withPageAuthRequired(function Profile({ user }) {
             <div className="card text-center">
               [Digital Analytics] [UA] Dashboard Produtos Recomendados
               <Image
-                src="/relatoriosprodutosrecomendados.png"
+                src="/relatorioprodutosrecomendados.png"
                 alt=""
                 title=""
                 width="300"
