@@ -30,6 +30,7 @@ export default withPageAuthRequired(function Profile({ user }) {
           <div className="col">
             <div className="card text-center">
               [Digital Analytics] [UA] Dashboard Produtos Recomendados
+              <a href="https://datastudio.google.com/u/0/reporting/4574aeac-d844-4bc5-83f9-f4e07aee7cbf/page/7BuKC">
               <Image
                 src="/relatorioprodutosrecomendados.png"
                 alt=""
@@ -38,6 +39,7 @@ export default withPageAuthRequired(function Profile({ user }) {
                 height="400"
                 layout="responsive"
               />
+              </a>
               Relatório construído para acompanhar os indicadores do produto de
               dados "Imóveis Recomendados".
             </div>
@@ -45,6 +47,7 @@ export default withPageAuthRequired(function Profile({ user }) {
           <div className="col">
             <div className="card text-center">
               [Digital Analytics] [UA] Dashboard Produtos Similares
+              <a href="https://datastudio.google.com/u/0/reporting/caa91186-942e-444a-8d7b-001d41831b43/page/7BuKC">
               <Image
                 src="/produtossimilares.png"
                 alt=""
@@ -53,6 +56,7 @@ export default withPageAuthRequired(function Profile({ user }) {
                 height="400"
                 layout="responsive"
               />
+              </a>
               Relatório construído para acompanhar os indicadores do produto de
               dados "Imóveis Similares".
             </div>
