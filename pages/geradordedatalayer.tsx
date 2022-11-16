@@ -176,8 +176,6 @@ export default withPageAuthRequired(function Profile({
           <textarea
             id="textdatalayer"
             name="w3review"
-            rows="20"
-            cols="50"
           ></textarea>
         </div>
       </div>
