@@ -101,10 +101,11 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
       <div className="container">
         <div className="row" style={{ paddingBottom: "100px" }}>
           <div className="col-4">
+            
             <button
               className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
               onClick={() =>
-                handleClick(document.getElementById("textId").value, textValor.value, textGtm.value)
+                handleClick(document.getElementById("textId")!.value, textValor.value, textGtm.value)
               }
             >
               Criar
