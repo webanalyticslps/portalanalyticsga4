@@ -104,7 +104,7 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
             <button
               className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
               onClick={() =>
-                handleClick(TextId.value, textValor.value, textGtm.value)
+                handleClick(document.getElementById("textId").value, textValor.value, textGtm.value)
               }
             >
               Criar
