@@ -173,10 +173,7 @@ export default withPageAuthRequired(function Profile({
         </h2>
 
         <div className="d-flex justify-content-center">
-          <textarea
-            id="textdatalayer"
-            name="w3review"
-          ></textarea>
+          <textarea id="textdatalayer" name="w3review" rows={20} cols={10}></textarea>
         </div>
       </div>
     </div>
