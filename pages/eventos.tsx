@@ -64,7 +64,12 @@ export default withPageAuthRequired(function Profile({ eventos }) {
       ))}
 
       <h2>
-        <p className="text-center font-weight-bold" style={{paddingTop : '100px'}}>INCLUIR NOVO EVENTO</p>
+        <p
+          className="text-center font-weight-bold"
+          style={{ paddingTop: "100px" }}
+        >
+          INCLUIR NOVO EVENTO
+        </p>
       </h2>
 
       <div className="container">
@@ -122,16 +127,23 @@ export default withPageAuthRequired(function Profile({ eventos }) {
       </div>
 
       <div className="container">
-        <div className="row" style={{paddingBottom : '100px'}}>
+        <div className="row" style={{ paddingBottom: "100px" }}>
           <div className="col-4">
             <button
               className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
               onClick={() =>
                 handleClick(
-                  textEvento.value,
-                  textQuando.value,
-                  textParametros.value,
-                  textColeta.value
+                  (document.getElementById("textEvento") as HTMLInputElement)
+                    .value,
+                  (document.getElementById("textQuando") as HTMLInputElement)
+                    .value,
+                  (
+                    document.getElementById(
+                      "textParametros"
+                    ) as HTMLInputElement
+                  ).value,
+                  (document.getElementById("textColeta") as HTMLInputElement)
+                    .value
                 )
               }
             >

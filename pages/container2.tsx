@@ -75,7 +75,7 @@ export default withPageAuthRequired(function Profile({ containers2 }) {
 
       <div className="container">
         <div className="row">
-          <div class="col-sm">
+          <div className="col-sm">
             <textarea
               id="textId"
               name="w3review"
