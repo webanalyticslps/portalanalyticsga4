@@ -12,7 +12,8 @@ import Link from "next/link";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 const gerardatalayer = () => {
-  var varcodigo = (document.getElementById("textcodigo") as HTMLInputElement).value;
+  var varcodigo = (document.getElementById("textcodigo") as HTMLInputElement)
+    .value;
   var tipodeevento = varcodigo.substring(0, varcodigo.indexOf("."));
 
   switch (tipodeevento) {
@@ -72,59 +73,59 @@ const gerardatalayer = () => {
         varcodigo +
         "'\n'item_list_id':''\n'item_list_name':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'quantity':''\n }\n});";
       break;
-      case "14":
+    case "14":
       (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" +
         varcodigo +
         "'\n'creative_name':''\n'creative_slot':''\n'location_id':''\n'promotion_id':''\n'promotion_name':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'creative_name':''\n'creative_slot':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'promotion_id':''\n'promotion_name':''\n'quantity':''\n }\n});";
       break;
-      case "15":
+    case "15":
       (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
-      case "16":
+    case "16":
       (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
-      case "17":
+    case "17":
       (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
-      case "18":
+    case "18":
       (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
-      case "19":
+    case "19":
       (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
-      case "20":
+    case "20":
       (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
-      case "21":
+    case "21":
       (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
-      case "22":
-        (document.getElementById("textdatalayer") as HTMLInputElement).value =
+    case "22":
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" +
         varcodigo +
         "'\n'value':''\n'currency':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'quantity':''\n }\n});";
       break;
-      case "23":
-        (document.getElementById("textdatalayer") as HTMLInputElement).value =
+    case "23":
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" +
         varcodigo +
         "'\n'item_list_id':''\n'item_list_name':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'quantity':''\n }\n});";
       break;
-      case "24":
-        (document.getElementById("textdatalayer") as HTMLInputElement).value =
+    case "24":
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" +
         varcodigo +
         "'\n'creative_name':''\n'creative_slot':''\n'location_id':''\n'promotion_id':''\n'promotion_name':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'quantity':''\n }\n});";
       break;
-      case "25":
+    case "25":
       (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
@@ -152,7 +153,7 @@ export default withPageAuthRequired(function Profile({
           <label htmlFor="nomeDoEvento">Código do evento</label>
 
           <div>
-            <textarea id="textcodigo" name="w3review" rows="1" cols="30">
+            <textarea id="textcodigo" name="w3review">
               Insira o código do evento.
             </textarea>
           </div>
