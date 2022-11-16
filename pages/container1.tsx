@@ -110,8 +110,9 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
               onClick={() =>
                 handleClick(
                   (document.getElementById("textId") as HTMLInputElement).value,
-                  textValor.value,
-                  textGtm.value
+                  (document.getElementById("textValor") as HTMLInputElement)
+                    .value,
+                  (document.getElementById("textGtm") as HTMLInputElement).value
                 )
               }
             >
