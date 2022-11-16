@@ -109,7 +109,7 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
               className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
               onClick={() =>
                 handleClick(
-                  (document.getElementById(textId) as HTMLInputElement)!.value,
+                  (document.getElementById("textId") as HTMLInputElement).value,
                   textValor.value,
                   textGtm.value
                 )
