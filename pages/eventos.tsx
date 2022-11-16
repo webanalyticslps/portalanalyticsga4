@@ -3,6 +3,7 @@ import { getAllEventos, Eventos } from "../lib/db";
 import Head from "next/head";
 import { Container, Row, Card, Button } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { useState } from "react";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const eventos = await getAllEventos();
@@ -18,10 +19,30 @@ interface PostProps {
 }
 
 export default withPageAuthRequired(function Profile({ eventos }) {
+  const [evento, setEvento] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [parametro, setParametro] = useState("");
+  const [coleta, setColeta] = useState("");
+
+  const handleClick = async (
+    nomeevento: any,
+    quandoevento: any,
+    parametroevento: any,
+    coletaevento: any
+  ) => {
+    const axios = require("axios");
+    const res = await axios.post("/api/1-create-evento-id-axios", {
+      nomeevento: nomeevento,
+      quandoevento: quandoevento,
+      parametroevento: parametroevento,
+      coletaevento: JSON.parse(coletaevento),
+    });
+  };
+
   return (
     <div className="container">
       <h2>
-        <p className="text-center font-weight-bold">EVENTOS</p>
+        <p className="text-center font-weight-bold">LISTA DE EVENTOS</p>
       </h2>
       <div>
         <div className="row text-light bg-lopes border border-dark">
@@ -41,6 +62,84 @@ export default withPageAuthRequired(function Profile({ eventos }) {
           <div className="col-sm-2">{String(Eventos.coletaAutomatica)}</div>
         </div>
       ))}
+
+      <h2>
+        <p className="text-center font-weight-bold" style={{paddingTop : '100px'}}>INCLUIR NOVO EVENTO</p>
+      </h2>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">Nome</div>
+          <div class="col-sm">Quando é disparado</div>
+          <div class="col-sm">Parâmetros</div>
+          <div class="col-sm">Coleta automática</div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <textarea
+              id="textEvento"
+              name="w3review"
+              rows="1"
+              cols="30"
+              value={evento}
+              onChange={(e) => setEvento(e.currentTarget.value)}
+            ></textarea>
+          </div>
+          <div class="col-sm">
+            <textarea
+              id="textQuando"
+              name="w3review"
+              rows="1"
+              cols="30"
+              value={descricao}
+              onChange={(e) => setDescricao(e.currentTarget.value)}
+            ></textarea>
+          </div>
+          <div class="col-sm">
+            <textarea
+              id="textParametros"
+              name="w3review"
+              rows="1"
+              cols="30"
+              value={parametro}
+              onChange={(e) => setParametro(e.currentTarget.value)}
+            ></textarea>
+          </div>
+          <div class="col-sm">
+            <textarea
+              id="textColeta"
+              name="w3review"
+              rows="1"
+              cols="30"
+              value={coleta}
+              onChange={(e) => setColeta(e.currentTarget.value)}
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row" style={{paddingBottom : '100px'}}>
+          <div class="col-4">
+            <button
+              className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
+              onClick={() =>
+                handleClick(
+                  textEvento.value,
+                  textQuando.value,
+                  textParametros.value,
+                  textColeta.value
+                )
+              }
+            >
+              Criar
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 });

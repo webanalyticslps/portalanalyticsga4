@@ -163,7 +163,7 @@ const Menu = () => {
                 Alerta (Slack)
               </NavDropdown.Item>
               <NavDropdown.Item
-                href="/projetosfuturos/geradordedatalayer"
+                href="/geradordedatalayer"
                 title="Gerador de Data Layer"
               >
                 Gerador de dataLayer
