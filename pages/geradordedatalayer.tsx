@@ -12,7 +12,7 @@ import Link from "next/link";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 const gerardatalayer = () => {
-  var varcodigo = document.getElementById("textcodigo").value;
+  var varcodigo = document.getElementById("textcodigo").value as HTMLInputElement;
   var tipodeevento = varcodigo.substring(0, varcodigo.indexOf("."));
 
   switch (tipodeevento) {
