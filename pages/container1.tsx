@@ -61,17 +61,17 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
         </p>
       </h2>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">ID</div>
-          <div class="col-sm">Valor</div>
-          <div class="col-sm">GTM</div>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">ID</div>
+          <div className="col-sm">Valor</div>
+          <div className="col-sm">GTM</div>
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">
             <textarea
               id="textId"
               name="w3review"
@@ -81,7 +81,7 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
               onChange={(e) => setId(e.currentTarget.value)}
             ></textarea>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <textarea
               id="textValor"
               name="w3review"
@@ -91,7 +91,7 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
               onChange={(e) => setValor(e.currentTarget.value)}
             ></textarea>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <textarea
               id="textGtm"
               name="w3review"
@@ -104,9 +104,9 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
         </div>
       </div>
 
-      <div class="container">
-        <div class="row" style={{ paddingBottom: "100px" }}>
-          <div class="col-4">
+      <div className="container">
+        <div className="row" style={{ paddingBottom: "100px" }}>
+          <div className="col-4">
             <button
               className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
               onClick={() =>

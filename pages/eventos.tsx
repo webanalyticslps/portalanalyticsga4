@@ -67,18 +67,18 @@ export default withPageAuthRequired(function Profile({ eventos }) {
         <p className="text-center font-weight-bold" style={{paddingTop : '100px'}}>INCLUIR NOVO EVENTO</p>
       </h2>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">Nome</div>
-          <div class="col-sm">Quando é disparado</div>
-          <div class="col-sm">Parâmetros</div>
-          <div class="col-sm">Coleta automática</div>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">Nome</div>
+          <div className="col-sm">Quando é disparado</div>
+          <div className="col-sm">Parâmetros</div>
+          <div className="col-sm">Coleta automática</div>
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">
             <textarea
               id="textEvento"
               name="w3review"
@@ -88,7 +88,7 @@ export default withPageAuthRequired(function Profile({ eventos }) {
               onChange={(e) => setEvento(e.currentTarget.value)}
             ></textarea>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <textarea
               id="textQuando"
               name="w3review"
@@ -98,7 +98,7 @@ export default withPageAuthRequired(function Profile({ eventos }) {
               onChange={(e) => setDescricao(e.currentTarget.value)}
             ></textarea>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <textarea
               id="textParametros"
               name="w3review"
@@ -108,7 +108,7 @@ export default withPageAuthRequired(function Profile({ eventos }) {
               onChange={(e) => setParametro(e.currentTarget.value)}
             ></textarea>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <textarea
               id="textColeta"
               name="w3review"
@@ -121,9 +121,9 @@ export default withPageAuthRequired(function Profile({ eventos }) {
         </div>
       </div>
 
-      <div class="container">
-        <div class="row" style={{paddingBottom : '100px'}}>
-          <div class="col-4">
+      <div className="container">
+        <div className="row" style={{paddingBottom : '100px'}}>
+          <div className="col-4">
             <button
               className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
               onClick={() =>
