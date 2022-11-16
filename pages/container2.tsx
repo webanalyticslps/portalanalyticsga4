@@ -79,8 +79,6 @@ export default withPageAuthRequired(function Profile({ containers2 }) {
             <textarea
               id="textId"
               name="w3review"
-              rows="1"
-              cols="30"
               value={id}
               onChange={(e) => setId(e.currentTarget.value)}
             ></textarea>
@@ -89,8 +87,6 @@ export default withPageAuthRequired(function Profile({ containers2 }) {
             <textarea
               id="textValor"
               name="w3review"
-              rows="1"
-              cols="30"
               value={valor}
               onChange={(e) => setValor(e.currentTarget.value)}
             ></textarea>
@@ -99,8 +95,6 @@ export default withPageAuthRequired(function Profile({ containers2 }) {
             <textarea
               id="textGtm"
               name="w3review"
-              rows="1"
-              cols="30"
               value={gtm}
               onChange={(e) => setGtm(e.currentTarget.value)}
             ></textarea>
@@ -114,7 +108,12 @@ export default withPageAuthRequired(function Profile({ containers2 }) {
             <button
               className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
               onClick={() =>
-                handleClick(textId.value, textValor.value, textGtm.value)
+                handleClick(
+                  (document.getElementById("textId") as HTMLInputElement).value,
+                  (document.getElementById("textValor") as HTMLInputElement)
+                    .value,
+                  (document.getElementById("textGtm") as HTMLInputElement).value
+                )
               }
             >
               Criar
