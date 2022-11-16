@@ -17,120 +17,120 @@ const gerardatalayer = () => {
 
   switch (tipodeevento) {
     case "1":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "2":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "3":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "4":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "5":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "6":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "7":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "8":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "9":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" +
         varcodigo +
         "'\n'transaction_id':''\n'affiliation':''\n'value':''\n'tax':''\n'shipping':''\n'currency':''\n'coupon':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'quantity':''\n }\n});";
       break;
     case "10":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "11":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "12":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
     case "13":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" +
         varcodigo +
         "'\n'item_list_id':''\n'item_list_name':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'quantity':''\n }\n});";
       break;
       case "14":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" +
         varcodigo +
         "'\n'creative_name':''\n'creative_slot':''\n'location_id':''\n'promotion_id':''\n'promotion_name':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'creative_name':''\n'creative_slot':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'promotion_id':''\n'promotion_name':''\n'quantity':''\n }\n});";
       break;
       case "15":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
       case "16":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
       case "17":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
       case "18":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
       case "19":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
       case "20":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
       case "21":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
       case "22":
-        document.getElementById("textdatalayer").value =
+        (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" +
         varcodigo +
         "'\n'value':''\n'currency':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'quantity':''\n }\n});";
       break;
       case "23":
-        document.getElementById("textdatalayer").value =
+        (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" +
         varcodigo +
         "'\n'item_list_id':''\n'item_list_name':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'quantity':''\n }\n});";
       break;
       case "24":
-        document.getElementById("textdatalayer").value =
+        (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" +
         varcodigo +
         "'\n'creative_name':''\n'creative_slot':''\n'location_id':''\n'promotion_id':''\n'promotion_name':''\n'items': [ \n { \n'item_id':''\n'item_name':''\n'affiliation':''\n'coupon':''\n'currency':''\n'discount':''\n'index':''\n'item_brand':''\n'item_category':''\n'item_category2':''\n'item_category3':''\n'item_category4':''\n'item_category5':''\n'item_list_id':''\n'item_list_name':''\n'item_variant':''\n'location_id':''\n'price':''\n'quantity':''\n }\n});";
       break;
       case "25":
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({\n'codigodedisparo':'" + varcodigo + "'\n});";
       break;
 
     default:
-      document.getElementById("textdatalayer").value =
+      (document.getElementById("textdatalayer") as HTMLInputElement).value =
         "window.dataLayer.push({'código incorreto'});";
   }
 };
