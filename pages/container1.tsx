@@ -23,7 +23,11 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
   const [valor, setValor] = useState("");
   const [gtm, setGtm] = useState("");
 
-  const handleClick = async (idcontainer1: any, valorcontainer1: any, gtmcontainer1: any) => {
+  const handleClick = async (
+    idcontainer1: any,
+    valorcontainer1: any,
+    gtmcontainer1: any
+  ) => {
     const axios = require("axios");
     const res = await axios.post("/api/1-create-container1-id-axios", {
       idcontainer1: idcontainer1,
@@ -101,11 +105,14 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
       <div className="container">
         <div className="row" style={{ paddingBottom: "100px" }}>
           <div className="col-4">
-            
             <button
               className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
               onClick={() =>
-                handleClick((document.getElementById(textId) as HTMLInputElement).value, textValor.value, textGtm.value)
+                handleClick(
+                  (document.getElementById(textId) as HTMLInputElement)!.value,
+                  textValor.value,
+                  textGtm.value
+                )
               }
             >
               Criar
