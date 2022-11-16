@@ -79,6 +79,7 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
             <textarea
               id="textId"
               name="w3review"
+              rows={1}
               value={id}
               onChange={(e) => setId(e.currentTarget.value)}
             ></textarea>
@@ -87,6 +88,7 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
             <textarea
               id="textValor"
               name="w3review"
+              rows={1}
               value={valor}
               onChange={(e) => setValor(e.currentTarget.value)}
             ></textarea>
@@ -95,6 +97,7 @@ export default withPageAuthRequired(function Profile({ containers1 }) {
             <textarea
               id="textGtm"
               name="w3review"
+              rows={1}
               value={gtm}
               onChange={(e) => setGtm(e.currentTarget.value)}
             ></textarea>

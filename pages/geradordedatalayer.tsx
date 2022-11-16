@@ -153,7 +153,7 @@ export default withPageAuthRequired(function Profile({
           <label htmlFor="nomeDoEvento">Código do evento</label>
 
           <div>
-            <textarea id="textcodigo" name="w3review">
+            <textarea id="textcodigo" name="w3review" rows={1}>
               Insira o código do evento.
             </textarea>
           </div>
@@ -173,7 +173,12 @@ export default withPageAuthRequired(function Profile({
         </h2>
 
         <div className="d-flex justify-content-center">
-          <textarea id="textdatalayer" name="w3review" rows={20} cols={10}></textarea>
+          <textarea
+            id="textdatalayer"
+            name="w3review"
+            rows={20}
+            cols={80}
+          ></textarea>
         </div>
       </div>
     </div>
