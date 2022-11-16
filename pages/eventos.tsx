@@ -87,8 +87,6 @@ export default withPageAuthRequired(function Profile({ eventos }) {
             <textarea
               id="textEvento"
               name="w3review"
-              rows="1"
-              cols="30"
               value={evento}
               onChange={(e) => setEvento(e.currentTarget.value)}
             ></textarea>
@@ -97,8 +95,6 @@ export default withPageAuthRequired(function Profile({ eventos }) {
             <textarea
               id="textQuando"
               name="w3review"
-              rows="1"
-              cols="30"
               value={descricao}
               onChange={(e) => setDescricao(e.currentTarget.value)}
             ></textarea>
@@ -107,8 +103,6 @@ export default withPageAuthRequired(function Profile({ eventos }) {
             <textarea
               id="textParametros"
               name="w3review"
-              rows="1"
-              cols="30"
               value={parametro}
               onChange={(e) => setParametro(e.currentTarget.value)}
             ></textarea>
@@ -117,8 +111,6 @@ export default withPageAuthRequired(function Profile({ eventos }) {
             <textarea
               id="textColeta"
               name="w3review"
-              rows="1"
-              cols="30"
               value={coleta}
               onChange={(e) => setColeta(e.currentTarget.value)}
             ></textarea>
