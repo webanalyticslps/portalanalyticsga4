@@ -161,7 +161,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 					<p className="text-center font-weight-bold">LISTA DE CÓDIGOS</p>
 				</h2>
 				<div>
-					<div className="row text-light bg-lopes border border-dark">
+					<div className="row text-light bg-lopes border border-dark" style={{ paddingBottom: "100px" }}>
 						<div className="col-sm">Código</div>
 						<div className="col-sm">Evento</div>
 						<div className="col-sm">Site</div>
