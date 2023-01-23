@@ -156,7 +156,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 				</div>
 			</form>
 
-			<div className="container">
+			<div className="container" style={{ paddingBottom: "100px" }}>
 				<h2>
 					<p className="text-center font-weight-bold">LISTA DE CÓDIGOS</p>
 				</h2>
@@ -171,7 +171,7 @@ export default withPageAuthRequired(function Profile({ listadecodigos, eventos, 
 					</div>
 				</div>
 				{listadecodigos.map((ListaDeCodigos: any, index: any) => (
-					<div key={ListaDeCodigos.codigo} className="row border border-dark" style={{ paddingBottom: "100px" }}>
+					<div key={ListaDeCodigos.codigo} className="row border border-dark">
 						<div className="col-sm">{ListaDeCodigos.codigo}</div>
 						<div className="col-sm">{ListaDeCodigos.evento}</div>
 						<div className="col-sm">{ListaDeCodigos.site}</div>
