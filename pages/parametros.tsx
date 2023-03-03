@@ -29,7 +29,7 @@ export default withPageAuthRequired(function Profile({ parametros }) {
 					<div className="col-sm">Nome</div>
 					<div className="col-sm">Escopo</div>
 					<div className="col-sm">Descrição</div>
-                    <div className="col-sm">Exemplo de valores</div>
+                    <div className="col-sm">Dimensão</div>
 				</div>
 			</div>
 			{parametros.map((Parametros: any, index: any) => (
@@ -38,7 +38,7 @@ export default withPageAuthRequired(function Profile({ parametros }) {
 					<div className="col-sm">{Parametros.nome}</div>
 					<div className="col-sm">{Parametros.escopo}</div>
 					<div className="col-sm">{Parametros.descricao}</div>
-                    <div className="col-sm">{Parametros.exemplos}</div>
+                    <div className="col-sm">{Parametros.dimensao}</div>
 				</div>
 			))}
 		</div>
