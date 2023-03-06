@@ -34,7 +34,7 @@ export default withPageAuthRequired(function Profile({ parametros }) {
         </div>
       </div>
       {parametros.map((Parametros: any, index: any) => (
-        <div key={Parametros.id} className="row border border-dark">
+        <div key={Parametros.id} className="row border border-dark" style={{ paddingBottom: "100px" }}>
           <div className="col-sm">{Parametros.id}</div>
           <div className="col-sm">{Parametros.nome}</div>
           <div className="col-sm">{Parametros.escopo}</div>
