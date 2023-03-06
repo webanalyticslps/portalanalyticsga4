@@ -19,7 +19,7 @@ interface PostProps {
 
 export default withPageAuthRequired(function Profile({ parametros }) {
   return (
-    <div className="container">
+    <div className="container" style={{ paddingBottom: "100px" }}>
       <h2>
         <p className="text-center font-weight-bold">PARÂMETROS</p>
       </h2>
@@ -34,7 +34,7 @@ export default withPageAuthRequired(function Profile({ parametros }) {
         </div>
       </div>
       {parametros.map((Parametros: any, index: any) => (
-        <div key={Parametros.id} className="row border border-dark" style={{ paddingBottom: "100px" }}>
+        <div key={Parametros.id} className="row border border-dark">
           <div className="col-sm">{Parametros.id}</div>
           <div className="col-sm">{Parametros.nome}</div>
           <div className="col-sm">{Parametros.escopo}</div>
