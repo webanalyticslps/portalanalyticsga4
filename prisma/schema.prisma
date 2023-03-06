@@ -33,6 +33,7 @@ model Parametros {
   descricao   String @db.Text()
   escopo      String @db.Text()
   nome        String @db.Text()
+  exemplos    String @db.Text()
   dimensao    String @db.Text()
 }
 

@@ -63,7 +63,7 @@ export interface Parametros {
 	nome: string;
 	escopo: string;
 	descricao: string;
-	dimensao: string;
+	exemplos: string;
 }
 
 export async function getAllParametros() {
@@ -71,12 +71,13 @@ export async function getAllParametros() {
 	return data;
 }
 
-export async function createParametros(escopo: string, descricao: string, nome: string, dimensao: string) {
+export async function createParametros(escopo: string, descricao: string, nome: string, exemplos: string, dimensao: string) {
 	await prisma.parametros.create({
 		data: {
 			escopo,
 			descricao,
 			nome,
+			exemplos,
 			dimensao
 		}
 	});
