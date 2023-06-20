@@ -83,9 +83,9 @@ export default withPageAuthRequired(function Profile({ user }) {
           <div className="col">
           <div className="card text-center">
               [Web Analytics] [GA4] Relatório Gerencial
-              <a href="https://datastudio.google.com/u/0/reporting/95419ed5-658a-4171-a86d-3b5447e6a2f9/page/7BuKC">
+              <a href="https://lookerstudio.google.com/reporting/7ed7bbd5-d88e-40b6-b7e2-fba84613a1eb">
                 <Image
-                  src="/sherlopes.png"
+                  src="/relatoriogerencial.png"
                   alt=""
                   title=""
                   width="300"
@@ -99,9 +99,9 @@ export default withPageAuthRequired(function Profile({ user }) {
           <div className="col">
           <div className="card text-center">
               [Web Analytics] [GA4] Relatório de Consulta de Código de Disparo
-              <a href="https://datastudio.google.com/u/0/reporting/95419ed5-658a-4171-a86d-3b5447e6a2f9/page/7BuKC">
+              <a href="https://lookerstudio.google.com/reporting/52c64ebc-774c-4f74-a7e0-b8587697a44b">
                 <Image
-                  src="/sherlopes.png"
+                  src="/consultadecodigo.png"
                   alt=""
                   title=""
                   width="300"
