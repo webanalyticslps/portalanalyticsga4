@@ -80,8 +80,38 @@ export default withPageAuthRequired(function Profile({ user }) {
               dados "Calculadora de Compra".
             </div>
           </div>
-          <div className="col"></div>
-          <div className="col"></div>
+          <div className="col">
+          <div className="card text-center">
+              [Web Analytics] [GA4] Relatório Gerencial
+              <a href="https://datastudio.google.com/u/0/reporting/95419ed5-658a-4171-a86d-3b5447e6a2f9/page/7BuKC">
+                <Image
+                  src="/sherlopes.png"
+                  alt=""
+                  title=""
+                  width="300"
+                  height="400"
+                  layout="responsive"
+                />
+              </a>
+              O relatório aborda de forma detalhada as informações de navegação dos usuários no site da Lopes, fornecendo dados sobre os usuários, sessões, conversões e mídia.
+            </div>
+          </div>
+          <div className="col">
+          <div className="card text-center">
+              [Web Analytics] [GA4] Relatório de Consulta de Código de Disparo
+              <a href="https://datastudio.google.com/u/0/reporting/95419ed5-658a-4171-a86d-3b5447e6a2f9/page/7BuKC">
+                <Image
+                  src="/sherlopes.png"
+                  alt=""
+                  title=""
+                  width="300"
+                  height="400"
+                  layout="responsive"
+                />
+              </a>
+              O relatório tem como objetivo fornecer um espaço rápido de pesquisa dos eventos do site da Lopes.
+            </div>
+          </div>
         </div>
       </div>
     </div>
