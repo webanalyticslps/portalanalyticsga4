@@ -8,7 +8,7 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 export default withPageAuthRequired(function Profile({ user }) {
   return (
     <div className="container">
-      <div className="container">
+      <div className="container" style={{ paddingBottom: "100px" }}>
         <div className="row">
           <div className="col">
             <div className="card text-center">
