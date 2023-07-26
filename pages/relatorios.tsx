@@ -141,6 +141,20 @@ export default withPageAuthRequired(function Profile({ user }) {
               itens clicados nas listas, itens visualizados e itens comprados.
             </div>
           </div>
+
+          <div className="col">
+            <div className="card text-center">
+              
+
+            </div>
+          </div>
+
+          <div className="col">
+            <div className="card text-center">
+            
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
