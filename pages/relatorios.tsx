@@ -12,10 +12,10 @@ export default withPageAuthRequired(function Profile({ user }) {
         <div className="row">
           <div className="col">
             <div className="card text-center">
-              [Digital Analytics] [UA] Dashboard Sherlopes Home
-              <a href="https://datastudio.google.com/u/0/reporting/10e69f92-8ba0-441e-aa26-f0233d32b402/page/7BuKC">
+              [Web Analytics GA4] Relatório Gerencial
+              <a href="https://lookerstudio.google.com/reporting/7ed7bbd5-d88e-40b6-b7e2-fba84613a1eb">
                 <Image
-                  src="/sherlopes.png"
+                  src="/relatorio_gerencial.png"
                   alt=""
                   title=""
                   width="300"
@@ -23,16 +23,17 @@ export default withPageAuthRequired(function Profile({ user }) {
                   layout="responsive"
                 />
               </a>
-              Relatório construído para acompanhar a jornada de geração de leads
-              do produto Sherlopes Home.
+              O relatório aborda de forma detalhada as informações de navegação
+              dos usuários no site da Lopes, fornecendo dados sobre os usuários,
+              sessões, conversões e mídia.
             </div>
           </div>
           <div className="col">
             <div className="card text-center">
-              [Digital Analytics] [UA] Dashboard Produtos Recomendados
-              <a href="https://datastudio.google.com/u/0/reporting/4574aeac-d844-4bc5-83f9-f4e07aee7cbf/page/7BuKC">
+              [Web Analytics GA4] Relatório de Consulta de Código de Disparo
+              <a href="https://lookerstudio.google.com/reporting/52c64ebc-774c-4f74-a7e0-b8587697a44b">
                 <Image
-                  src="/relatorioprodutosrecomendados.png"
+                  src="/relatorio_codigo_disparo.png"
                   alt=""
                   title=""
                   width="300"
@@ -40,16 +41,17 @@ export default withPageAuthRequired(function Profile({ user }) {
                   layout="responsive"
                 />
               </a>
-              Relatório construído para acompanhar os indicadores do produto de
-              dados "Imóveis Recomendados".
+              O relatório tem como objetivo fornecer um espaço rápido de
+              pesquisa dos eventos do site da Lopes, com foco nos eventos
+              disparados pelos usuários.
             </div>
           </div>
           <div className="col">
             <div className="card text-center">
-              [Digital Analytics] [UA] Dashboard Produtos Similares
-              <a href="https://datastudio.google.com/u/0/reporting/caa91186-942e-444a-8d7b-001d41831b43/page/7BuKC">
+              [Web Analytics GA4] Relatório de Busca
+              <a href="https://lookerstudio.google.com/reporting/d2e018f0-2be1-4ffa-9bbe-af9d015fc4d4">
                 <Image
-                  src="/produtossimilares.png"
+                  src="/relatorio_busca.png"
                   alt=""
                   title=""
                   width="300"
@@ -57,18 +59,19 @@ export default withPageAuthRequired(function Profile({ user }) {
                   layout="responsive"
                 />
               </a>
-              Relatório construído para acompanhar os indicadores do produto de
-              dados "Imóveis Similares".
+              O relatório aborda de forma detalhada as informações das buscas
+              realizadas no site da Lopes, fornecendo dados sobre os filtros
+              utilizados, os termos buscados e o status das buscas.
             </div>
           </div>
         </div>
         <div className="row">
           <div className="col">
             <div className="card text-center">
-              [Digital Analytics] [UA] Calculadora de Compra
-              <a href="https://datastudio.google.com/u/0/reporting/95419ed5-658a-4171-a86d-3b5447e6a2f9/page/7BuKC">
+              [Web Analytics GA4] Relatório de Mídia e Origem
+              <a href="https://lookerstudio.google.com/reporting/c1646a7a-2171-4e44-bfc4-b21267e3b963">
                 <Image
-                  src="/sherlopes.png"
+                  src="/relatorio_origem.png"
                   alt=""
                   title=""
                   width="300"
@@ -76,16 +79,16 @@ export default withPageAuthRequired(function Profile({ user }) {
                   layout="responsive"
                 />
               </a>
-              Relatório construído para acompanhar os indicadores do produto de
-              dados "Calculadora de Compra".
+              O relatório visa fornecer dados detalhados sobre as origens,
+              mídias, campanhas e páginas de destino dos usuários do portal.
             </div>
           </div>
           <div className="col">
-          <div className="card text-center">
-              [Web Analytics] [GA4] Relatório Gerencial
-              <a href="https://lookerstudio.google.com/reporting/7ed7bbd5-d88e-40b6-b7e2-fba84613a1eb">
+            <div className="card text-center">
+              [Web Analytics GA4] Relatório do Google ADS
+              <a href="https://lookerstudio.google.com/reporting/2176828d-54b2-4cac-a757-b310a798b982">
                 <Image
-                  src="/relatoriogerencial.png"
+                  src="/relatorio_ads.png"
                   alt=""
                   title=""
                   width="300"
@@ -93,15 +96,17 @@ export default withPageAuthRequired(function Profile({ user }) {
                   layout="responsive"
                 />
               </a>
-              O relatório aborda de forma detalhada as informações de navegação dos usuários no site da Lopes, fornecendo dados sobre os usuários, sessões, conversões e mídia.
+              O relatório aborda as informações das campanhas do Google ADS,
+              possibilitando a visualização das métricas de custo e a utilização
+              de filtros por campanha para acompanhamentos específicos.
             </div>
           </div>
           <div className="col">
-          <div className="card text-center">
-              [Web Analytics] [GA4] Relatório de Consulta de Código de Disparo
-              <a href="https://lookerstudio.google.com/reporting/52c64ebc-774c-4f74-a7e0-b8587697a44b">
+            <div className="card text-center">
+              [Web Analytics GA4] Relatório de Lead
+              <a href="https://lookerstudio.google.com/reporting/a1d46fe3-aaf5-4fa5-a0d0-7b12182123a6">
                 <Image
-                  src="/consultadecodigo.png"
+                  src="/relatorio_lead.png"
                   alt=""
                   title=""
                   width="300"
@@ -109,7 +114,31 @@ export default withPageAuthRequired(function Profile({ user }) {
                   layout="responsive"
                 />
               </a>
-              O relatório tem como objetivo fornecer um espaço rápido de pesquisa dos eventos do site da Lopes.
+              O relatório aborda de forma detalhada as informações de leads
+              gerados no site da Lopes, fornecendo dados sobre o histórico dos
+              leads, localização geográfica dos imóveis convertidos e os
+              formulários utilizados para a conversão.
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col">
+            <div className="card text-center">
+              [Web Analytics GA4] Relatório de E-commerce
+              <a href="https://lookerstudio.google.com/reporting/57a0c7ae-de6e-4ff4-aa28-ab6feace4dc6">
+                <Image
+                  src="/relatorio_ecommerce.png"
+                  alt=""
+                  title=""
+                  width="300"
+                  height="400"
+                  layout="responsive"
+                />
+              </a>
+              Relatório construído para acompanhar os eventos de e-commerce do
+              portal. Nele é possível acompabgar os itens vistos nas listas,
+              itens clicados nas listas, itens visualizados e itens comprados.
             </div>
           </div>
         </div>
