@@ -40,7 +40,7 @@ export default withPageAuthRequired(function Profile({ user }) {
           <div className="col">Data e Hora da Resolução</div>
         </div>
       </div>
-      {historicoImplementacoesBugs.map((historicoImplementacoesBugs, index) => (
+      {HistoricoImplementacoesBugs.map((HistoricoImplementacoesBugs: any, index: any) => (
         <div
           key={historicoImplementacoesBugs.id}
           className="row text-light bg-lopes border border-dark"
