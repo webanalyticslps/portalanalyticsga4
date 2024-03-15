@@ -8,7 +8,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const historicoImplementacoesBugs = await getAllHistoricoImplementacoesBugs();
   return {
     props: {
-      historicoImplementacoesBugs,
+      historicoImplementacoesBugs
     },
   };
 };
@@ -42,7 +42,7 @@ export default withPageAuthRequired(function Profile({ user }) {
       </div>
       {historicoImplementacoesBugs.map((HistoricoImplementacoesBugs: any, index: any) => (
         <div
-          key={historicoImplementacoesBugs.id}
+          key={HistoricoImplementacoesBugs.id}
           className="row text-light bg-lopes border border-dark"
         >
           <div className="col">{historicoImplementacoesBugs.tipo_registro}</div>
