@@ -81,9 +81,9 @@ model HistoricoImplementacoesBugs {
   data_hora          DateTime
   status             String   @db.VarChar(255)
   responsavel        String   @db.VarChar(255)
+  impacto            String   @db.VarChar(255)
   container_id_gtm   String?  @db.VarChar(255) // Opcional, pois nem todo registro pode ter um container GTM associado
   propriedade_id_ga4 String?  @db.VarChar(255) // Opcional, pois nem toda implementação afeta uma propriedade GA4
-  impacto            String   @db.VarChar(255)
   solucao            String?  @db.Text() // Opcional, pois nem todo registro terá uma solução imediata
   data_hora_resolucao DateTime?
 }
