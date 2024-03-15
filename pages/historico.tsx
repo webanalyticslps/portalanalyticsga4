@@ -5,7 +5,7 @@ import { Container, Row, Card, Button } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const metricas = await getAllHistoricoImplementacoesBugs();
+  const historicoImplementacoesBugs = await getAllHistoricoImplementacoesBugs();
   return {
     props: {
       historicoImplementacoesBugs,
@@ -14,7 +14,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 interface PostProps {
-  metricas: Metricas[];
+	historicoImplementacoesBugs: HistoricoImplementacoesBugs[];
 }
 
 export default withPageAuthRequired(function Profile({ user }) {
