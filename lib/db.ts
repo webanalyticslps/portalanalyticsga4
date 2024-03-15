@@ -217,9 +217,9 @@ export interface HistoricoImplementacoesBugs {
 	data_hora: Date;
 	status: string;
 	responsavel: string;
+	impacto: string;
 	container_id_gtm?: string; // Opcional
 	propriedade_id_ga4?: string; // Opcional
-	impacto: string;
 	solucao?: string; // Opcional
 	data_hora_resolucao?: Date; // Opcional
   }
@@ -238,9 +238,9 @@ export async function getAllHistoricoImplementacoesBugs() {
 	data_hora: Date,
 	status: string,
 	responsavel: string,
+	impacto: string,
 	container_id_gtm?: string,
 	propriedade_id_ga4?: string,
-	impacto: string,
 	solucao?: string,
 	data_hora_resolucao?: Date
   ) {
