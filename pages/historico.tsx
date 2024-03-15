@@ -1,5 +1,8 @@
 import { GetServerSideProps } from "next";
-import { getAllHistoricoImplementacoesBugs, HistoricoImplementacoesBugs } from "../lib/db";
+import {
+  getAllHistoricoImplementacoesBugs,
+  HistoricoImplementacoesBugs,
+} from "../lib/db";
 import Head from "next/head";
 import { Container, Row, Card, Button } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
@@ -17,7 +20,9 @@ interface PostProps {
   historicoImplementacoesBugs: HistoricoImplementacoesBugs[];
 }
 
-export default withPageAuthRequired(function Profile({ historicoImplementacoesBugs }: PostProps) {
+export default withPageAuthRequired(function Profile({
+  historicoImplementacoesBugs,
+}: PostProps) {
   return (
     <div className="container">
       <h2>
@@ -47,14 +52,18 @@ export default withPageAuthRequired(function Profile({ historicoImplementacoesBu
             <div className="col">{historico.tipo_registro}</div>
             <div className="col">{historico.tipo_implementacao}</div>
             <div className="col">{historico.descricao}</div>
-            <div className="col">{historico.data_hora}</div>
+            <div className="col">{historico.data_hora.toLocaleString()}</div>
             <div className="col">{historico.status}</div>
             <div className="col">{historico.responsavel}</div>
             <div className="col">{historico.container_id_gtm}</div>
             <div className="col">{historico.propriedade_id_ga4}</div>
             <div className="col">{historico.impacto}</div>
             <div className="col">{historico.solucao}</div>
-            <div className="col">{historico.data_hora_resolucao}</div>
+            <div className="col">
+              {historico.data_hora_resolucao
+                ? historico.data_hora_resolucao.toLocaleString()
+                : ""}
+            </div>
           </div>
         ))}
       </div>
