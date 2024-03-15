@@ -206,3 +206,58 @@ export async function createIdentificadores(id: string, valor: string, gtm: bool
 		}
 	});
 }
+
+// HISTORICO BUGS E IMPLEMENTACOES
+
+export interface HistoricoImplementacoesBugs {
+	id: number; // Ajustado para number, assumindo autoincremento
+	tipo_registro: string;
+	tipo_implementacao: string;
+	descricao: string;
+	data_hora: Date;
+	status: string;
+	responsavel: string;
+	container_id_gtm?: string; // Opcional
+	propriedade_id_ga4?: string; // Opcional
+	impacto: string;
+	solucao?: string; // Opcional
+	data_hora_resolucao?: Date; // Opcional
+  }
+
+  // Função para obter todos os registros de implementações e bugs
+export async function getAllHistoricoImplementacoesBugs() {
+	const data = await prisma.historicoImplementacoesBugs.findMany();
+	return data;
+  }
+  
+  // Função para criar um novo registro de implementação ou bug
+  export async function createHistoricoImplementacoesBugs(
+	tipo_registro: string,
+	tipo_implementacao: string,
+	descricao: string,
+	data_hora: Date,
+	status: string,
+	responsavel: string,
+	container_id_gtm?: string,
+	propriedade_id_ga4?: string,
+	impacto: string,
+	solucao?: string,
+	data_hora_resolucao?: Date
+  ) {
+	await prisma.historicoImplementacoesBugs.create({
+	  data: {
+		tipo_registro,
+		tipo_implementacao,
+		descricao,
+		data_hora,
+		status,
+		responsavel,
+		container_id_gtm,
+		propriedade_id_ga4,
+		impacto,
+		solucao,
+		data_hora_resolucao
+	  }
+	});
+  }
+  
