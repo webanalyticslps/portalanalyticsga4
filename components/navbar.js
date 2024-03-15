@@ -123,12 +123,7 @@ const Menu = () => {
               >
                 Cursos oficiais do Google
               </NavDropdown.Item>
-              <NavDropdown.Item
-                href="/documentacoes/curso-lopes-ga4"
-                title="Curso Lopes GA4"
-              >
-                Curso Lopes GA4
-              </NavDropdown.Item>
+
               <NavDropdown.Item
                 href="/documentacoes/como-procurar-um-codigo-no-confluence"
                 title="Como procurar um código no confluence"
