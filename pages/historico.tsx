@@ -37,7 +37,7 @@ export default withPageAuthRequired(function Profile({
     solucao: any
   ) => {
     try {
-      const response = await axios.post("/api/novo-registro-historico", {
+      const response = await axios.post("/api/1-create-historico", {
         tipo_registro: tipo_registro,
         tipo_implementacao: tipo_implementacao,
         descricao: descricao,
