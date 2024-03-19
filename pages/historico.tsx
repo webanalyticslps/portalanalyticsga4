@@ -27,7 +27,7 @@ export default withPageAuthRequired(function Profile({
     <div className="container">
       <h2>
         <p className="text-center font-weight-bold">
-          HISTÓRICO DE BUGS E IMPLEMENTAÇÕES TESTE
+          HISTÓRICO DE BUGS E IMPLEMENTAÇÕES
         </p>
       </h2>
       <div>
