@@ -8,7 +8,6 @@ import { Container, Row, Card, Button } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { useState } from "react";
 
-
 export const getServerSideProps: GetServerSideProps = async () => {
   const historicoImplementacoesBugs = await getAllHistoricoImplementacoesBugs();
   return {
@@ -22,7 +21,9 @@ interface PostProps {
   historicoImplementacoesBugs: HistoricoImplementacoesBugs[];
 }
 
-export default withPageAuthRequired(function AddHistoricoImplementacoesBugs() {
+export default withPageAuthRequired(function Profile({
+  historicoImplementacoesBugs,
+}) {
   const [tipoRegistro, setTipoRegistro] = useState("");
   const [tipoImplementacao, setTipoImplementacao] = useState("");
   const [descricao, setDescricao] = useState("");
