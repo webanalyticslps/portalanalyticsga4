@@ -23,6 +23,12 @@ interface PostProps {
 export default withPageAuthRequired(function Profile({
   historicoImplementacoesBugs,
 }) {
+
+  const [id, setId] = useState("");
+  const [tipoRegistro, setTipoRegistro] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [status, setStatus] = useState("");
+
   const handleClick = async (
     idhistorico: any,
     tipo_registro: any,
