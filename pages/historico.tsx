@@ -23,20 +23,32 @@ interface PostProps {
 export default withPageAuthRequired(function Profile({
   historicoImplementacoesBugs,
 }) {
-  const handleClick = async (historico) => {
+  const handleClick = async (
+    idhistorico: any,
+    tipo_registro: any,
+    tipo_implementacao: any,
+    descricao: any,
+    data_hora: any,
+    status: any,
+    responsavel: any,
+    container_id_gtm: any,
+    propriedade_id_ga4: any,
+    impacto: any,
+    solucao: any
+  ) => {
     try {
       const response = await axios.post("/api/novo-registro-historico", {
-        tipo_registro: historico.tipo_registro,
-        tipo_implementacao: historico.tipo_implementacao,
-        descricao: historico.descricao,
+        tipo_registro: tipo_registro,
+        tipo_implementacao: tipo_implementacao,
+        descricao: descricao,
         // Note que `data_hora` pode precisar de formatação dependendo de como sua API espera receber
-        data_hora: historico.data_hora,
-        status: historico.status,
-        responsavel: historico.responsavel,
-        container_id_gtm: historico.container_id_gtm,
-        propriedade_id_ga4: historico.propriedade_id_ga4,
-        impacto: historico.impacto,
-        solucao: historico.solucao,
+        data_hora: data_hora,
+        status: status,
+        responsavel: responsavel,
+        container_id_gtm: container_id_gtm,
+        propriedade_id_ga4: propriedade_id_ga4,
+        impacto: impacto,
+        solucao: solucao,
       });
       console.log(response.data);
       // Adicione aqui qualquer lógica adicional após sucesso
