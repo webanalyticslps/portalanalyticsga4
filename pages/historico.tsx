@@ -37,6 +37,7 @@ export default withPageAuthRequired(function Profile({
     solucao: any
   ) => {
     try {
+      const axios = require("axios");
       const response = await axios.post("/api/1-create-historico", {
         tipo_registro: tipo_registro,
         tipo_implementacao: tipo_implementacao,
