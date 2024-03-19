@@ -80,7 +80,7 @@ export default withPageAuthRequired(function Profile({
           <div className="col">Solução</div>
           <div className="col">Data e Hora da Resolução</div>
         </div>
-        {historicoImplementacoesBugs.map((historico, index) => (
+        {historicoImplementacoesBugs.map((historico: any, index: any) => (
           <div
             key={historico.id}
             className="row text-dark bg-white border border-dark"
