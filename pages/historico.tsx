@@ -47,7 +47,7 @@ export default withPageAuthRequired(function Profile({
         {historicoImplementacoesBugs.map((historico, index) => (
           <div
             key={historico.id}
-            className="row text-light bg-lopes border border-dark"
+            className="row text-light bg-white border border-dark"
           >
             <div className="col">{historico.tipo_registro}</div>
             <div className="col">{historico.tipo_implementacao}</div>
