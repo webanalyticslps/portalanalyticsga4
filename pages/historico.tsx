@@ -26,8 +26,15 @@ export default withPageAuthRequired(function Profile({
 }) {
   const [id, setId] = useState("");
   const [tipoRegistro, setTipoRegistro] = useState("");
+  const [tipoImplementacao, setTipoImplementacao] = useState("");
   const [descricao, setDescricao] = useState("");
+  const [dataHora, setDataHora] = useState("");
   const [status, setStatus] = useState("");
+  const [responsavel, setResponsavel] = useState("");
+  const [containerIdGtm, setContainerIdGtm] = useState("");
+  const [propriedadeIdGa4, setPropriedadeIdGa4] = useState("");
+  const [impacto, setImpacto] = useState("");
+  const [solucao, setSolucao] = useState("");
 
   const handleClick = async (
     idhistorico: any,
@@ -147,6 +154,15 @@ export default withPageAuthRequired(function Profile({
           </div>
           <div className="col-sm">
             <textarea
+              id="tipoImplementacao"
+              name="tipoImplementacao"
+              rows={1}
+              value={tipoImplementacao}
+              onChange={(e) => setTipoImplementacao(e.currentTarget.value)}
+            ></textarea>
+          </div>
+          <div className="col-sm">
+            <textarea
               id="descricao"
               name="descricao"
               rows={1}
@@ -156,11 +172,71 @@ export default withPageAuthRequired(function Profile({
           </div>
           <div className="col-sm">
             <textarea
+              id="dataHora"
+              name="dataHora"
+              rows={1}
+              value={dataHora}
+              onChange={(e) => setDataHora(e.currentTarget.value)}
+            ></textarea>
+          </div>
+
+          <div className="col-sm">
+            <textarea
               id="status"
               name="status"
               rows={1}
               value={status}
               onChange={(e) => setStatus(e.currentTarget.value)}
+            ></textarea>
+          </div>
+
+          <div className="col-sm">
+            <textarea
+              id="responsavel"
+              name="responsavel"
+              rows={1}
+              value={responsavel}
+              onChange={(e) => setResponsavel(e.currentTarget.value)}
+            ></textarea>
+          </div>
+
+          <div className="col-sm">
+            <textarea
+              id="containerIdGtm"
+              name="containerIdGtm"
+              rows={1}
+              value={containerIdGtm}
+              onChange={(e) => setContainerIdGtm(e.currentTarget.value)}
+            ></textarea>
+          </div>
+
+          <div className="col-sm">
+            <textarea
+              id="propriedadeIdGa4"
+              name="propriedadeIdGa4"
+              rows={1}
+              value={propriedadeIdGa4}
+              onChange={(e) => setPropriedadeIdGa4(e.currentTarget.value)}
+            ></textarea>
+          </div>
+
+          <div className="col-sm">
+            <textarea
+              id="impacto"
+              name="impacto"
+              rows={1}
+              value={impacto}
+              onChange={(e) => setImpacto(e.currentTarget.value)}
+            ></textarea>
+          </div>
+
+          <div className="col-sm">
+            <textarea
+              id="solucao"
+              name="solucao"
+              rows={1}
+              value={solucao}
+              onChange={(e) => setSolucao(e.currentTarget.value)}
             ></textarea>
           </div>
           {/* Repita para outros campos necessários */}
