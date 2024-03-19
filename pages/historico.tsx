@@ -6,6 +6,7 @@ import {
 import Head from "next/head";
 import { Container, Row, Card, Button } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { useState } from "react";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const historicoImplementacoesBugs = await getAllHistoricoImplementacoesBugs();
@@ -23,7 +24,6 @@ interface PostProps {
 export default withPageAuthRequired(function Profile({
   historicoImplementacoesBugs,
 }) {
-
   const [id, setId] = useState("");
   const [tipoRegistro, setTipoRegistro] = useState("");
   const [descricao, setDescricao] = useState("");
