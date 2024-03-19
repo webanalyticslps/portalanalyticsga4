@@ -22,7 +22,30 @@ interface PostProps {
 
 export default withPageAuthRequired(function Profile({
   historicoImplementacoesBugs,
-}: PostProps) {
+}) {
+  const handleClick = async (historico) => {
+    try {
+      const response = await axios.post("/api/novo-registro-historico", {
+        tipo_registro: historico.tipo_registro,
+        tipo_implementacao: historico.tipo_implementacao,
+        descricao: historico.descricao,
+        // Note que `data_hora` pode precisar de formatação dependendo de como sua API espera receber
+        data_hora: historico.data_hora,
+        status: historico.status,
+        responsavel: historico.responsavel,
+        container_id_gtm: historico.container_id_gtm,
+        propriedade_id_ga4: historico.propriedade_id_ga4,
+        impacto: historico.impacto,
+        solucao: historico.solucao,
+      });
+      console.log(response.data);
+      // Adicione aqui qualquer lógica adicional após sucesso
+    } catch (error) {
+      console.error("Erro ao criar o registro: ", error);
+      // Tratamento de erro
+    }
+  };
+
   return (
     <div className="container">
       <h2>
@@ -67,7 +90,63 @@ export default withPageAuthRequired(function Profile({
           </div>
         ))}
       </div>
-      {/* O restante do seu componente permanece inalterado */}
+      <h2>
+        <p
+          className="text-center font-weight-bold"
+          style={{ paddingTop: "100px" }}
+        >
+          INCLUIR NOVO BUG OU IMPLEMENTAÇÃO{" "}
+        </p>
+      </h2>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">Tipo de Registro</div>
+          <div className="col-sm">Tipo de Implementação</div>
+          <div className="col-sm">Descrição</div>
+          <div className="col-sm">Data e Hora</div>
+          <div className="col-sm">Status</div>
+          <div className="col-sm">Responsável</div>
+          <div className="col-sm">Container ID GTM</div>
+          <div className="col-sm">Propriedade ID GA4</div>
+          <div className="col-sm">Impacto</div>
+          <div className="col-sm">Solução</div>
+          <div className="col-sm">Data e Hora da Resolução</div>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">
+            <textarea
+              id="tipoRegistro"
+              name="tipoRegistro"
+              rows={1}
+              value={tipoRegistro}
+              onChange={(e) => setTipoRegistro(e.currentTarget.value)}
+            ></textarea>
+          </div>
+          <div className="col-sm">
+            <textarea
+              id="descricao"
+              name="descricao"
+              rows={1}
+              value={descricao}
+              onChange={(e) => setDescricao(e.currentTarget.value)}
+            ></textarea>
+          </div>
+          <div className="col-sm">
+            <textarea
+              id="status"
+              name="status"
+              rows={1}
+              value={status}
+              onChange={(e) => setStatus(e.currentTarget.value)}
+            ></textarea>
+          </div>
+          {/* Repita para outros campos necessários */}
+        </div>
+      </div>
     </div>
   );
 });
