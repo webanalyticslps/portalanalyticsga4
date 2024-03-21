@@ -242,6 +242,49 @@ export default withPageAuthRequired(function Profile({
           {/* Repita para outros campos necessários */}
         </div>
       </div>
+
+      <div className="container">
+        <div className="row" style={{ paddingBottom: "100px" }}>
+          <div className="col-4">
+            <button
+              className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
+              onClick={() =>
+                handleClick(
+                  (document.getElementById("tipoRegistro") as HTMLInputElement)
+                    .value,
+                  (
+                    document.getElementById(
+                      "tipoImplementacao"
+                    ) as HTMLInputElement
+                  ).value,
+                  (document.getElementById("descricao") as HTMLInputElement)
+                    .value,
+                  (document.getElementById("dataHora") as HTMLInputElement)
+                    .value,
+                  (document.getElementById("status") as HTMLInputElement).value,
+                  (document.getElementById("responsavel") as HTMLInputElement)
+                    .value,
+                  (
+                    document.getElementById(
+                      "containerIdGtm"
+                    ) as HTMLInputElement
+                  ).value,
+                  (
+                    document.getElementById(
+                      "propriedadeIdGa4"
+                    ) as HTMLInputElement
+                  ).value,
+                  (document.getElementById("impacto") as HTMLInputElement)
+                    .value,
+                  (document.getElementById("solucao") as HTMLInputElement).value
+                )
+              }
+            >
+              Criar
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 });
