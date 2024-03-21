@@ -37,7 +37,6 @@ export default withPageAuthRequired(function Profile({
   const [solucao, setSolucao] = useState("");
 
   const handleClick = async (
-    idhistorico: any,
     tipo_registro: any,
     tipo_implementacao: any,
     descricao: any,
