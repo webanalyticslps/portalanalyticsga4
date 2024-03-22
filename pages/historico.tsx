@@ -94,7 +94,7 @@ export default withPageAuthRequired(function Profile({
         {historicoImplementacoesBugs.map((historico: any, index: any) => (
           <div
             key={historico.id}
-            className="row text-dark bg-white border border-dark"
+            className="row text-dark border border-dark"
             style={{
               backgroundColor:
                 historico.tipo_registro === "Implementação"
@@ -159,6 +159,7 @@ export default withPageAuthRequired(function Profile({
               value={tipoImplementacao}
               onChange={(e) => setTipoImplementacao(e.currentTarget.value)}
             >
+              <option value="N/A">N/A</option>
               <option value="Hardcode">Hardcode</option>
               <option value="GTM">GTM</option>
               <option value="GA4">GA4</option>
