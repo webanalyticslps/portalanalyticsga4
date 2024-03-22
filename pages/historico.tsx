@@ -236,13 +236,16 @@ export default withPageAuthRequired(function Profile({
           </div>
 
           <div className="col-sm">
-            <textarea
+            <select
               id="impacto"
               name="impacto"
-              rows={1}
               value={impacto}
               onChange={(e) => setImpacto(e.currentTarget.value)}
-            ></textarea>
+            >
+              <option value="Baixo">Baixo</option>
+              <option value="Médio">Médio</option>
+              <option value="Alto">Alto</option>
+            </select>
           </div>
 
           <div className="col-sm">
