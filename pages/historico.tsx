@@ -216,23 +216,30 @@ export default withPageAuthRequired(function Profile({
           </div>
 
           <div className="col-sm">
-            <textarea
+            <select
               id="containerIdGtm"
               name="containerIdGtm"
-              rows={1}
               value={containerIdGtm}
               onChange={(e) => setContainerIdGtm(e.currentTarget.value)}
-            ></textarea>
+            >
+              <option value="N/A">N/A</option>
+              <option value="GTM-NW5CWVM">GTM-NW5CWVM (GA4 Prod)</option>
+              <option value="GTM-TLC7K75">GTM-TLC7K75 (Server Side)</option>
+              <option value="GTM-KV4S6DC">GTM-KV4S6DC (Mídia)</option>
+              <option value="GTM-KV4S6DC">GTM-W5XCPXHB (Unilopes)</option>
+            </select>
           </div>
 
           <div className="col-sm">
-            <textarea
+            <select
               id="propriedadeIdGa4"
               name="propriedadeIdGa4"
-              rows={1}
               value={propriedadeIdGa4}
               onChange={(e) => setPropriedadeIdGa4(e.currentTarget.value)}
-            ></textarea>
+            >
+              <option value="338885311">338885311 (GA4 Prod)</option>
+              <option value="428406499">428406499 (GA4 Unilopes)</option>
+            </select>
           </div>
 
           <div className="col-sm">
