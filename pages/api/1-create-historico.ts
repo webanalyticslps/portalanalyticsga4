@@ -21,7 +21,7 @@ export default async function handler(
   } = req.body;
 
   // Função para transformar a data/hora recebida para o formato completo UTC
-  function formatarDataParaUTC(dataHoraLocal) {
+  function formatarDataParaUTC(dataHoraLocal: any) {
     // Cria um objeto Date a partir da string "AAAA-MM-DDThh:mm"
     const dataObj = new Date(dataHoraLocal);
 
