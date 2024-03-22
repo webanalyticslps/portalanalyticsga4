@@ -202,6 +202,7 @@ export default withPageAuthRequired(function Profile({
           <div className="col-sm">Container ID GTM</div>
           <div className="col-sm">Propriedade ID GA4</div>
           <div className="col-sm">Impacto</div>
+          <div className="col-sm"></div>
         </div>
       </div>
 
