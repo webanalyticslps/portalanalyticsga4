@@ -7,23 +7,31 @@ export default async function handler(
 ) {
   const prisma = new PrismaClient();
 
-  // Substituímos as variáveis pelas correspondentes do HistoricoImplementacoesBugs
   const {
     tipo_registro,
     tipo_implementacao,
     descricao,
-    data_hora, // Atenção: Isso deve ser tratado no backend para converter para o tipo Date, se necessário
+    data_hora,
     status,
     responsavel,
     container_id_gtm,
     propriedade_id_ga4,
     impacto,
     solucao,
-    // data_hora_resolucao: Pode ser adicionado se necessário, e se você espera receber do frontend
   } = req.body;
 
+  // Função para transformar a data/hora recebida para o formato completo UTC
+  function formatarDataParaUTC(dataHoraLocal) {
+    // Cria um objeto Date a partir da string "AAAA-MM-DDThh:mm"
+    const dataObj = new Date(dataHoraLocal);
+
+    // Converte para o formato ISO "AAAA-MM-DDThh:mm:ss.sssZ" em UTC
+    const dataHoraUTC = dataObj.toISOString();
+
+    return dataHoraUTC;
+  }
+
   async function main() {
-    // Log das variáveis para debugging
     console.log(
       tipo_registro,
       tipo_implementacao,
@@ -36,25 +44,23 @@ export default async function handler(
       solucao
     );
 
-    // Aqui você cria o novo registro na tabela correspondente
-    // A tabela deve ser ajustada para corresponder à sua estrutura de dados atual
+    const data_hora_formatada = formatarDataParaUTC(data_hora);
+
     const createRegistro = await prisma.historicoImplementacoesBugs.create({
       data: {
         tipo_registro,
         tipo_implementacao,
         descricao,
-        data_hora, // Certifique-se que este valor esteja corretamente formatado como Date
+        data_hora: data_hora_formatada, // Usa a data formatada
         status,
         responsavel,
-        container_id_gtm, // Campos opcionais devem ser tratados para evitar erros
+        container_id_gtm,
         propriedade_id_ga4,
         impacto,
         solucao,
-        // data_hora_resolucao: Pode ser adicionado aqui se estiver incluído no req.body
       },
     });
 
-    // Retorna o registro criado para o cliente
     res.status(200).json(createRegistro);
   }
 
