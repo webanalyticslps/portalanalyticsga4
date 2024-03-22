@@ -148,13 +148,17 @@ export default withPageAuthRequired(function Profile({
             </select>
           </div>
           <div className="col-sm">
-            <textarea
+            <select
               id="tipoImplementacao"
               name="tipoImplementacao"
-              rows={1}
               value={tipoImplementacao}
               onChange={(e) => setTipoImplementacao(e.currentTarget.value)}
-            ></textarea>
+            >
+              <option value="Hardcode">Hardcode</option>
+              <option value="GTM">GTM</option>
+              <option value="GA4">GA4</option>
+              <option value="Outro">Outro</option>
+            </select>
           </div>
           <div className="col-sm">
             <textarea
@@ -166,13 +170,13 @@ export default withPageAuthRequired(function Profile({
             ></textarea>
           </div>
           <div className="col-sm">
-            <textarea
+            <input
+              type="datetime-local"
               id="dataHora"
               name="dataHora"
-              rows={1}
               value={dataHora}
               onChange={(e) => setDataHora(e.currentTarget.value)}
-            ></textarea>
+            />
           </div>
 
           <div className="col-sm">
