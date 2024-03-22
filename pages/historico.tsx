@@ -258,6 +258,9 @@ export default withPageAuthRequired(function Profile({
             </select>
           </div>
 
+          <div className="col-sm">
+            
+          </div>
           {/* Repita para outros campos necessários */}
         </div>
       </div>
