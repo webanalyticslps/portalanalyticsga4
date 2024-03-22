@@ -95,6 +95,12 @@ export default withPageAuthRequired(function Profile({
           <div
             key={historico.id}
             className="row text-dark bg-white border border-dark"
+            style={{
+              backgroundColor:
+                historico.tipo_registro === "Implementação"
+                  ? "#d4edda"
+                  : "#f8d7da",
+            }}
           >
             <div className="col">{historico.tipo_registro}</div>
             <div className="col">{historico.tipo_implementacao}</div>
@@ -259,9 +265,7 @@ export default withPageAuthRequired(function Profile({
             </select>
           </div>
 
-          <div className="col-sm">
-            
-          </div>
+          <div className="col-sm"></div>
           {/* Repita para outros campos necessários */}
         </div>
       </div>
