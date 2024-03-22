@@ -180,13 +180,17 @@ export default withPageAuthRequired(function Profile({
           </div>
 
           <div className="col-sm">
-            <textarea
+            <select
               id="status"
               name="status"
-              rows={1}
               value={status}
               onChange={(e) => setStatus(e.currentTarget.value)}
-            ></textarea>
+            >
+              <option value="Publicado">Publicado</option>
+              <option value="Em análise">Em análise</option>
+              <option value="Resolvido">Resolvido</option>
+              <option value="Pendente">Pendente</option>
+            </select>
           </div>
 
           {/* Repita para outros campos necessários */}
@@ -237,6 +241,7 @@ export default withPageAuthRequired(function Profile({
               value={propriedadeIdGa4}
               onChange={(e) => setPropriedadeIdGa4(e.currentTarget.value)}
             >
+              <option value="N/A">N/A</option>
               <option value="338885311">338885311 (GA4 Prod)</option>
               <option value="428406499">428406499 (GA4 Unilopes)</option>
             </select>
