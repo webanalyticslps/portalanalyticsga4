@@ -258,15 +258,6 @@ export default withPageAuthRequired(function Profile({
             </select>
           </div>
 
-          <div className="col-sm">
-            <textarea
-              id="solucao"
-              name="solucao"
-              rows={1}
-              value={solucao}
-              onChange={(e) => setSolucao(e.currentTarget.value)}
-            ></textarea>
-          </div>
           {/* Repita para outros campos necessários */}
         </div>
       </div>
