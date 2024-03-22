@@ -130,13 +130,6 @@ const Menu = () => {
               >
                 Como procurar um código no Confluence
               </NavDropdown.Item>
-
-              <NavDropdown.Item
-                href="/documentacoes/tipos-de-estudos"
-                title="Tipos de estudos"
-              >
-                Tipos de estudos
-              </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link title="Relatórios" href="/relatorios">
               Relatórios
@@ -159,6 +152,12 @@ const Menu = () => {
                 title="Rede de nós"
               >
                 Rede de nós
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                href="/projetosfuturos/rededenos"
+                title="Rede de nós"
+              >
+                Estudos
               </NavDropdown.Item>
               <NavDropdown.Item href="/projetosfuturos/alerta" title="Alerta">
                 Alerta (Slack)
