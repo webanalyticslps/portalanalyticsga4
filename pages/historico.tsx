@@ -131,12 +131,6 @@ export default withPageAuthRequired(function Profile({
           <div className="col-sm">Descrição</div>
           <div className="col-sm">Data e Hora</div>
           <div className="col-sm">Status</div>
-          <div className="col-sm">Responsável</div>
-          <div className="col-sm">Container ID GTM</div>
-          <div className="col-sm">Propriedade ID GA4</div>
-          <div className="col-sm">Impacto</div>
-          <div className="col-sm">Solução</div>
-          <div className="col-sm">Data e Hora da Resolução</div>
         </div>
       </div>
 
@@ -189,6 +183,22 @@ export default withPageAuthRequired(function Profile({
             ></textarea>
           </div>
 
+          {/* Repita para outros campos necessários */}
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">Responsável</div>
+          <div className="col-sm">Container ID GTM</div>
+          <div className="col-sm">Propriedade ID GA4</div>
+          <div className="col-sm">Impacto</div>
+          <div className="col-sm">Solução</div>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="row">
           <div className="col-sm">
             <textarea
               id="responsavel"
