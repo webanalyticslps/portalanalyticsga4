@@ -137,13 +137,15 @@ export default withPageAuthRequired(function Profile({
       <div className="container">
         <div className="row">
           <div className="col-sm">
-            <textarea
+            <select
               id="tipoRegistro"
               name="tipoRegistro"
-              rows={1}
               value={tipoRegistro}
               onChange={(e) => setTipoRegistro(e.currentTarget.value)}
-            ></textarea>
+            >
+              <option value="Implementação">Implementação</option>
+              <option value="Bug">Bug</option>
+            </select>
           </div>
           <div className="col-sm">
             <textarea
