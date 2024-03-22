@@ -45,8 +45,7 @@ export default withPageAuthRequired(function Profile({
     responsavel: any,
     container_id_gtm: any,
     propriedade_id_ga4: any,
-    impacto: any,
-    solucao: any
+    impacto: any
   ) => {
     try {
       const axios = require("axios");
@@ -203,7 +202,6 @@ export default withPageAuthRequired(function Profile({
           <div className="col-sm">Container ID GTM</div>
           <div className="col-sm">Propriedade ID GA4</div>
           <div className="col-sm">Impacto</div>
-          <div className="col-sm">Solução</div>
         </div>
       </div>
 
@@ -304,9 +302,7 @@ export default withPageAuthRequired(function Profile({
                       "propriedadeIdGa4"
                     ) as HTMLInputElement
                   ).value,
-                  (document.getElementById("impacto") as HTMLInputElement)
-                    .value,
-                  (document.getElementById("solucao") as HTMLInputElement).value
+                  (document.getElementById("impacto") as HTMLInputElement).value
                 )
               }
             >
