@@ -134,9 +134,6 @@ const Menu = () => {
             <Nav.Link title="Relatórios" href="/relatorios">
               Relatórios
             </Nav.Link>
-            <Nav.Link title="Estudos" href="/estudos">
-              Estudos
-            </Nav.Link>
             <Nav.Link title="Histórico" href="/historico">
               Histórico
             </Nav.Link>
@@ -153,10 +150,7 @@ const Menu = () => {
               >
                 Rede de nós
               </NavDropdown.Item>
-              <NavDropdown.Item
-                href="/projetosfuturos/rededenos"
-                title="Rede de nós"
-              >
+              <NavDropdown.Item href="/estudos" title="Rede de nós">
                 Estudos
               </NavDropdown.Item>
               <NavDropdown.Item href="/projetosfuturos/alerta" title="Alerta">
