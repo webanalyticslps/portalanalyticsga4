@@ -131,18 +131,18 @@ export default withPageAuthRequired(function Profile({
       </h2>
       <div>
         <div className="row text-light bg-lopes border border-dark">
-          <div className="col-md-3">Tipo de Registro</div>
-          <div className="col-md-3">Tipo de Implementação</div>
-          <div className="col-md-3">Descrição</div>
-          <div className="col-md-3">Data e Hora</div>
-          <div className="col-md-3">Status</div>
-          <div className="col-md-3">Responsável</div>
-          <div className="col-md-3">Container ID GTM</div>
-          <div className="col-md-3">Propriedade ID GA4</div>
-          <div className="col-md-3">Impacto</div>
-          <div className="col-md-3">Solução</div>
-          <div className="col-md-3">Data e Hora da Resolução</div>
-          <div className="col-md-3">Editar</div>
+          <div className="col">Tipo de Registro</div>
+          <div className="col">Tipo de Implementação</div>
+          <div className="col">Descrição</div>
+          <div className="col">Data e Hora</div>
+          <div className="col">Status</div>
+          <div className="col">Responsável</div>
+          <div className="col">Container ID GTM</div>
+          <div className="col">Propriedade ID GA4</div>
+          <div className="col">Impacto</div>
+          <div className="col">Solução</div>
+          <div className="col">Data e Hora da Resolução</div>
+          <div className="col">Editar</div>
         </div>
         {historicoImplementacoesBugs.map((historico: any, index: any) => (
           <div
@@ -155,22 +155,22 @@ export default withPageAuthRequired(function Profile({
                   : "#f8d7da",
             }}
           >
-            <div className="col-md-3">{historico.tipo_registro}</div>
-            <div className="col-md-3">{historico.tipo_implementacao}</div>
-            <div className="col-md-3">{historico.descricao}</div>
-            <div className="col-md-3">{historico.data_hora.toLocaleString()}</div>
-            <div className="col-md-3">{historico.status}</div>
-            <div className="col-md-3">{historico.responsavel}</div>
-            <div className="col-md-3">{historico.container_id_gtm}</div>
-            <div className="col-md-3">{historico.propriedade_id_ga4}</div>
-            <div className="col-md-3">{historico.impacto}</div>
-            <div className="col-md-3">{historico.solucao}</div>
-            <div className="col-md-3">
+            <div className="col">{historico.tipo_registro}</div>
+            <div className="col">{historico.tipo_implementacao}</div>
+            <div className="col">{historico.descricao}</div>
+            <div className="col">{historico.data_hora.toLocaleString()}</div>
+            <div className="col">{historico.status}</div>
+            <div className="col">{historico.responsavel}</div>
+            <div className="col">{historico.container_id_gtm}</div>
+            <div className="col">{historico.propriedade_id_ga4}</div>
+            <div className="col">{historico.impacto}</div>
+            <div className="col">{historico.solucao}</div>
+            <div className="col">
               {historico.data_hora_resolucao
                 ? historico.data_hora_resolucao.toLocaleString()
                 : ""}
             </div>
-            <div className="col-md-3">
+            <div className="col">
               <Button onClick={() => handleOpenModal(historico)}>Editar</Button>
             </div>
           </div>
