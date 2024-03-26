@@ -117,8 +117,55 @@ export default withPageAuthRequired(function Profile({
               placeholder="Descrição"
               defaultValue={selectedHistorico?.descricao}
             />
+            <Form.Label>Data e hora</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.data_hora}
+            />
+            <Form.Label>Status</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.status}
+            />
+            <Form.Label>Responsável</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.responsavel}
+            />
+            <Form.Label>Container ID GTM</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.container_id_gtm}
+            />
+            <Form.Label>Propriedade GA4</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.propriedade_id_ga4}
+            />
+             <Form.Label>Impacto</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.impacto}
+            />
+             <Form.Label>Solução</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.solucao}
+            />
+             <Form.Label>Data e hora da resolução</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.data_hora_resolucao}
+            />
           </Form.Group>
-          {/* Adicione mais campos conforme necessário */}
         </Form>
       </Modal.Body>
       <Modal.Footer>
