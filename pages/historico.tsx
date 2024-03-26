@@ -99,6 +99,18 @@ export default withPageAuthRequired(function Profile({
         <Form>
           {/* Exemplo de campo do formulário */}
           <Form.Group controlId="formDescricao">
+            <Form.Label>Tipo de registro</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.tipo_registro}
+            />
+            <Form.Label>Tipo de implementação</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.tipo_implementacao}
+            />
             <Form.Label>Descrição</Form.Label>
             <Form.Control
               type="text"
