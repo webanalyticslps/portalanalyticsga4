@@ -41,6 +41,7 @@ export default withPageAuthRequired(function Profile({
 
   // Função para abrir o modal com os dados do registro selecionado
   const handleOpenModal = (historico: any) => {
+    console.log("Abrindo modal para:", historico); // Adicione isto para depuração
     setSelectedHistorico(historico);
     setShowModal(true);
   };
