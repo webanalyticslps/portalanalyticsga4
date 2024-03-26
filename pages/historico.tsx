@@ -7,6 +7,7 @@ import Head from "next/head";
 import { Container, Row, Card, Button } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { useState } from "react";
+import { Modal, Button, Form } from "react-bootstrap";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const historicoImplementacoesBugs = await getAllHistoricoImplementacoesBugs();
@@ -35,6 +36,57 @@ export default withPageAuthRequired(function Profile({
   const [propriedadeIdGa4, setPropriedadeIdGa4] = useState("");
   const [impacto, setImpacto] = useState("");
   const [solucao, setSolucao] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [selectedHistorico, setSelectedHistorico] = useState(null);
+
+  // Função para abrir o modal com os dados do registro selecionado
+  const handleOpenModal = (historico) => {
+    setSelectedHistorico(historico);
+    setShowModal(true);
+  };
+
+  // Função para fechar o modal
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedHistorico(null); // Limpar o registro selecionado
+  };
+
+  const EditModal = () => (
+    <Modal show={showModal} onHide={handleCloseModal}>
+      <Modal.Header closeButton>
+        <Modal.Title>Editar Registro</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        {/* Aqui você pode colocar um formulário para editar o registro.
+            Use os estados como `selectedHistorico` para preencher os dados existentes */}
+        <Form>
+          {/* Exemplo de campo do formulário */}
+          <Form.Group controlId="formDescricao">
+            <Form.Label>Descrição</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Descrição"
+              defaultValue={selectedHistorico?.descricao}
+            />
+          </Form.Group>
+          {/* Adicione mais campos conforme necessário */}
+        </Form>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleCloseModal}>
+          Fechar
+        </Button>
+        <Button
+          variant="primary"
+          onClick={() => {
+            /* Aqui vai a lógica de atualização */
+          }}
+        >
+          Salvar Alterações
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
 
   const handleClick = async (
     tipo_registro: any,
@@ -90,6 +142,7 @@ export default withPageAuthRequired(function Profile({
           <div className="col">Impacto</div>
           <div className="col">Solução</div>
           <div className="col">Data e Hora da Resolução</div>
+          <div className="col">Editar</div>
         </div>
         {historicoImplementacoesBugs.map((historico: any, index: any) => (
           <div
@@ -117,6 +170,7 @@ export default withPageAuthRequired(function Profile({
                 ? historico.data_hora_resolucao.toLocaleString()
                 : ""}
             </div>
+            <Button onClick={() => handleOpenModal(historico)}>Editar</Button>
           </div>
         ))}
       </div>
