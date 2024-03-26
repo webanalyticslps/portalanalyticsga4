@@ -36,9 +36,8 @@ export default withPageAuthRequired(function Profile({
   const [impacto, setImpacto] = useState("");
   const [solucao, setSolucao] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [selectedHistorico, setSelectedHistorico] = useState<Historico | null>(
-    null
-  );
+  const [selectedHistorico, setSelectedHistorico] =
+    useState<HistoricoImplementacoesBugs | null>(null);
 
   // Função para abrir o modal com os dados do registro selecionado
   const handleOpenModal = (historico: any) => {
