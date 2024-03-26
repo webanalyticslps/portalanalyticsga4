@@ -121,7 +121,11 @@ export default withPageAuthRequired(function Profile({
             <Form.Control
               type="datetime-local"
               placeholder="Data e hora"
-              defaultValue={selectedHistorico?.data_hora}
+              defaultValue={
+                selectedHistorico?.data_hora
+                  ? selectedHistorico.data_hora.toISOString().slice(0, 16)
+                  : ""
+              }
             />
             <Form.Label>Status</Form.Label>
             <Form.Control
