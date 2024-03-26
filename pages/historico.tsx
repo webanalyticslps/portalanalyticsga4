@@ -170,7 +170,9 @@ export default withPageAuthRequired(function Profile({
                 ? historico.data_hora_resolucao.toLocaleString()
                 : ""}
             </div>
-            <Button onClick={() => handleOpenModal(historico)}>Editar</Button>
+            <div className="col">
+              <Button onClick={() => handleOpenModal(historico)}>Editar</Button>
+            </div>
           </div>
         ))}
       </div>
