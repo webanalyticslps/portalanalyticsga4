@@ -52,7 +52,7 @@ export default withPageAuthRequired(function Profile({
     setSelectedHistorico(null); // Limpar o registro selecionado
   };
 
-  function formatDateToInputString(date) {
+  function formatDateToInputString(date: any) {
     if (!date) return "";
 
     const pad = (num) => (num < 10 ? "0" + num : num.toString());
