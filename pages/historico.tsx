@@ -167,7 +167,13 @@ export default withPageAuthRequired(function Profile({
             <Form.Control
               type="datetime-local"
               placeholder="Data e hora da resolução"
-              defaultValue={selectedHistorico?.data_hora_resolucao}
+              defaultValue={
+                selectedHistorico?.data_hora_resolucao
+                  ? selectedHistorico.data_hora_resolucao
+                      .toISOString()
+                      .slice(0, 16)
+                  : ""
+              }
             />
           </Form.Group>
         </Form>
