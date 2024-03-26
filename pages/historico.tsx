@@ -102,13 +102,13 @@ export default withPageAuthRequired(function Profile({
             <Form.Label>Tipo de registro</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Descrição"
+              placeholder="Tipo de registro"
               defaultValue={selectedHistorico?.tipo_registro}
             />
             <Form.Label>Tipo de implementação</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Descrição"
+              placeholder="Tipo de implementação"
               defaultValue={selectedHistorico?.tipo_implementacao}
             />
             <Form.Label>Descrição</Form.Label>
@@ -119,50 +119,50 @@ export default withPageAuthRequired(function Profile({
             />
             <Form.Label>Data e hora</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Descrição"
+              type="datetime-local"
+              placeholder="Data e hora"
               defaultValue={selectedHistorico?.data_hora}
             />
             <Form.Label>Status</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Descrição"
+              placeholder="Status"
               defaultValue={selectedHistorico?.status}
             />
             <Form.Label>Responsável</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Descrição"
+              placeholder="Responsável"
               defaultValue={selectedHistorico?.responsavel}
             />
             <Form.Label>Container ID GTM</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Descrição"
+              placeholder="Container ID GTM"
               defaultValue={selectedHistorico?.container_id_gtm}
             />
             <Form.Label>Propriedade GA4</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Descrição"
+              placeholder="Propriedade GA4"
               defaultValue={selectedHistorico?.propriedade_id_ga4}
             />
-             <Form.Label>Impacto</Form.Label>
+            <Form.Label>Impacto</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Descrição"
+              placeholder="Impacto"
               defaultValue={selectedHistorico?.impacto}
             />
-             <Form.Label>Solução</Form.Label>
+            <Form.Label>Solução</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Descrição"
+              placeholder="Solução"
               defaultValue={selectedHistorico?.solucao}
             />
-             <Form.Label>Data e hora da resolução</Form.Label>
+            <Form.Label>Data e hora da resolução</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Descrição"
+              type="datetime-local"
+              placeholder="Data e hora da resolução"
               defaultValue={selectedHistorico?.data_hora_resolucao}
             />
           </Form.Group>
