@@ -52,15 +52,6 @@ export default withPageAuthRequired(function Profile({
     setSelectedHistorico(null); // Limpar o registro selecionado
   };
 
-  function formatDateToInputString(date: any) {
-    if (!date) return "";
-
-    const pad = (num) => (num < 10 ? "0" + num : num.toString());
-    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(
-      date.getDate()
-    )}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
-  }
-
   const handleClick = async (
     tipo_registro: any,
     tipo_implementacao: any,
@@ -128,15 +119,9 @@ export default withPageAuthRequired(function Profile({
             />
             <Form.Label>Data e hora</Form.Label>
             <Form.Control
-              type="datetime-local" // Se quiser manter como datetime-local
+              type="string"
               placeholder="Data e hora"
-              defaultValue={
-                selectedHistorico?.data_hora
-                  ? formatDateToInputString(
-                      new Date(selectedHistorico.data_hora)
-                    )
-                  : ""
-              }
+              defaultValue={selectedHistorico?.data_hora}
             />
             <Form.Label>Status</Form.Label>
             <Form.Control
@@ -176,15 +161,9 @@ export default withPageAuthRequired(function Profile({
             />
             <Form.Label>Data e hora da resolução</Form.Label>
             <Form.Control
-              type="datetime-local" // Se quiser manter como datetime-local
+              type="string"
               placeholder="Data e hora da resolução"
-              defaultValue={
-                selectedHistorico?.data_hora_resolucao
-                  ? formatDateToInputString(
-                      new Date(selectedHistorico.data_hora_resolucao)
-                    )
-                  : ""
-              }
+              defaultValue={selectedHistorico?.data_hora_resolucao}
             />
           </Form.Group>
         </Form>
