@@ -89,37 +89,14 @@ export default withPageAuthRequired(function Profile({
   console.log(showModal);
 
   const EditModal = () => (
-    <Modal show={showModal} onHide={handleCloseModal}>
+    <Modal show={showModal} onHide={() => setShowModal(false)}>
       <Modal.Header closeButton>
-        <Modal.Title>Editar Registro</Modal.Title>
+        <Modal.Title>Modal Simples</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        {/* Aqui você pode colocar um formulário para editar o registro.
-            Use os estados como `selectedHistorico` para preencher os dados existentes */}
-        <Form>
-          {/* Exemplo de campo do formulário */}
-          <Form.Group controlId="formDescricao">
-            <Form.Label>Descrição</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Descrição"
-              defaultValue={selectedHistorico?.descricao}
-            />
-          </Form.Group>
-          {/* Adicione mais campos conforme necessário */}
-        </Form>
-      </Modal.Body>
+      <Modal.Body>Este é um teste do modal.</Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleCloseModal}>
+        <Button variant="secondary" onClick={() => setShowModal(false)}>
           Fechar
-        </Button>
-        <Button
-          variant="primary"
-          onClick={() => {
-            /* Aqui vai a lógica de atualização */
-          }}
-        >
-          Salvar Alterações
         </Button>
       </Modal.Footer>
     </Modal>
