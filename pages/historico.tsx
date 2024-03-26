@@ -119,13 +119,9 @@ export default withPageAuthRequired(function Profile({
             />
             <Form.Label>Data e hora</Form.Label>
             <Form.Control
-              type="datetime-local"
+              type="string"
               placeholder="Data e hora"
-              defaultValue={
-                selectedHistorico?.data_hora
-                  ? selectedHistorico.data_hora.toISOString().slice(0, 16)
-                  : ""
-              }
+              defaultValue={selectedHistorico?.data_hora}
             />
             <Form.Label>Status</Form.Label>
             <Form.Control
@@ -151,29 +147,23 @@ export default withPageAuthRequired(function Profile({
               placeholder="Propriedade GA4"
               defaultValue={selectedHistorico?.propriedade_id_ga4}
             />
-            <Form.Label>Impacto</Form.Label>
+             <Form.Label>Impacto</Form.Label>
             <Form.Control
               type="text"
               placeholder="Impacto"
               defaultValue={selectedHistorico?.impacto}
             />
-            <Form.Label>Solução</Form.Label>
+             <Form.Label>Solução</Form.Label>
             <Form.Control
               type="text"
               placeholder="Solução"
               defaultValue={selectedHistorico?.solucao}
             />
-            <Form.Label>Data e hora da resolução</Form.Label>
+             <Form.Label>Data e hora da resolução</Form.Label>
             <Form.Control
-              type="datetime-local"
+              type="string"
               placeholder="Data e hora da resolução"
-              defaultValue={
-                selectedHistorico?.data_hora_resolucao
-                  ? selectedHistorico.data_hora_resolucao
-                      .toISOString()
-                      .slice(0, 16)
-                  : ""
-              }
+              defaultValue={selectedHistorico?.data_hora_resolucao}
             />
           </Form.Group>
         </Form>
