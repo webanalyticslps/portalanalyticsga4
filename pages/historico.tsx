@@ -52,6 +52,15 @@ export default withPageAuthRequired(function Profile({
     setSelectedHistorico(null); // Limpar o registro selecionado
   };
 
+  function formatDateToInputString(date) {
+    if (!date) return "";
+
+    const pad = (num) => (num < 10 ? "0" + num : num.toString());
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(
+      date.getDate()
+    )}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+  }
+
   const handleClick = async (
     tipo_registro: any,
     tipo_implementacao: any,
@@ -119,9 +128,15 @@ export default withPageAuthRequired(function Profile({
             />
             <Form.Label>Data e hora</Form.Label>
             <Form.Control
-              type="string"
+              type="datetime-local" // Se quiser manter como datetime-local
               placeholder="Data e hora"
-              defaultValue={selectedHistorico?.data_hora}
+              defaultValue={
+                selectedHistorico?.data_hora
+                  ? formatDateToInputString(
+                      new Date(selectedHistorico.data_hora)
+                    )
+                  : ""
+              }
             />
             <Form.Label>Status</Form.Label>
             <Form.Control
@@ -147,23 +162,29 @@ export default withPageAuthRequired(function Profile({
               placeholder="Propriedade GA4"
               defaultValue={selectedHistorico?.propriedade_id_ga4}
             />
-             <Form.Label>Impacto</Form.Label>
+            <Form.Label>Impacto</Form.Label>
             <Form.Control
               type="text"
               placeholder="Impacto"
               defaultValue={selectedHistorico?.impacto}
             />
-             <Form.Label>Solução</Form.Label>
+            <Form.Label>Solução</Form.Label>
             <Form.Control
               type="text"
               placeholder="Solução"
               defaultValue={selectedHistorico?.solucao}
             />
-             <Form.Label>Data e hora da resolução</Form.Label>
+            <Form.Label>Data e hora da resolução</Form.Label>
             <Form.Control
-              type="string"
+              type="datetime-local" // Se quiser manter como datetime-local
               placeholder="Data e hora da resolução"
-              defaultValue={selectedHistorico?.data_hora_resolucao}
+              defaultValue={
+                selectedHistorico?.data_hora_resolucao
+                  ? formatDateToInputString(
+                      new Date(selectedHistorico.data_hora_resolucao)
+                    )
+                  : ""
+              }
             />
           </Form.Group>
         </Form>
