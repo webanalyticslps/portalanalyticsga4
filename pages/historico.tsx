@@ -53,7 +53,7 @@ export default withPageAuthRequired(function Profile({
   };
 
   const EditModal = () => (
-    <Modal show={handleOpenModal} onHide={handleCloseModal}>
+    <Modal show={showModal} onHide={handleCloseModal}>
       <Modal.Header closeButton>
         <Modal.Title>Editar Registro</Modal.Title>
       </Modal.Header>
@@ -122,6 +122,8 @@ export default withPageAuthRequired(function Profile({
       // Tratamento de erro
     }
   };
+
+  console.log(showModal);
 
   return (
     <div className="container-fluid ">
