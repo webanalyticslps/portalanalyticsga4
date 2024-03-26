@@ -53,7 +53,7 @@ export default withPageAuthRequired(function Profile({
   };
 
   const EditModal = () => (
-    <Modal show={showModal} onHide={handleCloseModal}>
+    <Modal show={handleOpenModal} onHide={handleCloseModal}>
       <Modal.Header closeButton>
         <Modal.Title>Editar Registro</Modal.Title>
       </Modal.Header>
