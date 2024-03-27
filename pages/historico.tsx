@@ -159,7 +159,6 @@ export default withPageAuthRequired(function Profile({
                 type="text"
                 placeholder="Tipo de registro"
                 value={selectedHistorico?.tipo_registro}
-                onChange={(e) => setTipoRegistro(e.currentTarget.value)}
               />
               <Form.Label>Tipo de implementação</Form.Label>
               <Form.Control
