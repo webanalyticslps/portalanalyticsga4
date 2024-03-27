@@ -45,6 +45,8 @@ export default withPageAuthRequired(function Profile({
     console.log("Abrindo modal para:", historico); // Adicione isto para depuração
     setSelectedHistorico(historico);
     setShowModal(true);
+    setTipoRegistro(historico.tipo_registro || "");
+    setTipoImplementacao(historico.tipo_implementacao || "");
   };
 
   // Função para fechar o modal
@@ -139,7 +141,7 @@ export default withPageAuthRequired(function Profile({
             <Form.Control
               type="text"
               placeholder="Tipo de registro"
-              value={selectedHistorico?.tipo_registro}
+              value={tipoRegistro}
               onChange={(e) => setTipoRegistro(e.target.value)}
             />
             <Form.Label>Tipo de implementação</Form.Label>
