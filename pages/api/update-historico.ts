@@ -22,6 +22,7 @@ export default async function handler(
     propriedade_id_ga4,
     impacto,
     solucao,
+    data_hora_resolucao
   } = req.body;
 
   // Função para transformar a data/hora recebida para o formato completo UTC
@@ -35,7 +36,7 @@ export default async function handler(
 
   async function main() {
     const data_hora_formatada = formatarDataParaUTC(data_hora);
-    const data_hora_solucao_formatada = formatarDataParaUTC(data_hora_solucao);
+    const data_hora_solucao_formatada = formatarDataParaUTC(data_hora_resolucao);
 
     try {
       const updateRegistro = await prisma.historicoImplementacoesBugs.update({
