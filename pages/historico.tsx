@@ -6,7 +6,7 @@ import {
 import Head from "next/head";
 import { Container, Row, Card, Button, Modal, Form } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const historicoImplementacoesBugs = await getAllHistoricoImplementacoesBugs();
