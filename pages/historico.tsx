@@ -157,7 +157,7 @@ export default withPageAuthRequired(function Profile({
       }
     }, [selectedHistorico, showModal]);
 
-    const handleChange = (e) => {
+    const handleChange = (e: any) => {
       const { name, value } = e.target;
       setFormValues((prevState) => ({
         ...prevState,
