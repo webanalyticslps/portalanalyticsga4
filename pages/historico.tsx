@@ -240,14 +240,7 @@ export default withPageAuthRequired(function Profile({
           <Button variant="secondary" onClick={handleCloseModal}>
             Fechar
           </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              {
-                handleSaveChanges;
-              }
-            }}
-          >
+          <Button variant="primary" onClick={() => handleSaveChanges()}>
             Salvar Alterações
           </Button>
         </Modal.Footer>
