@@ -124,7 +124,15 @@ export default withPageAuthRequired(function Profile({
 
   console.log(showModal);
 
-  const EditModal = ({
+  interface EditModalProps {
+    showModal: boolean;
+    handleCloseModal: () => void;
+    handleSaveChanges: () => void;
+    selectedHistorico: HistoricoImplementacoesBugs | null; // Assumindo que você tem esse tipo definido em outro lugar
+    setTipoRegistro: React.Dispatch<React.SetStateAction<string>>;
+  }
+
+  const EditModal: React.FC<EditModalProps> = ({
     showModal,
     handleCloseModal,
     handleSaveChanges,
