@@ -54,55 +54,55 @@ export default withPageAuthRequired(function Profile({
   };
 
   const handleSaveChanges = async () => {
-    const tipo_implementacao = document.getElementById(
+    const tipo_implementacao_changed = document.getElementById(
       "formTipoImplementacao"
     ).value;
-    const tipo_registro = document.getElementById("formTipoRegistro").value;
-    const descricao = document.getElementById("formDescricao").value;
-    const data_hora = document.getElementById("formDataHora").value;
-    const status = document.getElementById("formStatus").value;
-    const responsavel = document.getElementById("formResponsavel").value;
-    const container_id_gtm =
+    const tipo_registro_changed = document.getElementById("formTipoRegistro").value;
+    const descricao_changed = document.getElementById("formDescricao").value;
+    const data_hora_changed = document.getElementById("formDataHora").value;
+    const status_changed = document.getElementById("formStatus").value;
+    const responsavel_changed = document.getElementById("formResponsavel").value;
+    const container_id_gtm_changed =
       document.getElementById("formContainerIdGtm").value;
-    const propriedade_id_ga4 = document.getElementById(
+    const propriedade_id_ga4_changed = document.getElementById(
       "formPropriedadeIdGa4"
     ).value;
-    const impacto = document.getElementById("formImpacto").value;
-    const data_hora_resolucao = document.getElementById(
+    const impacto_changed = document.getElementById("formImpacto").value;
+    const data_hora_resolucao_changed = document.getElementById(
       "formDataHoraResolucao"
     ).value;
 
-    const tipo_implementacao = tipoImplementacaoElement
+    const tipo_implementacao_changed = tipoImplementacaoElement
       ? tipoImplementacaoElement.value
       : "";
-    const tipo_registro = tipoRegistroElement ? tipoRegistroElement.value : "";
-    const descricao = descricaoElement ? tipoDescricaoElement.value : "";
-    const data_hora = dataHoraElement ? dataHoraElement.value : "";
-    const status = statusElement ? statusElement.value : "";
-    const responsavel = responsavelElement ? responsavelElement.value : "";
-    const container_id_gtm = containerIdGtmElement
+    const tipo_registro_changed = tipoRegistroElement ? tipoRegistroElement.value : "";
+    const descricao_changed = descricaoElement ? tipoDescricaoElement.value : "";
+    const data_hora_changed = dataHoraElement ? dataHoraElement.value : "";
+    const status_changed = statusElement ? statusElement.value : "";
+    const responsavel_changed = responsavelElement ? responsavelElement.value : "";
+    const container_id_gtm_changed = containerIdGtmElement
       ? containerIdGtmElement.value
       : "";
-    const propriedade_id_ga4 = propriedadeIdGa4Element
+    const propriedade_id_ga4_changed = propriedadeIdGa4Element
       ? propriedadeIdGa4Element.value
       : "";
-    const impacto = impactoElement ? impactoElement.value : "";
-    const data_hora_resolucao = dataHoraResolucaoElement
+    const impacto_changed = impactoElement ? impactoElement.value : "";
+    const data_hora_resolucao_changed = dataHoraResolucaoElement
       ? dataHoraResolucaoElement.value
       : "";
 
     const updatedHistorico = {
       id: selectedHistorico?.id,
-      tipo_registro: tipo_registro,
-      tipo_implementacao: tipo_implementacao,
-      descricao: descricao,
-      data_hora: data_hora,
-      status: status,
-      responsavel: responsavel,
-      container_id_gtm: container_id_gtm,
-      propriedade_id_ga4: propriedade_id_ga4,
-      impacto: impacto,
-      data_hora_resolucao: data_hora_resolucao,
+      tipo_registro_changed: tipo_registro_changed,
+      tipo_implementacao_changed: tipo_implementacao_changed,
+      descricao_changed: descricao_changed,
+      data_hora_changed: data_hora_changed,
+      status_changed: statu_changed,
+      responsavel_changed: responsavel_changed,
+      container_id_gtm_changed: container_id_gtm_changed,
+      propriedade_id_ga4_changed: propriedade_id_ga4_changed,
+      impacto_changed: impacto_changed,
+      data_hora_resolucao_changed: data_hora_resolucao_changed,
     };
 
     try {
