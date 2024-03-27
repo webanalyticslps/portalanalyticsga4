@@ -42,19 +42,19 @@ export default withPageAuthRequired(function Profile({
 
   // Função para abrir o modal com os dados do registro selecionado
   const handleOpenModal = (historico: any) => {
-    console.log("Abrindo modal para:", historico); // Adicione isto para depuração
+    console.log("Abrindo modal para:", historico);
     setSelectedHistorico(historico);
     setTipoRegistro(historico.tipo_registro || "");
     setTipoImplementacao(historico.tipo_implementacao || "");
     setDescricao(historico.descricao || "");
     setDataHora(historico.data_hora || "");
     setStatus(historico.status || "");
-    setResponsavel(historico.data_hora || "");
-    setContainerIdGtm(historico.data_hora || "");
-    setPropriedadeIdGa4(historico.data_hora || "");
-    setImpacto(historico.data_hora || "");
-    setSolucao(historico.data_hora || "");
-    setDataHoraResolucao(historico.data_hora || "");
+    setResponsavel(historico.responsavel || ""); // Corrigido
+    setContainerIdGtm(historico.container_id_gtm || ""); // Corrigido
+    setPropriedadeIdGa4(historico.propriedade_id_ga4 || ""); // Corrigido
+    setImpacto(historico.impacto || ""); // Corrigido
+    setSolucao(historico.solucao || ""); // Corrigido
+    setDataHoraResolucao(historico.data_hora_resolucao || "");
     setShowModal(true);
   };
 
