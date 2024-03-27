@@ -35,6 +35,7 @@ export default withPageAuthRequired(function Profile({
   const [propriedadeIdGa4, setPropriedadeIdGa4] = useState("");
   const [impacto, setImpacto] = useState("");
   const [solucao, setSolucao] = useState("");
+  const [dataHoraResolucao, setDataHoraResolucao] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [selectedHistorico, setSelectedHistorico] =
     useState<HistoricoImplementacoesBugs | null>(null);
@@ -50,6 +51,41 @@ export default withPageAuthRequired(function Profile({
   const handleCloseModal = () => {
     setShowModal(false);
     setSelectedHistorico(null); // Limpar o registro selecionado
+  };
+
+  const handleSaveChanges = async () => {
+    const updatedHistorico = {
+      id: selectedHistorico?.id, // Certifique-se de que o histórico selecionado tenha um ID para atualização
+      tipo_registro: tipoRegistro,
+      tipo_implementacao: tipoImplementacao,
+      descricao: descricao,
+      data_hora: dataHora,
+      status: status,
+      responsavel: responsavel,
+      container_id_gtm: containerIdGtm,
+      propriedade_id_ga4: propriedadeIdGa4,
+      impacto: impacto,
+      solucao: solucao,
+      data_hora_resolucao: dataHoraResolucao
+      // Adicione mais campos conforme necessário
+    };
+
+    try {
+      const axios = require("axios");
+      // Atualize esta URL com a rota correta da sua API para atualizações
+      const response = await axios.put(
+        `/api/update-historico/${selectedHistorico?.id}`,
+        updatedHistorico
+      );
+      console.log(response.data);
+      // Adicione qualquer lógica adicional após a atualização ser bem-sucedida
+      // Por exemplo, fechar o modal e atualizar a lista de históricos na UI
+      handleCloseModal();
+      // Talvez você queira recarregar os dados ou atualizar o estado para refletir as mudanças
+    } catch (error) {
+      console.error("Erro ao salvar as alterações: ", error);
+      // Tratamento de erro
+    }
   };
 
   const handleClick = async (
@@ -104,18 +140,21 @@ export default withPageAuthRequired(function Profile({
               type="text"
               placeholder="Tipo de registro"
               defaultValue={selectedHistorico?.tipo_registro}
+              onChange={(e) => setTipoRegistro(e.target.value)}
             />
             <Form.Label>Tipo de implementação</Form.Label>
             <Form.Control
               type="text"
               placeholder="Tipo de implementação"
               defaultValue={selectedHistorico?.tipo_implementacao}
+              onChange={(e) => setTipoImplementacao(e.target.value)}
             />
             <Form.Label>Descrição</Form.Label>
             <Form.Control
               type="text"
               placeholder="Descrição"
               defaultValue={selectedHistorico?.descricao}
+              onChange={(e) => setDescricao(e.target.value)}
             />
             <Form.Label>Data e hora</Form.Label>
             <Form.Control
@@ -128,6 +167,7 @@ export default withPageAuthRequired(function Profile({
                       .slice(0, 16)
                   : ""
               }
+              onChange={(e) => setDataHora(e.target.value)}
             />
 
             <Form.Label>Status</Form.Label>
@@ -135,36 +175,42 @@ export default withPageAuthRequired(function Profile({
               type="text"
               placeholder="Status"
               defaultValue={selectedHistorico?.status}
+              onChange={(e) => setStatus(e.target.value)}
             />
             <Form.Label>Responsável</Form.Label>
             <Form.Control
               type="text"
               placeholder="Responsável"
               defaultValue={selectedHistorico?.responsavel}
+              onChange={(e) => setResponsavel(e.target.value)}
             />
             <Form.Label>Container ID GTM</Form.Label>
             <Form.Control
               type="text"
               placeholder="Container ID GTM"
               defaultValue={selectedHistorico?.container_id_gtm}
+              onChange={(e) => setContainerIdGtm(e.target.value)}
             />
             <Form.Label>Propriedade GA4</Form.Label>
             <Form.Control
               type="text"
               placeholder="Propriedade GA4"
               defaultValue={selectedHistorico?.propriedade_id_ga4}
+              onChange={(e) => setPropriedadeIdGa4(e.target.value)}
             />
             <Form.Label>Impacto</Form.Label>
             <Form.Control
               type="text"
               placeholder="Impacto"
               defaultValue={selectedHistorico?.impacto}
+              onChange={(e) => setImpacto(e.target.value)}
             />
             <Form.Label>Solução</Form.Label>
             <Form.Control
               type="text"
               placeholder="Solução"
               defaultValue={selectedHistorico?.solucao}
+              onChange={(e) => setSolucao(e.target.value)}
             />
             <Form.Label>Data e hora da resolução</Form.Label>
             <Form.Control
@@ -177,6 +223,7 @@ export default withPageAuthRequired(function Profile({
                       .slice(0, 16)
                   : ""
               }
+              onChange={(e) => setDataHoraResolucao(e.target.value)}
             />
           </Form.Group>
         </Form>
@@ -188,7 +235,9 @@ export default withPageAuthRequired(function Profile({
         <Button
           variant="primary"
           onClick={() => {
-            /* Aqui vai a lógica de atualização */
+            {
+              handleSaveChanges;
+            }
           }}
         >
           Salvar Alterações
