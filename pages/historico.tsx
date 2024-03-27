@@ -53,7 +53,7 @@ export default withPageAuthRequired(function Profile({
     setSelectedHistorico(null); // Limpar o registro selecionado
   };
 
-  const handleSaveChanges = async () => {
+  const handleSaveChanges = async (values: YourFormValuesType) => {
     const updatedHistorico = {
       id: selectedHistorico?.id, // Certifique-se de que o histórico selecionado tenha um ID para atualização
       tipo_registro: tipoRegistro,
