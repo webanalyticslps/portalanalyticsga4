@@ -53,6 +53,41 @@ export default withPageAuthRequired(function Profile({
     setSelectedHistorico(null); // Limpar o registro selecionado
   };
 
+  const handleSaveChanges = async () => {
+    const updatedHistorico = {
+      id: selectedHistorico?.id, // Certifique-se de que o histórico selecionado tenha um ID para atualização
+      tipo_registro: tipoRegistro,
+      tipo_implementacao: tipoImplementacao,
+      descricao: descricao,
+      data_hora: dataHora,
+      status: status,
+      responsavel: responsavel,
+      container_id_gtm: containerIdGtm,
+      propriedade_id_ga4: propriedadeIdGa4,
+      impacto: impacto,
+      solucao: solucao,
+      data_hora_resolucao: dataHoraResolucao,
+      // Adicione mais campos conforme necessário
+    };
+
+    try {
+      const axios = require("axios");
+      // Atualize esta URL com a rota correta da sua API para atualizações
+      const response = await axios.put(
+        `/api/update-historico/${selectedHistorico?.id}`,
+        updatedHistorico
+      );
+      console.log(response.data);
+      // Adicione qualquer lógica adicional após a atualização ser bem-sucedida
+      // Por exemplo, fechar o modal e atualizar a lista de históricos na UI
+      handleCloseModal();
+      // Talvez você queira recarregar os dados ou atualizar o estado para refletir as mudanças
+    } catch (error) {
+      console.error("Erro ao salvar as alterações: ", error);
+      // Tratamento de erro
+    }
+  };
+
   const handleClick = async (
     tipo_registro: any,
     tipo_implementacao: any,
@@ -104,7 +139,7 @@ export default withPageAuthRequired(function Profile({
             <Form.Control
               type="text"
               placeholder="Tipo de registro"
-              defaultValue={selectedHistorico?.tipo_registro}
+              value={selectedHistorico?.tipo_registro}
               onChange={(e) => setTipoRegistro(e.target.value)}
             />
             <Form.Label>Tipo de implementação</Form.Label>
@@ -201,6 +236,7 @@ export default withPageAuthRequired(function Profile({
           variant="primary"
           onClick={() => {
             {
+              handleSaveChanges;
             }
           }}
         >
