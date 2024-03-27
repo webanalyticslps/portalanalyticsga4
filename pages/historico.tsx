@@ -151,7 +151,8 @@ export default withPageAuthRequired(function Profile({
             <Form.Control
               type="text"
               placeholder="Descrição"
-              defaultValue={selectedHistorico?.descricao}
+              value={selectedHistorico?.descricao}
+              onChange={(e) => setDescricao(e.target.value)}
             />
             <Form.Label>Data e hora</Form.Label>
             <Form.Control
