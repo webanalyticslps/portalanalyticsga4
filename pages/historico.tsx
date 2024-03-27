@@ -211,7 +211,7 @@ export default withPageAuthRequired(function Profile({
           HISTÓRICO DE BUGS E IMPLEMENTAÇÕES
         </p>
       </h2>
-      <EditModal />
+
       <div>
         <div className="row text-light bg-lopes border border-dark">
           <div className="col">Tipo de Registro</div>
