@@ -201,7 +201,6 @@ export default withPageAuthRequired(function Profile({
           variant="primary"
           onClick={() => {
             {
-              handleSaveChanges;
             }
           }}
         >
