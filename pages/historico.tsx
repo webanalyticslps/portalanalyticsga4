@@ -186,7 +186,8 @@ export default withPageAuthRequired(function Profile({
               <Form.Control
                 type="text"
                 placeholder="Tipo de implementação"
-                defaultValue={selectedHistorico?.tipo_implementacao}
+                value={tipoImplementacao}
+                onChange={(e) => setTipoImplementacao(e.target.value)}
               />
               <Form.Label>Descrição</Form.Label>
               <Form.Control
