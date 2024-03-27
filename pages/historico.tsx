@@ -6,7 +6,7 @@ import {
 import Head from "next/head";
 import { Container, Row, Card, Button, Modal, Form } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const historicoImplementacoesBugs = await getAllHistoricoImplementacoesBugs();
@@ -124,110 +124,78 @@ export default withPageAuthRequired(function Profile({
 
   console.log(showModal);
 
-  const EditModal = () => (
-    <Modal show={showModal} onHide={handleCloseModal} style={{ zIndex: 1050 }}>
-      <Modal.Header closeButton>
-        <Modal.Title>Editar Registro</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        {/* Aqui você pode colocar um formulário para editar o registro.
-            Use os estados como `selectedHistorico` para preencher os dados existentes */}
-        <Form>
-          {/* Exemplo de campo do formulário */}
-          <Form.Group controlId="formDescricao">
-            <Form.Label>Tipo de registro</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Tipo de registro"
-              defaultValue={selectedHistorico?.tipo_registro}
-            />
-            <Form.Label>Tipo de implementação</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Tipo de implementação"
-              defaultValue={selectedHistorico?.tipo_implementacao}
-            />
-            <Form.Label>Descrição</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Descrição"
-              value={selectedHistorico?.descricao}
-              onChange={(e) => setDescricao(e.target.value)}
-            />
-            <Form.Label>Data e hora</Form.Label>
-            <Form.Control
-              type="datetime-local"
-              placeholder="Data e hora"
-              defaultValue={
-                selectedHistorico?.data_hora
-                  ? new Date(selectedHistorico.data_hora)
-                      .toISOString()
-                      .slice(0, 16)
-                  : ""
-              }
-            />
+  const EditModal = ({
+    showModal,
+    handleCloseModal,
+    selectedHistorico,
+    handleSaveChanges,
+  }) => {
+    const [formValues, setFormValues] = useState({
+      descricao: "",
+      tipo_registro: "",
+      tipo_implementacao: "",
+      // Inclua os outros campos conforme necessário
+    });
 
-            <Form.Label>Status</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Status"
-              defaultValue={selectedHistorico?.status}
-            />
-            <Form.Label>Responsável</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Responsável"
-              defaultValue={selectedHistorico?.responsavel}
-            />
-            <Form.Label>Container ID GTM</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Container ID GTM"
-              defaultValue={selectedHistorico?.container_id_gtm}
-            />
-            <Form.Label>Propriedade GA4</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Propriedade GA4"
-              defaultValue={selectedHistorico?.propriedade_id_ga4}
-            />
-            <Form.Label>Impacto</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Impacto"
-              defaultValue={selectedHistorico?.impacto}
-            />
-            <Form.Label>Solução</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Solução"
-              defaultValue={selectedHistorico?.solucao}
-            />
-            <Form.Label>Data e hora da resolução</Form.Label>
-            <Form.Control
-              type="datetime-local"
-              placeholder="Data e hora da resolução"
-              defaultValue={
-                selectedHistorico?.data_hora_resolucao
-                  ? new Date(selectedHistorico.data_hora_resolucao)
-                      .toISOString()
-                      .slice(0, 16)
-                  : ""
-              }
-            />
-          </Form.Group>
-        </Form>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleCloseModal}>
-          Fechar
-        </Button>
-        <Button variant="primary" onClick={() => handleSaveChanges()}>
-          Salvar Alterações
-        </Button>
-      </Modal.Footer>
-    </Modal>
-  );
+    useEffect(() => {
+      // Atualiza os valores do formulário com os dados de `selectedHistorico` quando o modal é aberto
+      if (showModal && selectedHistorico) {
+        setFormValues({
+          descricao: selectedHistorico.descricao || "",
+          tipo_registro: selectedHistorico.tipo_registro || "",
+          tipo_implementacao: selectedHistorico.tipo_implementacao || "",
+          // Defina os valores iniciais para os outros campos aqui
+        });
+      }
+    }, [selectedHistorico, showModal]);
+
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormValues((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    };
+
+    const onSaveChanges = () => {
+      // Passa `formValues` para a função de salvar as alterações
+      handleSaveChanges(formValues);
+    };
+
+    return (
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        style={{ zIndex: 1050 }}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Editar Registro</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group controlId="formDescricao">
+              <Form.Label>Descrição</Form.Label>
+              <Form.Control
+                type="text"
+                name="descricao"
+                value={formValues.descricao}
+                onChange={handleChange}
+              />
+              {/* Repita para outros campos, assegurando-se de usar `value` e `onChange` */}
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Fechar
+          </Button>
+          <Button variant="primary" onClick={onSaveChanges}>
+            Salvar Alterações
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  };
 
   return (
     <div className="container-fluid ">
