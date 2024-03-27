@@ -6,7 +6,7 @@ import {
 import Head from "next/head";
 import { Container, Row, Card, Button, Modal, Form } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const historicoImplementacoesBugs = await getAllHistoricoImplementacoesBugs();
@@ -54,66 +54,69 @@ export default withPageAuthRequired(function Profile({
   };
 
   const handleSaveChanges = async () => {
-    const tipo_implementacao =
-      document.getElementById("formTipoImplementacao")?.value || "";
-    const tipo_registro =
-      document.getElementById("formTipoRegistro")?.value || "";
-    const descricao = document.getElementById("formDescricao")?.value || "";
-    const data_hora = document.getElementById("formDataHora")?.value || "";
-    const status = document.getElementById("formStatus")?.value || "";
-    const responsavel = document.getElementById("formResponsavel")?.value || "";
-    const container_id_gtm =
-      document.getElementById("formContainerIdGtm")?.value || "";
-    const propriedade_id_ga4 =
-      document.getElementById("formPropriedadeIdGa4")?.value || "";
-    const impacto = document.getElementById("formImpacto")?.value || "";
-    const data_hora_resolucao =
-      document.getElementById("formDataHoraResolucao")?.value || "";
+    useEffect(() => {
+      const tipo_registro =
+        document.getElementById("formTipoRegistro")?.value || "";
+      const tipo_implementacao =
+        document.getElementById("formTipoImplementacao")?.value || "";
+      const descricao = document.getElementById("formDescricao")?.value || "";
+      const data_hora = document.getElementById("formDataHora")?.value || "";
+      const status = document.getElementById("formStatus")?.value || "";
+      const responsavel =
+        document.getElementById("formResponsavel")?.value || "";
+      const container_id_gtm =
+        document.getElementById("formContainerIdGtm")?.value || "";
+      const propriedade_id_ga4 =
+        document.getElementById("formPropriedadeIdGa4")?.value || "";
+      const impacto = document.getElementById("formImpacto")?.value || "";
+      const data_hora_resolucao =
+        document.getElementById("formDataHoraResolucao")?.value || "";
 
-    const updatedHistorico = {
-      id: selectedHistorico?.id,
-      tipo_registro: tipo_registro,
-      tipo_implementacao: tipo_implementacao,
-      descricao: descricao,
-      data_hora: data_hora,
-      status: status,
-      responsavel: responsavel,
-      container_id_gtm: container_id_gtm,
-      propriedade_id_ga4: propriedade_id_ga4,
-      impacto: impacto,
-      data_hora_resolucao: data_hora_resolucao,
-    };
+      const updatedHistorico = {
+        id: selectedHistorico?.id,
+        tipo_registro: tipo_registro,
+        tipo_implementacao: tipo_implementacao,
+        descricao: descricao,
+        data_hora: data_hora,
+        status: status,
+        responsavel: responsavel,
+        container_id_gtm: container_id_gtm,
+        propriedade_id_ga4: propriedade_id_ga4,
+        impacto: impacto,
+        data_hora_resolucao: data_hora_resolucao,
+      };
 
-    const updatedHistorico = {
-      id: selectedHistorico?.id,
-      tipo_registro: tipo_registro,
-      tipo_implementacao: tipo_implementacao,
-      descricao: descricao,
-      data_hora: data_hora,
-      status: status,
-      responsavel: responsavel,
-      container_id_gtm: container_id_gtm,
-      propriedade_id_ga4: propriedade_id_ga4,
-      impacto: impacto,
-      data_hora_resolucao: data_hora_resolucao,
-    };
+      const updatedHistorico = {
+        id: selectedHistorico?.id,
+        tipo_registro: tipo_registro,
+        tipo_implementacao: tipo_implementacao,
+        descricao: descricao,
+        data_hora: data_hora,
+        status: status,
+        responsavel: responsavel,
+        container_id_gtm: container_id_gtm,
+        propriedade_id_ga4: propriedade_id_ga4,
+        impacto: impacto,
+        data_hora_resolucao: data_hora_resolucao,
+      };
 
-    try {
-      const axios = require("axios");
-      // Atualize esta URL com a rota correta da sua API para atualizações
-      const response = await axios.put(
-        `/api/update-historico/${selectedHistorico?.id}`,
-        updatedHistorico
-      );
-      console.log(response.data);
-      // Adicione qualquer lógica adicional após a atualização ser bem-sucedida
-      // Por exemplo, fechar o modal e atualizar a lista de históricos na UI
-      handleCloseModal();
-      // Talvez você queira recarregar os dados ou atualizar o estado para refletir as mudanças
-    } catch (error) {
-      console.error("Erro ao salvar as alterações: ", error);
-      // Tratamento de erro
-    }
+      try {
+        const axios = require("axios");
+        // Atualize esta URL com a rota correta da sua API para atualizações
+        const response = await axios.put(
+          `/api/update-historico/${selectedHistorico?.id}`,
+          updatedHistorico
+        );
+        console.log(response.data);
+        // Adicione qualquer lógica adicional após a atualização ser bem-sucedida
+        // Por exemplo, fechar o modal e atualizar a lista de históricos na UI
+        handleCloseModal();
+        // Talvez você queira recarregar os dados ou atualizar o estado para refletir as mudanças
+      } catch (error) {
+        console.error("Erro ao salvar as alterações: ", error);
+        // Tratamento de erro
+      }
+    }, []);
   };
 
   const handleClick = async (
