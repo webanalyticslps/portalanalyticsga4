@@ -25,9 +25,7 @@ export default withPageAuthRequired(function Profile({
   historicoImplementacoesBugs,
 }) {
   const [id, setId] = useState("");
-  const [tipoRegistro, setTipoRegistro] = useState(
-    selectedHistorico?.tipo_registro || ""
-  );
+  const [tipoRegistro, setTipoRegistro] = useState("");
   const [tipoImplementacao, setTipoImplementacao] = useState("");
   const [descricao, setDescricao] = useState("");
   const [dataHora, setDataHora] = useState("");
