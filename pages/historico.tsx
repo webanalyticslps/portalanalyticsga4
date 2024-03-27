@@ -119,10 +119,17 @@ export default withPageAuthRequired(function Profile({
             />
             <Form.Label>Data e hora</Form.Label>
             <Form.Control
-              type="string"
+              type="datetime-local"
               placeholder="Data e hora"
-              defaultValue={selectedHistorico?.data_hora}
+              defaultValue={
+                selectedHistorico?.data_hora
+                  ? new Date(selectedHistorico.data_hora)
+                      .toISOString()
+                      .slice(0, 16)
+                  : ""
+              }
             />
+
             <Form.Label>Status</Form.Label>
             <Form.Control
               type="text"
@@ -161,9 +168,15 @@ export default withPageAuthRequired(function Profile({
             />
             <Form.Label>Data e hora da resolução</Form.Label>
             <Form.Control
-              type="string"
+              type="datetime-local"
               placeholder="Data e hora da resolução"
-              defaultValue={selectedHistorico?.data_hora_resolucao}
+              defaultValue={
+                selectedHistorico?.data_hora_resolucao
+                  ? new Date(selectedHistorico.data_hora_resolucao)
+                      .toISOString()
+                      .slice(0, 16)
+                  : ""
+              }
             />
           </Form.Group>
         </Form>
