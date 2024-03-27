@@ -72,6 +72,25 @@ export default withPageAuthRequired(function Profile({
       "formDataHoraResolucao"
     ).value;
 
+    const tipo_implementacao = tipoImplementacaoElement
+      ? tipoImplementacaoElement.value
+      : "";
+    const tipo_registro = tipoRegistroElement ? tipoRegistroElement.value : "";
+    const descricao = descricaoElement ? tipoDescricaoElement.value : "";
+    const data_hora = dataHoraElement ? dataHoraElement.value : "";
+    const status = statusElement ? statusElement.value : "";
+    const responsavel = responsavelElement ? responsavelElement.value : "";
+    const container_id_gtm = containerIdGtmElement
+      ? containerIdGtmElement.value
+      : "";
+    const propriedade_id_ga4 = propriedadeIdGa4Element
+      ? propriedadeIdGa4Element.value
+      : "";
+    const impacto = impactoElement ? impactoElement.value : "";
+    const data_hora_resolucao = dataHoraResolucaoElement
+      ? dataHoraResolucaoElement.value
+      : "";
+
     const updatedHistorico = {
       id: selectedHistorico?.id,
       tipo_registro: tipo_registro,
