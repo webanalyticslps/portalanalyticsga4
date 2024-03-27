@@ -22,7 +22,7 @@ export default async function handler(
     propriedade_id_ga4,
     impacto,
     solucao,
-    data_hora_resolucao
+    data_hora_resolucao,
   } = req.body;
 
   // Função para transformar a data/hora recebida para o formato completo UTC
@@ -34,9 +34,18 @@ export default async function handler(
     return dataHoraUTC;
   }
 
+  function formatarDataResolucaoParaUTC(dataHoraResolucaoLocal: string) {
+    // Cria um objeto Date a partir da string "AAAA-MM-DDThh:mm"
+    const dataResolucaoObj = new Date(dataHoraResolucaoLocal);
+    // Converte para o formato ISO "AAAA-MM-DDThh:mm:ss.sssZ" em UTC
+    const dataHoraResolucaoUTC = dataResolucaoObj.toISOString();
+    return dataHoraResolucaoUTC;
+  }
+
   async function main() {
     const data_hora_formatada = formatarDataParaUTC(data_hora);
-    const data_hora_solucao_formatada = formatarDataParaUTC(data_hora_resolucao);
+    const data_hora_solucao_formatada =
+      formatarDataResolucaoParaUTC(data_hora_resolucao);
 
     try {
       const updateRegistro = await prisma.historicoImplementacoesBugs.update({
