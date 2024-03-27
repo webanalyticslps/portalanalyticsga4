@@ -5,7 +5,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { id } = req.query; // Agora o 'id' é extraído da URL
 
   if (req.method !== "PUT") {
     return res.status(405).json({ message: "Método não permitido" });
