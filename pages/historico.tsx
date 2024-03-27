@@ -179,7 +179,7 @@ export default withPageAuthRequired(function Profile({
               <Form.Control
                 type="text"
                 placeholder="Tipo de registro"
-                value={selectedHistorico?.tipo_registro}
+                defaultValue={selectedHistorico?.tipo_registro}
               />
               <Form.Label>Tipo de implementação</Form.Label>
               <Form.Control
