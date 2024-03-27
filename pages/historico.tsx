@@ -6,7 +6,7 @@ import {
 import Head from "next/head";
 import { Container, Row, Card, Button, Modal, Form } from "react-bootstrap";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const historicoImplementacoesBugs = await getAllHistoricoImplementacoesBugs();
@@ -64,9 +64,9 @@ export default withPageAuthRequired(function Profile({
     setSelectedHistorico(null); // Limpar o registro selecionado
   };
 
-  const handleSaveChanges = async () => {
+  const handleSaveChanges = useCallback(async () => {
     const updatedHistorico = {
-      id: selectedHistorico?.id, // Certifique-se de que o histórico selecionado tenha um ID para atualização
+      id: selectedHistorico?.id,
       tipo_registro: tipoRegistro,
       tipo_implementacao: tipoImplementacao,
       descricao: descricao,
@@ -83,21 +83,30 @@ export default withPageAuthRequired(function Profile({
 
     try {
       const axios = require("axios");
-      // Atualize esta URL com a rota correta da sua API para atualizações
       const response = await axios.put(
         `/api/update-historico/${selectedHistorico?.id}`,
         updatedHistorico
       );
       console.log(response.data);
-      // Adicione qualquer lógica adicional após a atualização ser bem-sucedida
-      // Por exemplo, fechar o modal e atualizar a lista de históricos na UI
       handleCloseModal();
-      // Talvez você queira recarregar os dados ou atualizar o estado para refletir as mudanças
     } catch (error) {
       console.error("Erro ao salvar as alterações: ", error);
-      // Tratamento de erro
     }
-  };
+  }, [
+    tipoRegistro,
+    tipoImplementacao,
+    descricao,
+    dataHora,
+    status,
+    responsavel,
+    containerIdGtm,
+    propriedadeIdGa4,
+    impacto,
+    solucao,
+    dataHoraResolucao,
+    selectedHistorico?.id,
+    handleCloseModal,
+  ]); // Certifique-se de incluir todas as dependências
 
   const handleClick = async (
     tipo_registro: any,
