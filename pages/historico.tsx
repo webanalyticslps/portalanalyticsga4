@@ -54,41 +54,41 @@ export default withPageAuthRequired(function Profile({
   };
 
   const handleSaveChanges = async () => {
-    const tipo_implementacao_changed = document.getElementById(
+    const tipo_implementacao = document.getElementById(
       "formTipoImplementacao"
     ).value;
-    const tipo_registro_changed = document.getElementById("formTipoRegistro").value;
-    const descricao_changed = document.getElementById("formDescricao").value;
-    const data_hora_changed = document.getElementById("formDataHora").value;
-    const status_changed = document.getElementById("formStatus").value;
-    const responsavel_changed = document.getElementById("formResponsavel").value;
-    const container_id_gtm_changed =
+    const tipo_registro = document.getElementById("formTipoRegistro").value;
+    const descricao = document.getElementById("formDescricao").value;
+    const data_hora = document.getElementById("formDataHora").value;
+    const status = document.getElementById("formStatus").value;
+    const responsavel = document.getElementById("formResponsavel").value;
+    const container_id_gtm =
       document.getElementById("formContainerIdGtm").value;
-    const propriedade_id_ga4_changed = document.getElementById(
+    const propriedade_id_ga4 = document.getElementById(
       "formPropriedadeIdGa4"
     ).value;
-    const impacto_changed = document.getElementById("formImpacto").value;
-    const data_hora_resolucao_changed = document.getElementById(
+    const impacto = document.getElementById("formImpacto").value;
+    const data_hora_resolucao = document.getElementById(
       "formDataHoraResolucao"
     ).value;
 
-    const tipo_implementacao_changed = tipoImplementacaoElement
-      ? tipoImplementacaoElement.value
+    const tipo_implementacao_changed = tipo_implementacao
+      ? tipo_implementacao.value
       : "";
-    const tipo_registro_changed = tipoRegistroElement ? tipoRegistroElement.value : "";
-    const descricao_changed = descricaoElement ? tipoDescricaoElement.value : "";
+    const tipo_registro_changed = tipo_registro ? tipo_registro.value : "";
+    const descricao_changed = descricao ? descricao.value : "";
     const data_hora_changed = dataHoraElement ? dataHoraElement.value : "";
-    const status_changed = statusElement ? statusElement.value : "";
-    const responsavel_changed = responsavelElement ? responsavelElement.value : "";
-    const container_id_gtm_changed = containerIdGtmElement
-      ? containerIdGtmElement.value
+    const status_changed = status ? status.value : "";
+    const responsavel_changed = responsavel ? responsavel.value : "";
+    const container_id_gtm_changed = container_id_gtm
+      ? container_id_gtm.value
       : "";
-    const propriedade_id_ga4_changed = propriedadeIdGa4Element
-      ? propriedadeIdGa4Element.value
+    const propriedade_id_ga4_changed = propriedade_id_ga4
+      ? propriedade_id_ga4.value
       : "";
-    const impacto_changed = impactoElement ? impactoElement.value : "";
-    const data_hora_resolucao_changed = dataHoraResolucaoElement
-      ? dataHoraResolucaoElement.value
+    const impacto_changed = impacto ? impacto.value : "";
+    const data_hora_resolucao_changed = data_hora_resolucao
+      ? data_hora_resolucao.value
       : "";
 
     const updatedHistorico = {
