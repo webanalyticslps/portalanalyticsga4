@@ -158,7 +158,6 @@ export default withPageAuthRequired(function Profile({
     handleCloseModal,
     handleSaveChanges,
     selectedHistorico,
-    setTipoRegistro,
   }) => {
     return (
       <Modal
@@ -193,67 +192,65 @@ export default withPageAuthRequired(function Profile({
               <Form.Control
                 type="text"
                 placeholder="Descrição"
-                defaultValue={selectedHistorico?.descricao}
+                value={descricao}
+                onChange={(e) => setDescricao(e.target.value)}
               />
               <Form.Label>Data e hora</Form.Label>
               <Form.Control
                 type="datetime-local"
                 placeholder="Data e hora"
-                defaultValue={
-                  selectedHistorico?.data_hora
-                    ? new Date(selectedHistorico.data_hora)
-                        .toISOString()
-                        .slice(0, 16)
-                    : ""
-                }
+                value={dataHora}
+                onChange={(e) => setDataHora(e.target.value)}
               />
 
               <Form.Label>Status</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Status"
-                defaultValue={selectedHistorico?.status}
+                value={status}
+                onChange={(e) => setStatus(e.target.value)}
               />
               <Form.Label>Responsável</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Responsável"
-                defaultValue={selectedHistorico?.responsavel}
+                value={responsavel}
+                onChange={(e) => setResponsavel(e.target.value)}
               />
               <Form.Label>Container ID GTM</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Container ID GTM"
-                defaultValue={selectedHistorico?.container_id_gtm}
+                value={containerIdGtm}
+                onChange={(e) => setContainerIdGtm(e.target.value)}
               />
               <Form.Label>Propriedade GA4</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Propriedade GA4"
-                defaultValue={selectedHistorico?.propriedade_id_ga4}
+                value={propriedadeIdGa4}
+                onChange={(e) => setPropriedadeIdGa4(e.target.value)}
               />
               <Form.Label>Impacto</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Impacto"
-                defaultValue={selectedHistorico?.impacto}
+                value={impacto}
+                onChange={(e) => setImpacto(e.target.value)}
               />
               <Form.Label>Solução</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Solução"
-                defaultValue={selectedHistorico?.solucao}
+                value={solucao}
+                onChange={(e) => setSolucao(e.target.value)}
               />
               <Form.Label>Data e hora da resolução</Form.Label>
               <Form.Control
                 type="datetime-local"
                 placeholder="Data e hora da resolução"
-                defaultValue={
-                  selectedHistorico?.data_hora_resolucao
-                    ? new Date(selectedHistorico.data_hora_resolucao)
-                        .toISOString()
-                        .slice(0, 16)
-                    : ""
+                defaultValue={dataHoraResolucao}
+                onChange={(e) => setDataHoraResolucao(e.target.value)}
                 }
               />
             </Form.Group>
