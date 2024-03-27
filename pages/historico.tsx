@@ -158,6 +158,18 @@ export default withPageAuthRequired(function Profile({
     handleCloseModal,
     handleSaveChanges,
     selectedHistorico,
+    setTipoImplementacao,
+    setTipoRegistro,
+    setDescricao,
+    setDataHora,
+    setStatus,
+    setResponsavel,
+    setContainerIdGtm,
+    setPropriedadeIdGa4,
+    setTipoRegistro,
+    setImpacto,
+    setSolucao,
+    setDataHoraResolucao,
   }) => {
     return (
       <Modal
@@ -249,7 +261,7 @@ export default withPageAuthRequired(function Profile({
               <Form.Control
                 type="datetime-local"
                 placeholder="Data e hora da resolução"
-                defaultValue={dataHoraResolucao}
+                value={dataHoraResolucao}
                 onChange={(e) => setDataHoraResolucao(e.target.value)}
               />
             </Form.Group>
