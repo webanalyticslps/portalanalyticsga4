@@ -39,6 +39,8 @@ export default withPageAuthRequired(function Profile({
   const [showModal, setShowModal] = useState(false);
   const [selectedHistorico, setSelectedHistorico] =
     useState<HistoricoImplementacoesBugs | null>(null);
+  const [tipoRegistro2, setTipoRegistro2] = useState("");
+
 
   // Função para abrir o modal com os dados do registro selecionado
   const handleOpenModal = (historico: any) => {
@@ -140,7 +142,7 @@ export default withPageAuthRequired(function Profile({
               type="text"
               placeholder="Tipo de registro"
               value={selectedHistorico?.tipo_registro}
-              onChange={(e) => setTipoRegistro(e.currentTarget.value)}
+              onChange={(e) => setTipoRegistro2(e.currentTarget.value)}
             />
             <Form.Label>Tipo de implementação</Form.Label>
             <Form.Control
