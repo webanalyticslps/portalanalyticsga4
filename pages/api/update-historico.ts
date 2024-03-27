@@ -45,7 +45,7 @@ export default async function handler(
   async function main() {
     const data_hora_formatada = formatarDataParaUTC(data_hora);
     const data_hora_resolucao_formatada =
-      formatarDataResolucaoParaUTC(data_hora_reresolucao);
+      formatarDataResolucaoParaUTC(data_hora_resolucao);
 
     try {
       const updateRegistro = await prisma.historicoImplementacoesBugs.update({
