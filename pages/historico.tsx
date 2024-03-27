@@ -108,6 +108,7 @@ export default withPageAuthRequired(function Profile({
     handleCloseModal,
   ]); // Certifique-se de incluir todas as dependências
 
+  // Função para criar novo registro
   const handleClick = async (
     tipo_registro: any,
     tipo_implementacao: any,
@@ -179,27 +180,23 @@ export default withPageAuthRequired(function Profile({
                 type="text"
                 placeholder="Tipo de registro"
                 value={selectedHistorico?.tipo_registro}
-                onChange={(e) => setTipoRegistro(e.target.value)} // Atualiza o estado baseado na entrada do usuário
               />
               <Form.Label>Tipo de implementação</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Tipo de implementação"
                 defaultValue={selectedHistorico?.tipo_implementacao}
-                onChange={(e) => setTipoImplementacao(e.target.value)} // Atualiza o estado baseado na entrada do usuário
               />
               <Form.Label>Descrição</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Descrição"
                 defaultValue={selectedHistorico?.descricao}
-                onChange={(e) => setDescricao(e.target.value)} // Atualiza o estado baseado na entrada do usuário
               />
               <Form.Label>Data e hora</Form.Label>
               <Form.Control
                 type="datetime-local"
                 placeholder="Data e hora"
-                onChange={(e) => setDataHora(e.target.value)} // Atualiza o estado baseado na entrada do usuário
                 defaultValue={
                   selectedHistorico?.data_hora
                     ? new Date(selectedHistorico.data_hora)
@@ -214,48 +211,41 @@ export default withPageAuthRequired(function Profile({
                 type="text"
                 placeholder="Status"
                 defaultValue={selectedHistorico?.status}
-                onChange={(e) => setStatus(e.target.value)} // Atualiza o estado baseado na entrada do usuário
               />
               <Form.Label>Responsável</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Responsável"
                 defaultValue={selectedHistorico?.responsavel}
-                onChange={(e) => setResponsavel(e.target.value)} // Atualiza o estado baseado na entrada do usuário
               />
               <Form.Label>Container ID GTM</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Container ID GTM"
                 defaultValue={selectedHistorico?.container_id_gtm}
-                onChange={(e) => setContainerIdGtm(e.target.value)} // Atualiza o estado baseado na entrada do usuário
               />
               <Form.Label>Propriedade GA4</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Propriedade GA4"
                 defaultValue={selectedHistorico?.propriedade_id_ga4}
-                onChange={(e) => setPropriedadeIdGa4(e.target.value)} // Atualiza o estado baseado na entrada do usuário
               />
               <Form.Label>Impacto</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Impacto"
                 defaultValue={selectedHistorico?.impacto}
-                onChange={(e) => setImpacto(e.target.value)} // Atualiza o estado baseado na entrada do usuário
               />
               <Form.Label>Solução</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Solução"
                 defaultValue={selectedHistorico?.solucao}
-                onChange={(e) => setSolucao(e.target.value)} // Atualiza o estado baseado na entrada do usuário
               />
               <Form.Label>Data e hora da resolução</Form.Label>
               <Form.Control
                 type="datetime-local"
                 placeholder="Data e hora da resolução"
-                onChange={(e) => setDataHoraResolucao(e.target.value)} // Atualiza o estado baseado na entrada do usuário
                 defaultValue={
                   selectedHistorico?.data_hora_resolucao
                     ? new Date(selectedHistorico.data_hora_resolucao)
