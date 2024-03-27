@@ -151,6 +151,16 @@ export default withPageAuthRequired(function Profile({
     handleSaveChanges: () => void;
     selectedHistorico: HistoricoImplementacoesBugs | null; // Assumindo que você tem esse tipo definido em outro lugar
     setTipoRegistro: React.Dispatch<React.SetStateAction<string>>;
+    setTipoImplementacao: React.Dispatch<React.SetStateAction<string>>;
+    setDescricao: React.Dispatch<React.SetStateAction<string>>;
+    setDataHora: React.Dispatch<React.SetStateAction<string>>;
+    setStatus: React.Dispatch<React.SetStateAction<string>>;
+    setResponsavel: React.Dispatch<React.SetStateAction<string>>;
+    setContainerIdGtm: React.Dispatch<React.SetStateAction<string>>;
+    setPropriedadeIdGa4: React.Dispatch<React.SetStateAction<string>>;
+    setImpacto: React.Dispatch<React.SetStateAction<string>>;
+    setSolucao: React.Dispatch<React.SetStateAction<string>>;
+    setDataHoraResolucao: React.Dispatch<React.SetStateAction<string>>;
   }
 
   const EditModal: React.FC<EditModalProps> = ({
@@ -166,7 +176,6 @@ export default withPageAuthRequired(function Profile({
     setResponsavel,
     setContainerIdGtm,
     setPropriedadeIdGa4,
-    setTipoRegistro,
     setImpacto,
     setSolucao,
     setDataHoraResolucao,
