@@ -25,7 +25,9 @@ export default withPageAuthRequired(function Profile({
   historicoImplementacoesBugs,
 }) {
   const [id, setId] = useState("");
-  const [tipoRegistro, setTipoRegistro] = useState("");
+  const [tipoRegistro, setTipoRegistro] = useState(
+    selectedHistorico?.tipo_registro || ""
+  );
   const [tipoImplementacao, setTipoImplementacao] = useState("");
   const [descricao, setDescricao] = useState("");
   const [dataHora, setDataHora] = useState("");
@@ -179,7 +181,8 @@ export default withPageAuthRequired(function Profile({
               <Form.Control
                 type="text"
                 placeholder="Tipo de registro"
-                defaultValue={selectedHistorico?.tipo_registro}
+                value={tipoRegistro}
+                onChange={(e) => setTipoRegistro(e.target.value)}
               />
               <Form.Label>Tipo de implementação</Form.Label>
               <Form.Control
