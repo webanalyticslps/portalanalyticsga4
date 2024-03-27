@@ -251,7 +251,6 @@ export default withPageAuthRequired(function Profile({
                 placeholder="Data e hora da resolução"
                 defaultValue={dataHoraResolucao}
                 onChange={(e) => setDataHoraResolucao(e.target.value)}
-                }
               />
             </Form.Group>
           </Form>
