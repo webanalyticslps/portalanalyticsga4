@@ -124,7 +124,15 @@ export default withPageAuthRequired(function Profile({
 
   console.log(showModal);
 
-  const EditModal = ({
+  interface EditModalProps {
+    showModal: boolean;
+    handleCloseModal: () => void;
+    selectedHistorico: HistoricoImplementacoesBugs | null; // Substitua `HistoricoImplementacoesBugs` pelo tipo correto, se necessário
+    handleSaveChanges: () => Promise<void>; // Ajuste conforme a implementação real de `handleSaveChanges`
+    // Inclua outras props necessárias aqui
+  }
+
+  const EditModal: React.FC<EditModalProps> = ({
     showModal,
     handleCloseModal,
     selectedHistorico,
