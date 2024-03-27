@@ -124,117 +124,131 @@ export default withPageAuthRequired(function Profile({
 
   console.log(showModal);
 
-  const EditModal = () => (
-    <Modal show={showModal} onHide={handleCloseModal} style={{ zIndex: 1050 }}>
-      <Modal.Header closeButton>
-        <Modal.Title>Editar Registro</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        {/* Aqui você pode colocar um formulário para editar o registro.
+  const EditModal = ({
+    showModal,
+    handleCloseModal,
+    handleSaveChanges,
+    selectedHistorico,
+    setTipoRegistro,
+  }) => {
+    return (
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        style={{ zIndex: 1050 }}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Editar Registro</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {/* Aqui você pode colocar um formulário para editar o registro.
             Use os estados como `selectedHistorico` para preencher os dados existentes */}
-        <Form>
-          {/* Exemplo de campo do formulário */}
-          <Form.Group controlId="formDescricao">
-            <Form.Label>Tipo de registro</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Tipo de registro"
-              value={selectedHistorico?.tipo_registro}
-              onChange={(e) => setTipoRegistro(e.currentTarget.value)}
-            />
-            <Form.Label>Tipo de implementação</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Tipo de implementação"
-              defaultValue={selectedHistorico?.tipo_implementacao}
-            />
-            <Form.Label>Descrição</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Descrição"
-              defaultValue={selectedHistorico?.descricao}
-            />
-            <Form.Label>Data e hora</Form.Label>
-            <Form.Control
-              type="datetime-local"
-              placeholder="Data e hora"
-              defaultValue={
-                selectedHistorico?.data_hora
-                  ? new Date(selectedHistorico.data_hora)
-                      .toISOString()
-                      .slice(0, 16)
-                  : ""
-              }
-            />
+          <Form>
+            {/* Exemplo de campo do formulário */}
+            <Form.Group controlId="formDescricao">
+              <Form.Label>Tipo de registro</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Tipo de registro"
+                value={selectedHistorico?.tipo_registro}
+                onChange={(e) => setTipoRegistro(e.currentTarget.value)}
+              />
+              <Form.Label>Tipo de implementação</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Tipo de implementação"
+                defaultValue={selectedHistorico?.tipo_implementacao}
+              />
+              <Form.Label>Descrição</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Descrição"
+                defaultValue={selectedHistorico?.descricao}
+              />
+              <Form.Label>Data e hora</Form.Label>
+              <Form.Control
+                type="datetime-local"
+                placeholder="Data e hora"
+                defaultValue={
+                  selectedHistorico?.data_hora
+                    ? new Date(selectedHistorico.data_hora)
+                        .toISOString()
+                        .slice(0, 16)
+                    : ""
+                }
+              />
 
-            <Form.Label>Status</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Status"
-              defaultValue={selectedHistorico?.status}
-            />
-            <Form.Label>Responsável</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Responsável"
-              defaultValue={selectedHistorico?.responsavel}
-            />
-            <Form.Label>Container ID GTM</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Container ID GTM"
-              defaultValue={selectedHistorico?.container_id_gtm}
-            />
-            <Form.Label>Propriedade GA4</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Propriedade GA4"
-              defaultValue={selectedHistorico?.propriedade_id_ga4}
-            />
-            <Form.Label>Impacto</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Impacto"
-              defaultValue={selectedHistorico?.impacto}
-            />
-            <Form.Label>Solução</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Solução"
-              defaultValue={selectedHistorico?.solucao}
-            />
-            <Form.Label>Data e hora da resolução</Form.Label>
-            <Form.Control
-              type="datetime-local"
-              placeholder="Data e hora da resolução"
-              defaultValue={
-                selectedHistorico?.data_hora_resolucao
-                  ? new Date(selectedHistorico.data_hora_resolucao)
-                      .toISOString()
-                      .slice(0, 16)
-                  : ""
+              <Form.Label>Status</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Status"
+                defaultValue={selectedHistorico?.status}
+              />
+              <Form.Label>Responsável</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Responsável"
+                defaultValue={selectedHistorico?.responsavel}
+              />
+              <Form.Label>Container ID GTM</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Container ID GTM"
+                defaultValue={selectedHistorico?.container_id_gtm}
+              />
+              <Form.Label>Propriedade GA4</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Propriedade GA4"
+                defaultValue={selectedHistorico?.propriedade_id_ga4}
+              />
+              <Form.Label>Impacto</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Impacto"
+                defaultValue={selectedHistorico?.impacto}
+              />
+              <Form.Label>Solução</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Solução"
+                defaultValue={selectedHistorico?.solucao}
+              />
+              <Form.Label>Data e hora da resolução</Form.Label>
+              <Form.Control
+                type="datetime-local"
+                placeholder="Data e hora da resolução"
+                defaultValue={
+                  selectedHistorico?.data_hora_resolucao
+                    ? new Date(selectedHistorico.data_hora_resolucao)
+                        .toISOString()
+                        .slice(0, 16)
+                    : ""
+                }
+              />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Fechar
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              {
+                handleSaveChanges;
               }
-            />
-          </Form.Group>
-        </Form>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleCloseModal}>
-          Fechar
-        </Button>
-        <Button
-          variant="primary"
-          onClick={() => {
-            {
-              handleSaveChanges;
-            }
-          }}
-        >
-          Salvar Alterações
-        </Button>
-      </Modal.Footer>
-    </Modal>
-  );
+            }}
+          >
+            Salvar Alterações
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  };
+
+  const MemoizedEditModal = React.memo(EditModal);
 
   return (
     <div className="container-fluid ">
@@ -243,7 +257,13 @@ export default withPageAuthRequired(function Profile({
           HISTÓRICO DE BUGS E IMPLEMENTAÇÕES
         </p>
       </h2>
-      <EditModal />
+      <MemoizedEditModal
+        showModal={showModal}
+        handleCloseModal={handleCloseModal}
+        handleSaveChanges={handleSaveChanges}
+        selectedHistorico={selectedHistorico}
+        setTipoRegistro={setTipoRegistro}
+      />
       <div>
         <div className="row text-light bg-lopes border border-dark">
           <div className="col">Tipo de Registro</div>
