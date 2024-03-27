@@ -303,7 +303,18 @@ export default withPageAuthRequired(function Profile({
         handleSaveChanges={handleSaveChanges}
         selectedHistorico={selectedHistorico}
         setTipoRegistro={setTipoRegistro}
+        setTipoImplementacao={setTipoImplementacao}
+        setDescricao={setDescricao}
+        setDataHora={setDataHora}
+        setStatus={setStatus}
+        setResponsavel={setResponsavel}
+        setContainerIdGtm={setContainerIdGtm}
+        setPropriedadeIdGa4={setPropriedadeIdGa4}
+        setImpacto={setImpacto}
+        setSolucao={setSolucao}
+        setDataHoraResolucao={setDataHoraResolucao}
       />
+
       <div>
         <div className="row text-light bg-lopes border border-dark">
           <div className="col">Tipo de Registro</div>
