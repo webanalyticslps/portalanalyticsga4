@@ -33,40 +33,34 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   };
 
   // Definindo uma interface para o formData
-  // Supondo que você tenha uma função para formatar as datas conforme necessário
-  function formatarData(data: string): string {
-    // Implementação da formatação da data
-    return new Date(data).toISOString(); // Exemplo de formatação, ajuste conforme necessário
+  interface FormData {
+    tipoRegistro: string;
+    tipoImplementacao: string;
+    descricao: string;
+    dataHora: string;
+    status: string;
+    responsavel: string;
+    containerIdGtm: string;
+    propriedadeIdGa4: string;
+    impacto: string;
+    solucao: string;
+    dataHoraResolucao: string;
+    // Adicione mais campos conforme necessário
   }
 
+  // No componente pai (Profile)
   const handleSaveChanges = async (formData: FormData) => {
-    if (!selectedHistorico) return;
-
-    // Transformando as chaves para o formato esperado pela API e formatando as datas
-    const dadosParaApi = {
-      tipo_registro: formData.tipoRegistro,
-      tipo_implementacao: formData.tipoImplementacao,
-      descricao: formData.descricao,
-      data_hora: formatarData(formData.dataHora),
-      status: formData.status,
-      responsavel: formData.responsavel,
-      container_id_gtm: formData.containerIdGtm,
-      propriedade_id_ga4: formData.propriedadeIdGa4,
-      impacto: formData.impacto,
-      solucao: formData.solucao,
-      data_hora_resolucao: formData.dataHoraResolucao
-        ? formatarData(formData.dataHoraResolucao)
-        : null,
-    };
+    if (!selectedHistorico) return; // Verifica se um histórico foi selecionado
 
     try {
+      // Aqui você faz a chamada de API para salvar as alterações
       const axios = require("axios");
       const response = await axios.put(
-        `/api/update-historico/${selectedHistorico.id}`,
-        dadosParaApi
+        `/api/update-historico/${selectedHistorico.id}`, // Endpoint correto
+        formData // Dados do formulário recebidos do EditModal
       );
       console.log("Dados salvos:", response.data);
-      handleCloseModal();
+      handleCloseModal(); // Fecha o modal após o sucesso
     } catch (error) {
       console.error("Erro ao salvar as alterações: ", error);
     }
