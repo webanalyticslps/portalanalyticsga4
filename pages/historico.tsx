@@ -79,46 +79,34 @@ export default withPageAuthRequired(function Profile({
   const handleSaveChanges = useCallback(async () => {
     const updatedHistorico = {
       id: selectedHistorico?.id,
-      tipo_registro: tipoRegistro,
-      tipo_implementacao: tipoImplementacao,
-      descricao: descricao,
-      data_hora: dataHora,
-      status: status,
-      responsavel: responsavel,
-      container_id_gtm: containerIdGtm,
-      propriedade_id_ga4: propriedadeIdGa4,
-      impacto: impacto,
-      solucao: solucao,
-      data_hora_resolucao: dataHoraResolucao,
+      tipo_registro: formData.tipoRegistro,
+      tipo_implementacao: formData.tipoImplementacao,
+      descricao: formData.descricao,
+      data_hora: formData.dataHora,
+      status: formData.status,
+      responsavel: formData.responsavel,
+      container_id_gtm: formData.containerIdGtm,
+      propriedade_id_ga4: formData.propriedadeIdGa4,
+      impacto: formData.impacto,
+      solucao: formData.solucao,
+      data_hora_resolucao: formData.dataHoraResolucao,
       // Adicione mais campos conforme necessário
     };
 
     try {
+      // Supondo que você use axios para a chamada de API
       const axios = require("axios");
       const response = await axios.put(
         `/api/update-historico/${selectedHistorico?.id}`,
         updatedHistorico
       );
       console.log(response.data);
+      // Após a atualização, você pode querer fechar o modal ou atualizar o estado da página de alguma forma
       handleCloseModal();
     } catch (error) {
       console.error("Erro ao salvar as alterações: ", error);
     }
-  }, [
-    tipoRegistro,
-    tipoImplementacao,
-    descricao,
-    dataHora,
-    status,
-    responsavel,
-    containerIdGtm,
-    propriedadeIdGa4,
-    impacto,
-    solucao,
-    dataHoraResolucao,
-    selectedHistorico?.id,
-    handleCloseModal,
-  ]); // Certifique-se de incluir todas as dependências
+  }, [formData, selectedHistorico?.id, handleCloseModal]);
 
   // Função para criar novo registro
   const handleClick = async (
