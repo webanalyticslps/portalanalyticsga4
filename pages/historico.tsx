@@ -32,14 +32,28 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     setSelectedHistorico(null);
   };
 
-  // No componente pai
+  // Definindo uma interface para o formData
+  interface FormData {
+    tipoRegistro: string;
+    tipoImplementacao: string;
+    descricao: string;
+    dataHora: string;
+    status: string;
+    responsavel: string;
+    containerIdGtm: string;
+    propriedadeIdGa4: string;
+    impacto: string;
+    solucao: string;
+    dataHoraResolucao: string;
+    // Adicione mais campos conforme necessário
+  }
+
   // No componente pai (Profile)
-  const handleSaveChanges = async (formData) => {
+  const handleSaveChanges = async (formData: FormData) => {
     if (!selectedHistorico) return; // Verifica se um histórico foi selecionado
 
     try {
       // Aqui você faz a chamada de API para salvar as alterações
-      // formData já contém os dados do formulário que você precisa enviar
       const axios = require("axios");
       const response = await axios.put(
         `/api/update-historico/${selectedHistorico.id}`, // Endpoint correto
