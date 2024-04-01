@@ -113,35 +113,25 @@ export default withPageAuthRequired(function Profile({
   }, [formData, selectedHistorico?.id, handleCloseModal]);
 
   // Função para criar novo registro
-  const handleClick = async (
-    tipo_registro: any,
-    tipo_implementacao: any,
-    descricao: any,
-    data_hora: any,
-    status: any,
-    responsavel: any,
-    container_id_gtm: any,
-    propriedade_id_ga4: any,
-    impacto: any,
-    solucao: any
-  ) => {
+  const handleClick = async () => {
     try {
       const axios = require("axios");
-      const response = await axios.post("/api/1-create-historico", {
-        tipo_registro: tipo_registro,
-        tipo_implementacao: tipo_implementacao,
-        descricao: descricao,
-        // Note que `data_hora` pode precisar de formatação dependendo de como sua API espera receber
-        data_hora: data_hora,
-        status: status,
-        responsavel: responsavel,
-        container_id_gtm: container_id_gtm,
-        propriedade_id_ga4: propriedade_id_ga4,
-        impacto: impacto,
-        solucao: solucao,
-      });
+      const response = await axios.post("/api/1-create-historico", formData);
       console.log(response.data);
-      // Adicione aqui qualquer lógica adicional após sucesso
+      // Após sucesso, talvez você queira limpar o formData ou tratar o sucesso de alguma forma específica.
+      setFormData({
+        tipoRegistro: "",
+        tipoImplementacao: "",
+        descricao: "",
+        dataHora: "",
+        status: "",
+        responsavel: "",
+        containerIdGtm: "",
+        propriedadeIdGa4: "",
+        impacto: "",
+        solucao: "",
+        dataHoraResolucao: "",
+      });
     } catch (error) {
       console.error("Erro ao criar o registro: ", error);
       // Tratamento de erro
@@ -518,35 +508,7 @@ export default withPageAuthRequired(function Profile({
           <div className="col-4">
             <button
               className="bg-lopes px-2 py-1 rounded-md text-white font-semibold"
-              onClick={() =>
-                handleClick(
-                  (document.getElementById("tipoRegistro") as HTMLInputElement)
-                    .value,
-                  (
-                    document.getElementById(
-                      "tipoImplementacao"
-                    ) as HTMLInputElement
-                  ).value,
-                  (document.getElementById("descricao") as HTMLInputElement)
-                    .value,
-                  (document.getElementById("dataHora") as HTMLInputElement)
-                    .value,
-                  (document.getElementById("status") as HTMLInputElement).value,
-                  (document.getElementById("responsavel") as HTMLInputElement)
-                    .value,
-                  (
-                    document.getElementById(
-                      "containerIdGtm"
-                    ) as HTMLInputElement
-                  ).value,
-                  (
-                    document.getElementById(
-                      "propriedadeIdGa4"
-                    ) as HTMLInputElement
-                  ).value,
-                  (document.getElementById("impacto") as HTMLInputElement).value
-                )
-              }
+              onClick={handleClick}
             >
               Criar
             </button>
