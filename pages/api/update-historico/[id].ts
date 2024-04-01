@@ -35,6 +35,20 @@ export default async function handler(
   }
 
   function formatarDataResolucaoParaUTC(dataHoraResolucaoLocal: string) {
+    console.log("Atualizando registro com ID:", id);
+    console.log("Dados recebidos para atualização:", {
+      tipo_registro,
+      tipo_implementacao,
+      descricao,
+      data_hora,
+      status,
+      responsavel,
+      container_id_gtm,
+      propriedade_id_ga4,
+      impacto,
+      solucao,
+      data_hora_resolucao,
+    });
     // Cria um objeto Date a partir da string "AAAA-MM-DDThh:mm"
     const dataResolucaoObj = new Date(dataHoraResolucaoLocal);
     // Converte para o formato ISO "AAAA-MM-DDThh:mm:ss.sssZ" em UTC
@@ -48,21 +62,6 @@ export default async function handler(
       formatarDataResolucaoParaUTC(data_hora_resolucao);
 
     try {
-      console.log("Atualizando registro com ID:", id);
-      console.log("Dados recebidos para atualização:", {
-        tipo_registro,
-        tipo_implementacao,
-        descricao,
-        data_hora,
-        status,
-        responsavel,
-        container_id_gtm,
-        propriedade_id_ga4,
-        impacto,
-        solucao,
-        data_hora_resolucao,
-      });
-
       const updateRegistro = await prisma.historicoImplementacoesBugs.update({
         where: { id: parseInt(id) }, // O 'id' é usado para localizar o registro a ser atualizado
         data: {
