@@ -114,8 +114,6 @@ export default withPageAuthRequired(function Profile({
 
   // Função para criar novo registro
   const handleClick = async () => {
-    console.log("Enviando dados para a API:", formData); // Log dos dados que serão enviados
-
     // Converte dataHora para o formato UTC completo
     const dataHoraUTC = new Date(formData.dataHora).toISOString();
 
@@ -127,6 +125,8 @@ export default withPageAuthRequired(function Profile({
         ? new Date(formData.dataHoraResolucao).toISOString()
         : "",
     };
+
+    console.log("Enviando dados para a API:", dadosParaEnvio); // Log dos dados que serão enviados
 
     try {
       const axios = require("axios");
