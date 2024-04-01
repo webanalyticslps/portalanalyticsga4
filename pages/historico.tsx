@@ -13,6 +13,28 @@ export const getServerSideProps: GetServerSideProps = async () => {
   return { props: { historicoImplementacoesBugs } };
 };
 
+const [formData, setFormData] = useState({
+  tipoRegistro: "",
+  tipoImplementacao: "",
+  descricao: "",
+  dataHora: "",
+  status: "",
+  responsavel: "",
+  containerIdGtm: "",
+  propriedadeIdGa4: "",
+  impacto: "",
+  solucao: "",
+  dataHoraResolucao: "",
+});
+
+const handleInputChange = (event) => {
+  const { name, value } = event.target;
+  setFormData((prevState) => ({
+    ...prevState,
+    [name]: value,
+  }));
+};
+
 interface PostProps {
   historicoImplementacoesBugs: HistoricoImplementacoesBugs[];
 }
