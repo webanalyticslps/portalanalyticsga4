@@ -24,10 +24,10 @@ const EditModal = ({
   // Opções das caixas de seleção; ajuste conforme necessário
   const tipoRegistroOptions = ["Bug", "Implementação"];
   const tipoImplementacaoOptions = ["N/A", "Hardcode", "GTM", "GA4", "Outro"];
-  const statusOptions = ["Em análise", "Resolvido", "Pendente"];
+  const statusOptions = ["Em análise", "Resolvido", "Pendente", "Publicado"];
   const impactoOptions = ["Baixo", "Médio", "Alto"];
-  const containerIdGtmOptions = ["GTM-NW5CWVM", "GTM-TLC7K75"];
-  const propriedadeIdGa4Options = ["338885311", "428406499"];
+  const containerIdGtmOptions = ["GTM-NW5CWVM (GA4 Prod)", "GTM-TLC7K75 (Server Side)", "GTM-KV4S6DC (Mídia)", "GTM-W5XCPXHB (Unilopes)"];
+  const propriedadeIdGa4Options = ["338885311 (GA4 Prod)", "428406499 (GA4 Unilopes)"];
 
   useEffect(() => {
     if (selectedHistorico) {
@@ -157,29 +157,41 @@ const EditModal = ({
               onChange={handleInputChange}
             />
             <Form.Label>Container ID GTM</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Container ID GTM"
+            <Form.Select
               name="container_id_gtm"
               value={localFormData.container_id_gtm}
               onChange={handleInputChange}
-            />
+            >
+              {containerIdGtmOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Form.Select>
             <Form.Label>Propriedade GA4</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Propriedade GA4"
+            <Form.Select
               name="propriedade_id_ga4"
               value={localFormData.propriedade_id_ga4}
               onChange={handleInputChange}
-            />
+            >
+              {propriedadeIdGa4Options.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Form.Select>
             <Form.Label>Impacto</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Impacto"
+            <Form.Select
               name="impacto"
               value={localFormData.impacto}
               onChange={handleInputChange}
-            />
+            >
+              {impactoOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Form.Select>
             <Form.Label>Solução</Form.Label>
             <Form.Control
               type="text"
