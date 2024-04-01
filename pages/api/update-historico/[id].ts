@@ -5,7 +5,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-
   if (req.method !== "PUT") {
     return res.status(405).json({ message: "Método não permitido" });
   }
@@ -13,17 +12,17 @@ export default async function handler(
   const prisma = new PrismaClient();
   const {
     id, // Certifique-se de que o 'id' esteja sendo enviado na requisição
-    tipoRegistro,
-    tipoImplementacao,
+    tipo_registro,
+    tipo_implementacao,
     descricao,
-    dataHora,
+    data_hora,
     status,
     responsavel,
-    containerIdGtm,
-    propriedadeIdGa4,
+    container_id_gtm,
+    propriedade_id_ga4,
     impacto,
     solucao,
-    dataHoraResolucao,
+    data_hora_resolucao,
   } = req.body;
 
   // Função para transformar a data/hora recebida para o formato completo UTC
@@ -44,25 +43,25 @@ export default async function handler(
   }
 
   async function main() {
-    const dataHora_formatada = formatarDataParaUTC(dataHora);
-    const dataHoraResolucao_formatada =
-      formatarDataResolucaoParaUTC(dataHoraResolucao);
+    const data_hora_formatada = formatarDataParaUTC(data_hora);
+    const data_hora_resolucao_formatada =
+      formatarDataResolucaoParaUTC(data_hora_resolucao);
 
     try {
       const updateRegistro = await prisma.historicoImplementacoesBugs.update({
         where: { id: parseInt(id) }, // O 'id' é usado para localizar o registro a ser atualizado
         data: {
-          tipoRegistro,
-          tipoImplementacao,
+          tipo_registro,
+          tipo_implementacao,
           descricao,
-          dataHora: dataHora_formatada, // Usa a data formatada
+          data_hora: data_hora_formatada, // Usa a data formatada
           status,
           responsavel,
-          containerIdGtm,
-          propriedadeIdGa4,
+          container_id_gtm,
+          propriedade_id_ga4,
           impacto,
           solucao,
-          dataHoraResolucao: dataHoraResolucao_formatada,
+          data_hora_resolucao: data_hora_resolucao_formatada,
         },
       });
 
