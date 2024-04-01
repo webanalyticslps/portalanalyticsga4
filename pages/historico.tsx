@@ -32,7 +32,7 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     setSelectedHistorico(null);
   };
 
-  const handleSaveChanges = (formData) => {
+  const handleSaveChanges = (formData: any) => {
     console.log("Dados salvos", formData);
     // Aqui você pode implementar a lógica para salvar os dados atualizados
     handleCloseModal();
