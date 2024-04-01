@@ -27,7 +27,9 @@ const [formData, setFormData] = useState({
   dataHoraResolucao: "",
 });
 
-const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+const handleInputChange = (
+  event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+) => {
   const { name, value } = event.target;
   setFormData((prevState) => ({
     ...prevState,
