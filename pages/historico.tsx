@@ -150,18 +150,20 @@ export default withPageAuthRequired(function Profile({
     showModal: boolean;
     handleCloseModal: () => void;
     handleSaveChanges: () => void;
-    selectedHistorico: HistoricoImplementacoesBugs | null; // Assumindo que você tem esse tipo definido em outro lugar
-    setTipoRegistro: React.Dispatch<React.SetStateAction<string>>;
-    setTipoImplementacao: React.Dispatch<React.SetStateAction<string>>;
-    setDescricao: React.Dispatch<React.SetStateAction<string>>;
-    setDataHora: React.Dispatch<React.SetStateAction<string>>;
-    setStatus: React.Dispatch<React.SetStateAction<string>>;
-    setResponsavel: React.Dispatch<React.SetStateAction<string>>;
-    setContainerIdGtm: React.Dispatch<React.SetStateAction<string>>;
-    setPropriedadeIdGa4: React.Dispatch<React.SetStateAction<string>>;
-    setImpacto: React.Dispatch<React.SetStateAction<string>>;
-    setSolucao: React.Dispatch<React.SetStateAction<string>>;
-    setDataHoraResolucao: React.Dispatch<React.SetStateAction<string>>;
+    formData: {
+      tipoRegistro: string;
+      tipoImplementacao: string;
+      descricao: string;
+      dataHora: string;
+      status: string;
+      responsavel: string;
+      containerIdGtm: string;
+      propriedadeIdGa4: string;
+      impacto: string;
+      solucao: string;
+      dataHoraResolucao: string;
+    };
+    handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   }
 
   const EditModal: React.FC<EditModalProps> = ({
@@ -200,80 +202,89 @@ export default withPageAuthRequired(function Profile({
               <Form.Control
                 type="text"
                 placeholder="Tipo de registro"
-                value={tipoRegistro}
-                onChange={(e) => setTipoRegistro(e.target.value)}
+                name="tipoRegistro"
+                value={formData.tipoRegistro}
+                onChange={handleInputChange}
               />
               <Form.Label>Tipo de implementação</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Tipo de registro"
-                name="tipoRegistro"
-                value={formData.tipoRegistro}
+                placeholder="Tipo de implementação"
+                name="tipoImplementacao"
+                value={formData.tipoImplementacao}
                 onChange={handleInputChange}
               />
               <Form.Label>Descrição</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Descrição"
-                value={descricao}
-                onChange={(e) => setDescricao(e.target.value)}
+                name="descricao"
+                value={formData.descricao}
+                onChange={handleInputChange}
               />
               <Form.Label>Data e hora</Form.Label>
               <Form.Control
                 type="datetime-local"
                 placeholder="Data e hora"
-                value={dataHora}
-                onChange={(e) => setDataHora(e.target.value)}
+                name="dataHora"
+                value={formData.dataHora}
+                onChange={handleInputChange}
               />
-
               <Form.Label>Status</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Status"
-                value={status}
-                onChange={(e) => setStatus(e.target.value)}
+                name="status"
+                value={formData.status}
+                onChange={handleInputChange}
               />
               <Form.Label>Responsável</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Responsável"
-                value={responsavel}
-                onChange={(e) => setResponsavel(e.target.value)}
+                name="responsavel"
+                value={formData.responsavel}
+                onChange={handleInputChange}
               />
               <Form.Label>Container ID GTM</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Container ID GTM"
-                value={containerIdGtm}
-                onChange={(e) => setContainerIdGtm(e.target.value)}
+                name="containerIdGtm"
+                value={formData.containerIdGtm}
+                onChange={handleInputChange}
               />
               <Form.Label>Propriedade GA4</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Propriedade GA4"
-                value={propriedadeIdGa4}
-                onChange={(e) => setPropriedadeIdGa4(e.target.value)}
+                name="propriedadeIdGa4"
+                value={formData.propriedadeIdGa4}
+                onChange={handleInputChange}
               />
               <Form.Label>Impacto</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Impacto"
-                value={impacto}
-                onChange={(e) => setImpacto(e.target.value)}
+                name="impacto"
+                value={formData.impacto}
+                onChange={handleInputChange}
               />
               <Form.Label>Solução</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Solução"
-                value={solucao}
-                onChange={(e) => setSolucao(e.target.value)}
+                name="solucao"
+                value={formData.solucao}
+                onChange={handleInputChange}
               />
               <Form.Label>Data e hora da resolução</Form.Label>
               <Form.Control
                 type="datetime-local"
                 placeholder="Data e hora da resolução"
-                value={dataHoraResolucao}
-                onChange={(e) => setDataHoraResolucao(e.target.value)}
+                name="dataHoraResolucao"
+                value={formData.dataHoraResolucao}
+                onChange={handleInputChange}
               />
             </Form.Group>
           </Form>
