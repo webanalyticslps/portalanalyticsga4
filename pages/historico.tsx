@@ -110,6 +110,35 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
       solucao: formData.solucao,
       data_hora_resolucao: dataHoraResolucaoUTC, // Apenas inclua se for relevante para o modelo
     };
+
+    try {
+      const axios = require("axios");
+      const response = await axios.post(
+        "/api/1-create-historico",
+        dadosParaEnvio
+      );
+      console.log("Resposta da API:", response.data);
+
+      // Após sucesso, limpa o formData ou trata o sucesso de alguma forma específica
+      setFormData({
+        tipoRegistro: "",
+        tipoImplementacao: "",
+        descricao: "",
+        dataHora: "",
+        status: "",
+        responsavel: "",
+        containerIdGtm: "",
+        propriedadeIdGa4: "",
+        impacto: "",
+        solucao: "",
+        dataHoraResolucao: "",
+      });
+    } catch (error) {
+      console.error(
+        "Erro ao criar o registro: ",
+        (error as any).response ? (error as any).response.data : error
+      );
+    }
   };
 
   console.log("Enviando dados para a API:", formData); // Log dos dados que serão enviados
@@ -318,6 +347,8 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
               <option value="Alto">Alto</option>
             </select>
           </div>
+
+          <div className="col-sm"></div>
 
           {/* Adicione outros campos conforme necessário, seguindo o mesmo padrão */}
         </div>
