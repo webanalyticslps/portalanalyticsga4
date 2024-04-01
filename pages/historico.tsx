@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, useMemo } from "react";
 import { GetServerSideProps } from "next";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { Button } from "react-bootstrap";
@@ -30,6 +30,38 @@ interface FormData {
 interface PostProps {
   historicoImplementacoesBugs: HistoricoImplementacoesBugs[];
 }
+
+// Ordenação dos dados
+const [sortConfig, setSortConfig] = useState({
+  key: null,
+  direction: "ascending",
+});
+
+const requestSort = (key) => {
+  let direction = "ascending";
+  if (sortConfig.key === key && sortConfig.direction === "ascending") {
+    direction = "descending";
+  }
+  setSortConfig({ key, direction });
+};
+
+const sortedItems = useMemo(() => {
+  let sortableItems = [...historicoImplementacoesBugs];
+  if (sortConfig !== null) {
+    sortableItems.sort((a, b) => {
+      if (a[sortConfig.key] < b[sortConfig.key]) {
+        return sortConfig.direction === "ascending" ? -1 : 1;
+      }
+      if (a[sortConfig.key] > b[sortConfig.key]) {
+        return sortConfig.direction === "ascending" ? 1 : -1;
+      }
+      return 0;
+    });
+  }
+  return sortableItems;
+}, [historicoImplementacoesBugs, sortConfig]);
+
+// Fim das funções de ordenação
 
 const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   const [formData, setFormData] = useState<FormData>({
@@ -147,6 +179,17 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
       <h2 className="text-center font-weight-bold">
         HISTÓRICO DE BUGS E IMPLEMENTAÇÕES
       </h2>
+
+      <div className="row text-light bg-lopes border border-dark">
+        <div className="col" onClick={() => requestSort("tipoRegistro")}>
+          Tipo de Registro
+        </div>
+        <div className="col" onClick={() => requestSort("tipoImplementacao")}>
+          Tipo de Implementação
+        </div>
+        {/* Repita para outras colunas conforme necessário */}
+      </div>
+
       <div className="row text-light bg-lopes border border-dark">
         {/* Cabeçalhos da tabela aqui */}
         <div className="col">Tipo de Registro</div>
@@ -163,8 +206,8 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
         <div className="col">Editar</div>
         {/* Outros cabeçalhos da tabela */}
       </div>
-      {/* Loop para renderizar cada linha baseada em historicoImplementacoesBugs */}
-      {historicoImplementacoesBugs.map((historico) => (
+
+      {sortedItems.map((historico) => (
         <div
           key={historico.id}
           className="row text-dark border border-dark"
