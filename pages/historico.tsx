@@ -25,7 +25,8 @@ export default withPageAuthRequired(function Profile({
 }) {
   const [showModal, setShowModal] = useState(false);
   const [selectedHistorico, setSelectedHistorico] =
-    (useState < HistoricoImplementacoesBugs) | (null > null);
+    useState<HistoricoImplementacoesBugs | null>(null);
+
   const [formData, setFormData] = useState({
     tipoRegistro: "",
     tipoImplementacao: "",
