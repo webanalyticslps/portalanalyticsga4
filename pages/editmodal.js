@@ -62,7 +62,13 @@ const EditModal = ({
   };
 
   const handleSave = () => {
-    onSaveChanges(localFormData);
+    // Inclua o id no objeto de dados que está sendo enviado
+    const dataWithId = {
+      ...localFormData,
+      id: selectedHistorico?.id, // Assumindo que selectedHistorico possui um campo id
+    };
+
+    onSaveChanges(dataWithId);
     handleCloseModal();
   };
 

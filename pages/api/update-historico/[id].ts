@@ -27,20 +27,6 @@ export default async function handler(
 
   // Função para transformar a data/hora recebida para o formato completo UTC
   function formatarDataParaUTC(dataHoraLocal: string) {
-    console.log("Atualizando registro com ID:", id);
-    console.log("Dados recebidos para atualização:", {
-      tipo_registro,
-      tipo_implementacao,
-      descricao,
-      data_hora,
-      status,
-      responsavel,
-      container_id_gtm,
-      propriedade_id_ga4,
-      impacto,
-      solucao,
-      data_hora_resolucao,
-    });
     // Cria um objeto Date a partir da string "AAAA-MM-DDThh:mm"
     const dataObj = new Date(dataHoraLocal);
     // Converte para o formato ISO "AAAA-MM-DDThh:mm:ss.sssZ" em UTC
