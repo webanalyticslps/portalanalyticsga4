@@ -32,11 +32,35 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     setSelectedHistorico(null);
   };
 
-  const handleSaveChanges = (formData: any) => {
-    console.log("Dados salvos", formData);
-    // Implemente a lógica de salvamento aqui
-    handleCloseModal();
+  // No componente pai
+  const handleSaveChanges = async (formData) => {
+    if (!selectedHistorico) return;
+
+    // `formData` agora é recebido como argumento desta função
+    const updatedHistorico = { ...formData, id: selectedHistorico.id };
+
+    try {
+      // Certifique-se de que axios está importado corretamente no seu arquivo
+      const axios = require("axios");
+      const response = await axios.put(
+        `/api/update-historico/${selectedHistorico.id}`,
+        updatedHistorico
+      );
+      console.log("Dados salvos:", response.data);
+      // Após sucesso, feche o modal
+      handleCloseModal();
+    } catch (error) {
+      console.error("Erro ao salvar as alterações: ", error);
+    }
   };
+
+  // Certifique-se de que esta função é passada para o EditModal corretamente
+  <EditModal
+    showModal={showModal}
+    handleCloseModal={handleCloseModal}
+    onSaveChanges={handleSaveChanges} // Essa função é chamada dentro do EditModal com os dados do formulário
+    selectedHistorico={selectedHistorico}
+  />;
 
   return (
     <div className="container-fluid">
