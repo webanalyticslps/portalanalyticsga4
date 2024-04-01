@@ -33,7 +33,7 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   };
 
   // No componente pai
-  const handleSaveChanges = async (formData) => {
+  const handleSaveChanges = async (formData: any) => {
     if (!selectedHistorico) return;
 
     // `formData` agora é recebido como argumento desta função
