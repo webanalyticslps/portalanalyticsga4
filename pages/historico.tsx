@@ -54,17 +54,19 @@ export default withPageAuthRequired(function Profile({
   const handleOpenModal = (historico: any) => {
     console.log("Abrindo modal para:", historico);
     setSelectedHistorico(historico);
-    setTipoRegistro(historico.tipo_registro || "");
-    setTipoImplementacao(historico.tipo_implementacao || "");
-    setDescricao(historico.descricao || "");
-    setDataHora(historico.data_hora || "");
-    setStatus(historico.status || "");
-    setResponsavel(historico.responsavel || ""); // Corrigido
-    setContainerIdGtm(historico.container_id_gtm || ""); // Corrigido
-    setPropriedadeIdGa4(historico.propriedade_id_ga4 || ""); // Corrigido
-    setImpacto(historico.impacto || ""); // Corrigido
-    setSolucao(historico.solucao || ""); // Corrigido
-    setDataHoraResolucao(historico.data_hora_resolucao || "");
+    setFormData({
+      tipoRegistro: historico.tipo_registro || "",
+      tipoImplementacao: historico.tipo_implementacao || "",
+      descricao: historico.descricao || "",
+      dataHora: historico.data_hora || "",
+      status: historico.status || "",
+      responsavel: historico.responsavel || "",
+      containerIdGtm: historico.container_id_gtm || "",
+      propriedadeIdGa4: historico.propriedade_id_ga4 || "",
+      impacto: historico.impacto || "",
+      solucao: historico.solucao || "",
+      dataHoraResolucao: historico.data_hora_resolucao || "",
+    });
     setShowModal(true);
   };
 
