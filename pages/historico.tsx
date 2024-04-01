@@ -37,7 +37,7 @@ const [sortConfig, setSortConfig] = useState({
   direction: "ascending",
 });
 
-const requestSort = (key) => {
+const requestSort = (key: keyof FormData) => {
   let direction = "ascending";
   if (sortConfig.key === key && sortConfig.direction === "ascending") {
     direction = "descending";
