@@ -45,9 +45,54 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
       </h2>
       {/* Renderize sua lista de históricos aqui */}
       {historicoImplementacoesBugs.map((historico) => (
-        <div key={historico.id}>
-          {/* Detalhes do histórico */}
-          <Button onClick={() => handleOpenModal(historico)}>Editar</Button>
+        <div>
+          <div className="row text-light bg-lopes border border-dark">
+            <div className="col">Tipo de Registro</div>
+            <div className="col">Tipo de Implementação</div>
+            <div className="col">Descrição</div>
+            <div className="col">Data e Hora</div>
+            <div className="col">Status</div>
+            <div className="col">Responsável</div>
+            <div className="col">Container ID GTM</div>
+            <div className="col">Propriedade ID GA4</div>
+            <div className="col">Impacto</div>
+            <div className="col">Solução</div>
+            <div className="col">Data e Hora da Resolução</div>
+            <div className="col">Editar</div>
+          </div>
+          {historicoImplementacoesBugs.map((historico: any, index: any) => (
+            <div
+              key={historico.id}
+              className="row text-dark border border-dark"
+              style={{
+                backgroundColor:
+                  historico.tipo_registro === "Implementação"
+                    ? "#d4edda"
+                    : "#f8d7da",
+              }}
+            >
+              <div className="col">{historico.tipo_registro}</div>
+              <div className="col">{historico.tipo_implementacao}</div>
+              <div className="col">{historico.descricao}</div>
+              <div className="col">{historico.data_hora.toLocaleString()}</div>
+              <div className="col">{historico.status}</div>
+              <div className="col">{historico.responsavel}</div>
+              <div className="col">{historico.container_id_gtm}</div>
+              <div className="col">{historico.propriedade_id_ga4}</div>
+              <div className="col">{historico.impacto}</div>
+              <div className="col">{historico.solucao}</div>
+              <div className="col">
+                {historico.data_hora_resolucao
+                  ? historico.data_hora_resolucao.toLocaleString()
+                  : ""}
+              </div>
+              <div className="col">
+                <Button onClick={() => handleOpenModal(historico)}>
+                  Editar
+                </Button>
+              </div>
+            </div>
+          ))}
         </div>
       ))}
 
