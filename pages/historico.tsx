@@ -32,47 +32,11 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     setSelectedHistorico(null);
   };
 
-  // Definindo uma interface para o formData
-  interface FormData {
-    tipoRegistro: string;
-    tipoImplementacao: string;
-    descricao: string;
-    dataHora: string;
-    status: string;
-    responsavel: string;
-    containerIdGtm: string;
-    propriedadeIdGa4: string;
-    impacto: string;
-    solucao: string;
-    dataHoraResolucao: string;
-    // Adicione mais campos conforme necessário
-  }
-
-  // No componente pai (Profile)
-  const handleSaveChanges = async (formData: FormData) => {
-    if (!selectedHistorico) return; // Verifica se um histórico foi selecionado
-
-    try {
-      // Aqui você faz a chamada de API para salvar as alterações
-      const axios = require("axios");
-      const response = await axios.put(
-        `/api/update-historico/${selectedHistorico.id}`, // Endpoint correto
-        formData // Dados do formulário recebidos do EditModal
-      );
-      console.log("Dados salvos:", response.data);
-      handleCloseModal(); // Fecha o modal após o sucesso
-    } catch (error) {
-      console.error("Erro ao salvar as alterações: ", error);
-    }
+  const handleSaveChanges = (formData: any) => {
+    console.log("Dados salvos", formData);
+    // Implemente a lógica de salvamento aqui
+    handleCloseModal();
   };
-
-  // Certifique-se de que esta função é passada para o EditModal corretamente
-  <EditModal
-    showModal={showModal}
-    handleCloseModal={handleCloseModal}
-    onSaveChanges={handleSaveChanges} // Essa função é chamada dentro do EditModal com os dados do formulário
-    selectedHistorico={selectedHistorico}
-  />;
 
   return (
     <div className="container-fluid">
