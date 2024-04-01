@@ -114,16 +114,25 @@ export default withPageAuthRequired(function Profile({
 
   // Função para criar novo registro
   const handleClick = async () => {
-    // Converte dataHora para o formato UTC completo
+    // Converte dataHora e dataHoraResolucao para o formato UTC completo
     const dataHoraUTC = new Date(formData.dataHora).toISOString();
+    const dataHoraResolucaoUTC = formData.dataHoraResolucao
+      ? new Date(formData.dataHoraResolucao).toISOString()
+      : "";
 
-    // Prepara os dados para serem enviados, substituindo dataHora por sua versão em UTC
+    // Prepara os dados para serem enviados, com nomes de chaves em snake_case
     const dadosParaEnvio = {
-      ...formData,
-      dataHora: dataHoraUTC,
-      dataHoraResolucao: formData.dataHoraResolucao
-        ? new Date(formData.dataHoraResolucao).toISOString()
-        : "",
+      tipo_registro: formData.tipoRegistro,
+      tipo_implementacao: formData.tipoImplementacao,
+      descricao: formData.descricao,
+      data_hora: dataHoraUTC,
+      status: formData.status,
+      responsavel: formData.responsavel,
+      container_id_gtm: formData.containerIdGtm,
+      propriedade_id_ga4: formData.propriedadeIdGa4,
+      impacto: formData.impacto,
+      solucao: formData.solucao,
+      data_hora_resolucao: dataHoraResolucaoUTC, // Apenas inclua se for relevante para o modelo
     };
 
     console.log("Enviando dados para a API:", dadosParaEnvio); // Log dos dados que serão enviados
@@ -153,7 +162,7 @@ export default withPageAuthRequired(function Profile({
     } catch (error) {
       console.error(
         "Erro ao criar o registro: ",
-        (error as any).response ? (error as any).response.data : error
+        error.response ? error.response.data : error
       );
     }
   };
