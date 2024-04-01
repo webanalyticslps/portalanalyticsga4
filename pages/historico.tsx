@@ -150,7 +150,7 @@ export default withPageAuthRequired(function Profile({
     showModal: boolean;
     handleCloseModal: () => void;
     handleSaveChanges: () => void;
-    selectedHistorico: HistoricoImplementacoesBugs | null; // Adicione o tipo apropriado
+    selectedHistorico: HistoricoImplementacoesBugs | null;
     formData: {
       tipoRegistro: string;
       tipoImplementacao: string;
@@ -175,18 +175,8 @@ export default withPageAuthRequired(function Profile({
     showModal,
     handleCloseModal,
     handleSaveChanges,
-    selectedHistorico,
-    setTipoImplementacao,
-    setTipoRegistro,
-    setDescricao,
-    setDataHora,
-    setStatus,
-    setResponsavel,
-    setContainerIdGtm,
-    setPropriedadeIdGa4,
-    setImpacto,
-    setSolucao,
-    setDataHoraResolucao,
+    formData,
+    handleInputChange,
   }) => {
     return (
       <Modal
