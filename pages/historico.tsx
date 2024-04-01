@@ -112,7 +112,7 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     };
   };
 
-  console.log("Enviando dados para a API:", dadosParaEnvio); // Log dos dados que serão enviados
+  console.log("Enviando dados para a API:", formData); // Log dos dados que serão enviados
   return (
     <div className="container-fluid">
       <h2 className="text-center font-weight-bold">
