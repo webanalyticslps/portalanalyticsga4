@@ -62,11 +62,13 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     direction: "ascending",
   });
 
-  const requestSort = (key: keyof HistoricoImplementacoesBugs) => {
-    let direction =
+  const requestSort = (key: keyof FormData) => {
+    // Explicitamente definindo 'direction' como um dos dois valores permitidos
+    let direction: "ascending" | "descending" =
       sortConfig.key === key && sortConfig.direction === "ascending"
         ? "descending"
         : "ascending";
+
     setSortConfig({ key, direction });
   };
 
