@@ -315,7 +315,7 @@ export default withPageAuthRequired(function Profile({
         handleSaveChanges={handleSaveChanges}
         formData={formData}
         handleInputChange={handleInputChange}
-        // Passe outras props necessárias
+        selectedHistorico={selectedHistorico} // Adicione esta linha
       />
 
       <div>
