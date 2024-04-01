@@ -4,7 +4,7 @@ import {
   HistoricoImplementacoesBugs,
 } from "../lib/db";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react"; // Adicionado useCallback
 import { Button } from "react-bootstrap";
 import EditModal from "./editmodal"; // Certifique-se de que o caminho esteja correto
 
