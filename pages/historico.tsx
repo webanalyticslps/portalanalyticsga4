@@ -235,24 +235,35 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
         <div className="col" onClick={() => requestSort("tipoImplementacao")}>
           Tipo de Implementação
         </div>
-        {/* Repita para outras colunas conforme necessário */}
-      </div>
-
-      <div className="row text-light bg-lopes border border-dark">
-        {/* Cabeçalhos da tabela aqui */}
-        <div className="col">Tipo de Registro</div>
-        <div className="col">Tipo de Implementação</div>
-        <div className="col">Descrição</div>
-        <div className="col">Data e Hora</div>
-        <div className="col">Status</div>
-        <div className="col">Responsável</div>
-        <div className="col">Container ID GTM</div>
-        <div className="col">Propriedade ID GA4</div>
-        <div className="col">Impacto</div>
-        <div className="col">Solução</div>
-        <div className="col">Data e Hora da Resolução</div>
+        <div className="col" onClick={() => requestSort("descricao")}>
+          Descrição
+        </div>
+        <div className="col" onClick={() => requestSort("dataHora")}>
+          Data e Hora
+        </div>
+        <div className="col" onClick={() => requestSort("status")}>
+          Status
+        </div>
+        <div className="col" onClick={() => requestSort("responsavel")}>
+          Responsável
+        </div>
+        <div className="col" onClick={() => requestSort("containerIdGtm")}>
+          Container ID GTM
+        </div>
+        <div className="col" onClick={() => requestSort("propriedadeIdGa4")}>
+          Propriedade ID GA4
+        </div>
+        <div className="col" onClick={() => requestSort("impacto")}>
+          Impacto
+        </div>
+        <div className="col" onClick={() => requestSort("solucao")}>
+          Solução
+        </div>
+        <div className="col" onClick={() => requestSort("dataHoraResolucao")}>
+          Data e Hora da Resolução
+        </div>
         <div className="col">Editar</div>
-        {/* Outros cabeçalhos da tabela */}
+        {/* Repita para outras colunas conforme necessário */}
       </div>
 
       {sortedItems.map((historico) => (
