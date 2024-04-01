@@ -5,7 +5,7 @@ const EditModal = ({
   showModal,
   handleCloseModal,
   selectedHistorico,
-  onSaveChanges, // Certifique-se que essa prop seja passada corretamente ao usar o componente
+  onSaveChanges,
 }) => {
   const [localFormData, setLocalFormData] = useState({
     tipo_registro: "",
@@ -23,18 +23,28 @@ const EditModal = ({
 
   useEffect(() => {
     if (selectedHistorico) {
+      const formatDateTime = (dateString) => {
+        if (!dateString) return "";
+        const date = new Date(dateString);
+        const offset = date.getTimezoneOffset();
+        const adjustedDate = new Date(date.getTime() - offset * 60 * 1000);
+        return adjustedDate.toISOString().slice(0, 16);
+      };
+
       setLocalFormData({
         tipo_registro: selectedHistorico.tipo_registro || "",
         tipo_implementacao: selectedHistorico.tipo_implementacao || "",
         descricao: selectedHistorico.descricao || "",
-        data_hora: selectedHistorico.data_hora || "",
+        data_hora: formatDateTime(selectedHistorico.data_hora),
         status: selectedHistorico.status || "",
         responsavel: selectedHistorico.responsavel || "",
         container_id_gtm: selectedHistorico.container_id_gtm || "",
         propriedade_id_ga4: selectedHistorico.propriedade_id_ga4 || "",
         impacto: selectedHistorico.impacto || "",
         solucao: selectedHistorico.solucao || "",
-        data_hora_resolucao: selectedHistorico.data_hora_resolucao || "",
+        data_hora_resolucao: formatDateTime(
+          selectedHistorico.data_hora_resolucao
+        ),
       });
     } else {
       setLocalFormData({
@@ -62,13 +72,10 @@ const EditModal = ({
   };
 
   const handleSave = () => {
-    // Inclua o id no objeto de dados que está sendo enviado
-    const dataWithId = {
+    onSaveChanges({
       ...localFormData,
-      id: selectedHistorico?.id, // Assumindo que selectedHistorico possui um campo id
-    };
-
-    onSaveChanges(dataWithId);
+      id: selectedHistorico?.id,
+    });
     handleCloseModal();
   };
 
