@@ -6,7 +6,7 @@ import {
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { EditModal } from "./editmodal";
+import { EditModal } from "/editmodal";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const historicoImplementacoesBugs = await getAllHistoricoImplementacoesBugs();
