@@ -27,14 +27,6 @@ export default async function handler(
 
   // Função para transformar a data/hora recebida para o formato completo UTC
   function formatarDataParaUTC(dataHoraLocal: string) {
-    // Cria um objeto Date a partir da string "AAAA-MM-DDThh:mm"
-    const dataObj = new Date(dataHoraLocal);
-    // Converte para o formato ISO "AAAA-MM-DDThh:mm:ss.sssZ" em UTC
-    const dataHoraUTC = dataObj.toISOString();
-    return dataHoraUTC;
-  }
-
-  function formatarDataResolucaoParaUTC(dataHoraResolucaoLocal: string) {
     console.log("Atualizando registro com ID:", id);
     console.log("Dados recebidos para atualização:", {
       tipo_registro,
@@ -49,6 +41,14 @@ export default async function handler(
       solucao,
       data_hora_resolucao,
     });
+    // Cria um objeto Date a partir da string "AAAA-MM-DDThh:mm"
+    const dataObj = new Date(dataHoraLocal);
+    // Converte para o formato ISO "AAAA-MM-DDThh:mm:ss.sssZ" em UTC
+    const dataHoraUTC = dataObj.toISOString();
+    return dataHoraUTC;
+  }
+
+  function formatarDataResolucaoParaUTC(dataHoraResolucaoLocal: string) {
     // Cria um objeto Date a partir da string "AAAA-MM-DDThh:mm"
     const dataResolucaoObj = new Date(dataHoraResolucaoLocal);
     // Converte para o formato ISO "AAAA-MM-DDThh:mm:ss.sssZ" em UTC
