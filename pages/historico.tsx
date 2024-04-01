@@ -160,9 +160,9 @@ export default withPageAuthRequired(function Profile({
         dataHoraResolucao: "",
       });
     } catch (error) {
-      console.error(
+      cconsole.error(
         "Erro ao criar o registro: ",
-        error.response ? error.response.data : error
+        (error as any).response ? (error as any).response.data : error
       );
     }
   };
