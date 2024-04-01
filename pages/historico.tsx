@@ -73,15 +73,24 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   const sortedItems = useMemo(() => {
     let sortableItems = [...historicoImplementacoesBugs];
     if (sortConfig.key) {
-      // Garante que sortConfig.key não seja null
+      // Verifica se sortConfig.key não é null
+      const key = sortConfig.key;
       sortableItems.sort((a, b) => {
-        const key = sortConfig.key as keyof HistoricoImplementacoesBugs; // Afirmação de tipo para satisfazer o TypeScript
-        if (a[key] < b[key]) {
-          return sortConfig.direction === "ascending" ? -1 : 1;
+        // Assegura que a e b têm a propriedade definida por sortConfig.key
+        const aValue = a[key];
+        const bValue = b[key];
+
+        // Adiciona uma verificação de existência para a e bValue antes de comparar
+        if (aValue && bValue) {
+          return sortConfig.direction === "ascending"
+            ? aValue < bValue
+              ? -1
+              : 1
+            : aValue > bValue
+            ? -1
+            : 1;
         }
-        if (a[key] > b[key]) {
-          return sortConfig.direction === "ascending" ? 1 : -1;
-        }
+
         return 0;
       });
     }
