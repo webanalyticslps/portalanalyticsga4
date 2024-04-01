@@ -32,9 +32,11 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     setSelectedHistorico(null);
   };
 
-  const handleSaveChanges = useCallback(async () => {
+  const handleSaveChanges = async () => {
+    if (!selectedHistorico) return; // Verifica se existe um historico selecionado
+
     const updatedHistorico = {
-      id: selectedHistorico?.id,
+      id: selectedHistorico.id,
       tipo_registro: formData.tipoRegistro,
       tipo_implementacao: formData.tipoImplementacao,
       descricao: formData.descricao,
@@ -53,7 +55,7 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
       // Supondo que você use axios para a chamada de API
       const axios = require("axios");
       const response = await axios.put(
-        `/api/update-historico/${selectedHistorico?.id}`,
+        `/api/update-historico/${selectedHistorico.id}`,
         updatedHistorico
       );
       console.log(response.data);
@@ -62,7 +64,7 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     } catch (error) {
       console.error("Erro ao salvar as alterações: ", error);
     }
-  }, [formData, selectedHistorico?.id, handleCloseModal]);
+  };
 
   return (
     <div className="container-fluid">
