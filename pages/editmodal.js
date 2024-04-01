@@ -8,47 +8,47 @@ const EditModal = ({
   onSaveChanges, // Certifique-se que essa prop seja passada corretamente ao usar o componente
 }) => {
   const [localFormData, setLocalFormData] = useState({
-    tipoRegistro: "",
-    tipoImplementacao: "",
+    tipo_registro: "",
+    tipo_implementacao: "",
     descricao: "",
-    dataHora: "",
+    data_hora: "",
     status: "",
     responsavel: "",
-    containerIdGtm: "",
-    propriedadeIdGa4: "",
+    container_id_gtm: "",
+    propriedade_id_ga4: "",
     impacto: "",
     solucao: "",
-    dataHoraResolucao: "",
+    data_hora_resolucao: "",
   });
 
   useEffect(() => {
     if (selectedHistorico) {
       setLocalFormData({
-        tipoRegistro: selectedHistorico.tipo_registro || "",
-        tipoImplementacao: selectedHistorico.tipo_implementacao || "",
+        tipo_registro: selectedHistorico.tipo_registro || "",
+        tipo_implementacao: selectedHistorico.tipo_implementacao || "",
         descricao: selectedHistorico.descricao || "",
-        dataHora: selectedHistorico.data_hora || "",
+        data_hora: selectedHistorico.data_hora || "",
         status: selectedHistorico.status || "",
         responsavel: selectedHistorico.responsavel || "",
-        containerIdGtm: selectedHistorico.container_id_gtm || "",
-        propriedadeIdGa4: selectedHistorico.propriedade_id_ga4 || "",
+        container_id_gtm: selectedHistorico.container_id_gtm || "",
+        propriedade_id_ga4: selectedHistorico.propriedade_id_ga4 || "",
         impacto: selectedHistorico.impacto || "",
         solucao: selectedHistorico.solucao || "",
-        dataHoraResolucao: selectedHistorico.data_hora_resolucao || "",
+        data_hora_resolucao: selectedHistorico.data_hora_resolucao || "",
       });
     } else {
       setLocalFormData({
-        tipoRegistro: "",
-        tipoImplementacao: "",
+        tipo_registro: "",
+        tipo_implementacao: "",
         descricao: "",
-        dataHora: "",
+        data_hora: "",
         status: "",
         responsavel: "",
-        containerIdGtm: "",
-        propriedadeIdGa4: "",
+        container_id_gtm: "",
+        propriedade_id_ga4: "",
         impacto: "",
         solucao: "",
-        dataHoraResolucao: "",
+        data_hora_resolucao: "",
       });
     }
   }, [selectedHistorico]);
@@ -79,16 +79,16 @@ const EditModal = ({
             <Form.Control
               type="text"
               placeholder="Tipo de registro"
-              name="tipoRegistro"
-              value={localFormData.tipoRegistro}
+              name="tipo_registro"
+              value={localFormData.tipo_registro}
               onChange={handleInputChange}
             />
             <Form.Label>Tipo de implementação</Form.Label>
             <Form.Control
               type="text"
               placeholder="Tipo de implementação"
-              name="tipoImplementacao"
-              value={localFormData.tipoImplementacao}
+              name="tipo_implementacao"
+              value={localFormData.tipo_implementacao}
               onChange={handleInputChange}
             />
             <Form.Label>Descrição</Form.Label>
@@ -103,8 +103,8 @@ const EditModal = ({
             <Form.Control
               type="datetime-local"
               placeholder="Data e hora"
-              name="dataHora"
-              value={localFormData.dataHora}
+              name="data_hora"
+              value={localFormData.data_hora}
               onChange={handleInputChange}
             />
             <Form.Label>Status</Form.Label>
@@ -127,16 +127,16 @@ const EditModal = ({
             <Form.Control
               type="text"
               placeholder="Container ID GTM"
-              name="containerIdGtm"
-              value={localFormData.containerIdGtm}
+              name="container_id_gtm"
+              value={localFormData.container_id_gtm}
               onChange={handleInputChange}
             />
             <Form.Label>Propriedade GA4</Form.Label>
             <Form.Control
               type="text"
               placeholder="Propriedade GA4"
-              name="propriedadeIdGa4"
-              value={localFormData.propriedadeIdGa4}
+              name="propriedade_id_ga4"
+              value={localFormData.propriedade_id_ga4}
               onChange={handleInputChange}
             />
             <Form.Label>Impacto</Form.Label>
@@ -159,8 +159,8 @@ const EditModal = ({
             <Form.Control
               type="datetime-local"
               placeholder="Data e hora da resolução"
-              name="dataHoraResolucao"
-              value={localFormData.dataHoraResolucao}
+              name="data_hora_resolucao"
+              value={localFormData.data_hora_resolucao}
               onChange={handleInputChange}
             />
           </Form.Group>
