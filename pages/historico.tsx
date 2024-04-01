@@ -150,6 +150,7 @@ export default withPageAuthRequired(function Profile({
     showModal: boolean;
     handleCloseModal: () => void;
     handleSaveChanges: () => void;
+    selectedHistorico: HistoricoImplementacoesBugs | null; // Adicione o tipo apropriado
     formData: {
       tipoRegistro: string;
       tipoImplementacao: string;
@@ -163,7 +164,11 @@ export default withPageAuthRequired(function Profile({
       solucao: string;
       dataHoraResolucao: string;
     };
-    handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleInputChange: (
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >
+    ) => void;
   }
 
   const EditModal: React.FC<EditModalProps> = ({
