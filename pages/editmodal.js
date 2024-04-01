@@ -5,7 +5,7 @@ const EditModal = ({
   showModal,
   handleCloseModal,
   selectedHistorico,
-  onSaveChanges,
+  onSaveChanges, // Certifique-se que essa prop seja passada corretamente ao usar o componente
 }) => {
   const [localFormData, setLocalFormData] = useState({
     tipoRegistro: "",
@@ -22,7 +22,6 @@ const EditModal = ({
   });
 
   useEffect(() => {
-    // Preencher dados do formulário local quando `selectedHistorico` mudar
     if (selectedHistorico) {
       setLocalFormData({
         tipoRegistro: selectedHistorico.tipo_registro || "",
@@ -38,7 +37,6 @@ const EditModal = ({
         dataHoraResolucao: selectedHistorico.data_hora_resolucao || "",
       });
     } else {
-      // Resetar os dados do formulário se nenhum historico for selecionado
       setLocalFormData({
         tipoRegistro: "",
         tipoImplementacao: "",
@@ -74,8 +72,6 @@ const EditModal = ({
         <Modal.Title>Editar Registro</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {/* Aqui você pode colocar um formulário para editar o registro.
-          Use os estados como `selectedHistorico` para preencher os dados existentes */}
         <Form>
           {/* Exemplo de campo do formulário */}
           <Form.Group controlId="formDescricao">
@@ -174,10 +170,12 @@ const EditModal = ({
         <Button variant="secondary" onClick={handleCloseModal}>
           Fechar
         </Button>
-        <Button variant="primary" onClick={() => handleSaveChanges()}>
+        <Button variant="primary" onClick={handleSave}>
           Salvar Alterações
         </Button>
       </Modal.Footer>
     </Modal>
   );
 };
+
+export default EditModal;
