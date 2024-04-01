@@ -503,6 +503,8 @@ export default withPageAuthRequired(function Profile({
               </select>
             </div>
 
+            <div className="col-sm"></div>
+
             {/* Adicione outros campos conforme necessário, seguindo o mesmo padrão */}
           </div>
         </div>
