@@ -98,21 +98,31 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     let sortableItems = [...historicoImplementacoesBugs];
     if (sortConfig.key) {
       sortableItems.sort((a, b) => {
-        // Aqui garantimos que key não é null e o TypeScript pode inferir o tipo corretamente
+        // Garante que a chave não é null
         const key = sortConfig.key as keyof HistoricoImplementacoesBugs;
 
-        // Agora o TypeScript sabe que key não é null e está sendo usado corretamente
-        const aValue = a[key];
-        const bValue = b[key];
+        // Pega os valores de a e b, considerando um valor padrão se for undefined
+        const aValue = a[key] ?? ""; // ou outro valor padrão que faça sentido
+        const bValue = b[key] ?? ""; // ou outro valor padrão que faça sentido
+
+        // Se um dos valores for undefined, você pode definir como quer tratá-los na comparação
+        // Por exemplo, tratar undefined como o menor valor possível
+        if (aValue === undefined && bValue === undefined) return 0;
+        if (aValue === undefined) return -1;
+        if (bValue === undefined) return 1;
 
         // A implementação da comparação permanece a mesma
-        if (aValue < bValue) {
-          return sortConfig.direction === "ascending" ? -1 : 1;
-        }
-        if (aValue > bValue) {
-          return sortConfig.direction === "ascending" ? 1 : -1;
-        }
-        return 0;
+        return sortConfig.direction === "ascending"
+          ? aValue < bValue
+            ? -1
+            : aValue > bValue
+            ? 1
+            : 0
+          : aValue > bValue
+          ? -1
+          : aValue < bValue
+          ? 1
+          : 0;
       });
     }
     return sortableItems;
