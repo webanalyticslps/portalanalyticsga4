@@ -17,7 +17,6 @@ export default async function handler(
     container_id_gtm,
     propriedade_id_ga4,
     impacto,
-    solucao,
   } = req.body;
 
   // Função para transformar a data/hora recebida para o formato completo UTC
@@ -40,8 +39,7 @@ export default async function handler(
       responsavel,
       container_id_gtm,
       propriedade_id_ga4,
-      impacto,
-      solucao
+      impacto
     );
 
     const data_hora_formatada = formatarDataParaUTC(data_hora);
