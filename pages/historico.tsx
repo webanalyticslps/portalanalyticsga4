@@ -115,9 +115,9 @@ export default withPageAuthRequired(function Profile({
   // Função para criar novo registro
   const handleClick = async () => {
     try {
+      console.log("Enviando dados para a API:", formData); // Log dos dados que serão enviados
       const axios = require("axios");
       const response = await axios.post("/api/1-create-historico", formData);
-      console.log("Enviando dados para a API:", formData); // Log dos dados que serão enviados
       console.log(response.data);
       // Após sucesso, talvez você queira limpar o formData ou tratar o sucesso de alguma forma específica.
       setFormData({
