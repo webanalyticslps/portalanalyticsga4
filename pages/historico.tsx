@@ -54,7 +54,7 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
       <EditModal
         showModal={showModal}
         handleCloseModal={handleCloseModal}
-        handleSaveChanges={handleSaveChanges}
+        onSaveChanges={handleSaveChanges} // Use onSaveChanges aqui
         selectedHistorico={selectedHistorico}
       />
     </div>
