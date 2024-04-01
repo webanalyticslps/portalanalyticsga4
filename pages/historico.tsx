@@ -339,4 +339,4 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   };
 
   export default withPageAuthRequired(Profile);
-};
+
