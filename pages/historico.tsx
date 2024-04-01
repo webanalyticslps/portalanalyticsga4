@@ -322,7 +322,7 @@ export default withPageAuthRequired(function Profile({
     }
   );
 
-  console.log("Renderizou novamente" showModal);
+  console.log("Renderizou novamente", showModal);
 
   return (
     <div className="container-fluid ">
