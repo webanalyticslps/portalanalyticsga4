@@ -21,18 +21,14 @@ export default async function handler(
   } = req.body;
 
   // Função para transformar a data/hora recebida para o formato completo UTC
-  function formatarDataParaUTC(dataHoraLocal: string) {
-    try {
-      const dataObj = new Date(dataHoraLocal);
-      if (isNaN(dataObj.getTime())) {
-        // Verifica se a data é inválida
-        throw new Error("Data inválida");
-      }
-      return dataObj.toISOString();
-    } catch (error) {
-      console.error(error);
-      return null; // Ou trate de uma maneira que faça sentido para sua aplicação
-    }
+  function formatarDataParaUTC(dataHoraLocal: any) {
+    // Cria um objeto Date a partir da string "AAAA-MM-DDThh:mm"
+    const dataObj = new Date(dataHoraLocal);
+
+    // Converte para o formato ISO "AAAA-MM-DDThh:mm:ss.sssZ" em UTC
+    const dataHoraUTC = dataObj.toISOString();
+
+    return dataHoraUTC;
   }
 
   async function main() {
