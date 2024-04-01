@@ -55,7 +55,6 @@ export default async function handler(
         container_id_gtm,
         propriedade_id_ga4,
         impacto,
-        solucao,
       },
     });
 
