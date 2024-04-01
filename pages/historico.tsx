@@ -24,6 +24,11 @@ interface PostProps {
 export default withPageAuthRequired(function Profile({
   historicoImplementacoesBugs,
 }) {
+  const [showModal, setShowModal] = useState(false);
+
+  const [selectedHistorico, setSelectedHistorico] =
+    useState<HistoricoImplementacoesBugs | null>(null);
+
   const [formData, setFormData] = useState({
     tipoRegistro: "",
     tipoImplementacao: "",
@@ -38,21 +43,21 @@ export default withPageAuthRequired(function Profile({
     dataHoraResolucao: "",
   });
 
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const [showModal, setShowModal] = useState(false);
-  const [selectedHistorico, setSelectedHistorico] =
-    useState<HistoricoImplementacoesBugs | null>(null);
+  // Função para alterar um registro
+  const handleInputChange = useCallback(
+    (
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >
+    ) => {
+      const { name, value } = e.target;
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    },
+    [] // Depende de algo que nunca muda entre renderizações.
+  );
 
   // Função para abrir o modal com os dados do registro selecionado
   const handleOpenModal = (historico: any) => {
@@ -80,6 +85,7 @@ export default withPageAuthRequired(function Profile({
     setSelectedHistorico(null); // Limpar o registro selecionado
   };
 
+  // Função para salvar um registro alterado
   const handleSaveChanges = useCallback(async () => {
     const updatedHistorico = {
       id: selectedHistorico?.id,
@@ -166,8 +172,6 @@ export default withPageAuthRequired(function Profile({
       );
     }
   };
-
-  console.log(showModal);
 
   interface EditModalProps {
     showModal: boolean;
@@ -322,6 +326,8 @@ export default withPageAuthRequired(function Profile({
   );
 
   const MemoizedEditModal = React.memo(EditModal);
+
+  console.log(showModal);
 
   return (
     <div className="container-fluid ">
