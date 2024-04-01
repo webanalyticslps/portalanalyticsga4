@@ -31,38 +31,6 @@ interface PostProps {
   historicoImplementacoesBugs: HistoricoImplementacoesBugs[];
 }
 
-// Ordenação dos dados
-const [sortConfig, setSortConfig] = useState({
-  key: null,
-  direction: "ascending",
-});
-
-const requestSort = (key: keyof FormData) => {
-  let direction = "ascending";
-  if (sortConfig.key === key && sortConfig.direction === "ascending") {
-    direction = "descending";
-  }
-  setSortConfig({ key, direction });
-};
-
-const sortedItems = useMemo(() => {
-  let sortableItems = [...historicoImplementacoesBugs];
-  if (sortConfig !== null) {
-    sortableItems.sort((a, b) => {
-      if (a[sortConfig.key] < b[sortConfig.key]) {
-        return sortConfig.direction === "ascending" ? -1 : 1;
-      }
-      if (a[sortConfig.key] > b[sortConfig.key]) {
-        return sortConfig.direction === "ascending" ? 1 : -1;
-      }
-      return 0;
-    });
-  }
-  return sortableItems;
-}, [historicoImplementacoesBugs, sortConfig]);
-
-// Fim das funções de ordenação
-
 const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   const [formData, setFormData] = useState<FormData>({
     tipoRegistro: "",
@@ -81,6 +49,38 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedHistorico, setSelectedHistorico] =
     useState<HistoricoImplementacoesBugs | null>(null);
+
+  // Ordenação dos dados
+  const [sortConfig, setSortConfig] = useState({
+    key: null,
+    direction: "ascending",
+  });
+
+  const requestSort = (key: keyof FormData) => {
+    let direction = "ascending";
+    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+      direction = "descending";
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const sortedItems = useMemo(() => {
+    let sortableItems = [...historicoImplementacoesBugs];
+    if (sortConfig !== null) {
+      sortableItems.sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+          return sortConfig.direction === "ascending" ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+          return sortConfig.direction === "ascending" ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+    return sortableItems;
+  }, [historicoImplementacoesBugs, sortConfig]);
+
+  // Fim das funções de ordenação
 
   const handleInputChange = (
     event: ChangeEvent<
