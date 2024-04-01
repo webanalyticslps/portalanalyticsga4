@@ -315,7 +315,7 @@ export default withPageAuthRequired(function Profile({
         handleSaveChanges={handleSaveChanges}
         formData={formData}
         handleInputChange={handleInputChange}
-        selectedHistorico={selectedHistorico} // Adicione esta linha
+        selectedHistorico={selectedHistorico}
       />
 
       <div>
@@ -390,8 +390,8 @@ export default withPageAuthRequired(function Profile({
             <select
               id="tipoRegistro"
               name="tipoRegistro"
-              value={tipoRegistro}
-              onChange={(e) => setTipoRegistro(e.currentTarget.value)}
+              value={formData.tipoRegistro}
+              onChange={handleInputChange}
             >
               <option value="Implementação">Implementação</option>
               <option value="Bug">Bug</option>
@@ -401,8 +401,8 @@ export default withPageAuthRequired(function Profile({
             <select
               id="tipoImplementacao"
               name="tipoImplementacao"
-              value={tipoImplementacao}
-              onChange={(e) => setTipoImplementacao(e.currentTarget.value)}
+              value={formData.tipoImplementacao}
+              onChange={handleInputChange}
             >
               <option value="N/A">N/A</option>
               <option value="Hardcode">Hardcode</option>
@@ -416,8 +416,8 @@ export default withPageAuthRequired(function Profile({
               id="descricao"
               name="descricao"
               rows={1}
-              value={descricao}
-              onChange={(e) => setDescricao(e.currentTarget.value)}
+              value={formData.descricao}
+              onChange={handleInputChange}
             ></textarea>
           </div>
           <div className="col-sm">
@@ -425,17 +425,16 @@ export default withPageAuthRequired(function Profile({
               type="datetime-local"
               id="dataHora"
               name="dataHora"
-              value={dataHora}
-              onChange={(e) => setDataHora(e.currentTarget.value)}
+              value={formData.dataHora}
+              onChange={handleInputChange}
             />
           </div>
-
           <div className="col-sm">
             <select
               id="status"
               name="status"
-              value={status}
-              onChange={(e) => setStatus(e.currentTarget.value)}
+              value={formData.status}
+              onChange={handleInputChange}
             >
               <option value="Publicado">Publicado</option>
               <option value="Em análise">Em análise</option>
@@ -443,8 +442,7 @@ export default withPageAuthRequired(function Profile({
               <option value="Pendente">Pendente</option>
             </select>
           </div>
-
-          {/* Repita para outros campos necessários */}
+          {/* Adicione outros campos conforme necessário, seguindo o mesmo padrão */}
         </div>
       </div>
 
@@ -465,8 +463,8 @@ export default withPageAuthRequired(function Profile({
               id="responsavel"
               name="responsavel"
               rows={1}
-              value={responsavel}
-              onChange={(e) => setResponsavel(e.currentTarget.value)}
+              value={formData.responsavel}
+              onChange={handleInputChange}
             ></textarea>
           </div>
 
@@ -474,14 +472,14 @@ export default withPageAuthRequired(function Profile({
             <select
               id="containerIdGtm"
               name="containerIdGtm"
-              value={containerIdGtm}
-              onChange={(e) => setContainerIdGtm(e.currentTarget.value)}
+              value={formData.containerIdGtm}
+              onChange={handleInputChange}
             >
               <option value="N/A">N/A</option>
               <option value="GTM-NW5CWVM">GTM-NW5CWVM (GA4 Prod)</option>
               <option value="GTM-TLC7K75">GTM-TLC7K75 (Server Side)</option>
               <option value="GTM-KV4S6DC">GTM-KV4S6DC (Mídia)</option>
-              <option value="GTM-KV4S6DC">GTM-W5XCPXHB (Unilopes)</option>
+              <option value="GTM-W5XCPXHB">GTM-W5XCPXHB (Unilopes)</option>
             </select>
           </div>
 
@@ -489,8 +487,8 @@ export default withPageAuthRequired(function Profile({
             <select
               id="propriedadeIdGa4"
               name="propriedadeIdGa4"
-              value={propriedadeIdGa4}
-              onChange={(e) => setPropriedadeIdGa4(e.currentTarget.value)}
+              value={formData.propriedadeIdGa4}
+              onChange={handleInputChange}
             >
               <option value="N/A">N/A</option>
               <option value="338885311">338885311 (GA4 Prod)</option>
@@ -502,8 +500,8 @@ export default withPageAuthRequired(function Profile({
             <select
               id="impacto"
               name="impacto"
-              value={impacto}
-              onChange={(e) => setImpacto(e.currentTarget.value)}
+              value={formData.impacto}
+              onChange={handleInputChange}
             >
               <option value="Baixo">Baixo</option>
               <option value="Médio">Médio</option>
@@ -511,8 +509,7 @@ export default withPageAuthRequired(function Profile({
             </select>
           </div>
 
-          <div className="col-sm"></div>
-          {/* Repita para outros campos necessários */}
+          {/* Adicione outros campos conforme necessário, seguindo o mesmo padrão */}
         </div>
       </div>
 
