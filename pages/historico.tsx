@@ -24,18 +24,28 @@ interface PostProps {
 export default withPageAuthRequired(function Profile({
   historicoImplementacoesBugs,
 }) {
-  const [id, setId] = useState("");
-  const [tipoRegistro, setTipoRegistro] = useState("");
-  const [tipoImplementacao, setTipoImplementacao] = useState("");
-  const [descricao, setDescricao] = useState("");
-  const [dataHora, setDataHora] = useState("");
-  const [status, setStatus] = useState("");
-  const [responsavel, setResponsavel] = useState("");
-  const [containerIdGtm, setContainerIdGtm] = useState("");
-  const [propriedadeIdGa4, setPropriedadeIdGa4] = useState("");
-  const [impacto, setImpacto] = useState("");
-  const [solucao, setSolucao] = useState("");
-  const [dataHoraResolucao, setDataHoraResolucao] = useState("");
+  const [formData, setFormData] = useState({
+    tipoRegistro: "",
+    tipoImplementacao: "",
+    descricao: "",
+    dataHora: "",
+    status: "",
+    responsavel: "",
+    containerIdGtm: "",
+    propriedadeIdGa4: "",
+    impacto: "",
+    solucao: "",
+    dataHoraResolucao: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   const [showModal, setShowModal] = useState(false);
   const [selectedHistorico, setSelectedHistorico] =
     useState<HistoricoImplementacoesBugs | null>(null);
@@ -205,9 +215,10 @@ export default withPageAuthRequired(function Profile({
               <Form.Label>Tipo de implementação</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Tipo de implementação"
-                value={tipoImplementacao}
-                onChange={(e) => setTipoImplementacao(e.target.value)}
+                placeholder="Tipo de registro"
+                name="tipoRegistro"
+                value={formData.tipoRegistro}
+                onChange={handleInputChange}
               />
               <Form.Label>Descrição</Form.Label>
               <Form.Control
@@ -301,18 +312,9 @@ export default withPageAuthRequired(function Profile({
         showModal={showModal}
         handleCloseModal={handleCloseModal}
         handleSaveChanges={handleSaveChanges}
-        selectedHistorico={selectedHistorico}
-        setTipoRegistro={setTipoRegistro}
-        setTipoImplementacao={setTipoImplementacao}
-        setDescricao={setDescricao}
-        setDataHora={setDataHora}
-        setStatus={setStatus}
-        setResponsavel={setResponsavel}
-        setContainerIdGtm={setContainerIdGtm}
-        setPropriedadeIdGa4={setPropriedadeIdGa4}
-        setImpacto={setImpacto}
-        setSolucao={setSolucao}
-        setDataHoraResolucao={setDataHoraResolucao}
+        formData={formData}
+        handleInputChange={handleInputChange}
+        // Passe outras props necessárias
       />
 
       <div>
