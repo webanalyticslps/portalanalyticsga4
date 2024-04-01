@@ -38,7 +38,7 @@ export default withPageAuthRequired(function Profile({
     dataHoraResolucao: "",
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
