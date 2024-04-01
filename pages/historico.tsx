@@ -33,22 +33,20 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   };
 
   // No componente pai
-  const handleSaveChanges = async (formData: any) => {
-    if (!selectedHistorico) return;
-
-    // `formData` agora é recebido como argumento desta função
-    const updatedHistorico = { ...formData, id: selectedHistorico.id };
+  // No componente pai (Profile)
+  const handleSaveChanges = async (formData) => {
+    if (!selectedHistorico) return; // Verifica se um histórico foi selecionado
 
     try {
-      // Certifique-se de que axios está importado corretamente no seu arquivo
+      // Aqui você faz a chamada de API para salvar as alterações
+      // formData já contém os dados do formulário que você precisa enviar
       const axios = require("axios");
       const response = await axios.put(
-        `/api/update-historico/${selectedHistorico.id}`,
-        updatedHistorico
+        `/api/update-historico/${selectedHistorico.id}`, // Endpoint correto
+        formData // Dados do formulário recebidos do EditModal
       );
       console.log("Dados salvos:", response.data);
-      // Após sucesso, feche o modal
-      handleCloseModal();
+      handleCloseModal(); // Fecha o modal após o sucesso
     } catch (error) {
       console.error("Erro ao salvar as alterações: ", error);
     }
