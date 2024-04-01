@@ -98,11 +98,18 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     let sortableItems = [...historicoImplementacoesBugs];
     if (sortConfig.key) {
       sortableItems.sort((a, b) => {
-        const key = sortConfig.key; // Já está corretamente tipado
-        if (a[key] < b[key]) {
+        // Aqui garantimos que key não é null e o TypeScript pode inferir o tipo corretamente
+        const key = sortConfig.key as keyof HistoricoImplementacoesBugs;
+
+        // Agora o TypeScript sabe que key não é null e está sendo usado corretamente
+        const aValue = a[key];
+        const bValue = b[key];
+
+        // A implementação da comparação permanece a mesma
+        if (aValue < bValue) {
           return sortConfig.direction === "ascending" ? -1 : 1;
         }
-        if (a[key] > b[key]) {
+        if (aValue > bValue) {
           return sortConfig.direction === "ascending" ? 1 : -1;
         }
         return 0;
