@@ -28,7 +28,7 @@ const [formData, setFormData] = useState({
 });
 
 const handleInputChange = (
-  event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
 ) => {
   const { name, value } = event.target;
   setFormData((prevState) => ({
