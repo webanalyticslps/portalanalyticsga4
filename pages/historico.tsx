@@ -114,12 +114,29 @@ export default withPageAuthRequired(function Profile({
 
   // Função para criar novo registro
   const handleClick = async () => {
+    console.log("Enviando dados para a API:", formData); // Log dos dados que serão enviados
+
+    // Converte dataHora para o formato UTC completo
+    const dataHoraUTC = new Date(formData.dataHora).toISOString();
+
+    // Prepara os dados para serem enviados, substituindo dataHora por sua versão em UTC
+    const dadosParaEnvio = {
+      ...formData,
+      dataHora: dataHoraUTC,
+      dataHoraResolucao: formData.dataHoraResolucao
+        ? new Date(formData.dataHoraResolucao).toISOString()
+        : "",
+    };
+
     try {
-      console.log("Enviando dados para a API:", formData); // Log dos dados que serão enviados
       const axios = require("axios");
-      const response = await axios.post("/api/1-create-historico", formData);
-      console.log(response.data);
-      // Após sucesso, talvez você queira limpar o formData ou tratar o sucesso de alguma forma específica.
+      const response = await axios.post(
+        "/api/1-create-historico",
+        dadosParaEnvio
+      );
+      console.log("Resposta da API:", response.data);
+
+      // Após sucesso, limpa o formData ou trata o sucesso de alguma forma específica
       setFormData({
         tipoRegistro: "",
         tipoImplementacao: "",
@@ -134,8 +151,10 @@ export default withPageAuthRequired(function Profile({
         dataHoraResolucao: "",
       });
     } catch (error) {
-      console.error("Erro ao criar o registro: ", error);
-      // Tratamento de erro
+      console.error(
+        "Erro ao criar o registro: ",
+        error.response ? error.response.data : error
+      );
     }
   };
 
@@ -184,7 +203,7 @@ export default withPageAuthRequired(function Profile({
         </Modal.Header>
         <Modal.Body>
           {/* Aqui você pode colocar um formulário para editar o registro.
-            Use os estados como `selectedHistorico` para preencher os dados existentes */}
+              Use os estados como `selectedHistorico` para preencher os dados existentes */}
           <Form>
             {/* Exemplo de campo do formulário */}
             <Form.Group controlId="formDescricao">
