@@ -57,21 +57,43 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
 
   // Ordenação dos dados
 
+  const formToDatabaseMapping: Record<
+    keyof FormData,
+    keyof HistoricoImplementacoesBugs | null
+  > = {
+    tipoRegistro: "tipo_registro",
+    tipoImplementacao: "tipo_implementacao",
+    descricao: "descricao",
+    dataHora: "data_hora",
+    status: "status",
+    responsavel: "responsavel",
+    containerIdGtm: "container_id_gtm",
+    propriedadeIdGa4: "propriedade_id_ga4",
+    impacto: "impacto",
+    solucao: "solucao",
+    dataHoraResolucao: "data_hora_resolucao",
+  };
+
   const [sortConfig, setSortConfig] = useState<SortConfig>({
     key: null,
     direction: "ascending",
   });
 
-  const requestSort = (key: keyof FormData) => {
-    // Explicitamente definindo 'direction' como um dos dois valores permitidos
+  const requestSort = (formKey: keyof FormData) => {
+    // Converte a chave do formulário para a chave correspondente no banco de dados
+    const key = formToDatabaseMapping[formKey];
+
+    // Sair se a chave não é válida para o banco de dados
+    if (!key) return;
+
     let direction: "ascending" | "descending" =
       sortConfig.key === key && sortConfig.direction === "ascending"
         ? "descending"
         : "ascending";
 
+    // Atualiza o estado de ordenação com a chave do banco de dados e direção
     setSortConfig({ key, direction });
   };
-
   const sortedItems = useMemo(() => {
     let sortableItems = [...historicoImplementacoesBugs];
     if (sortConfig.key) {
