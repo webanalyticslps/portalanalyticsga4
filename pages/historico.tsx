@@ -194,7 +194,7 @@ export default withPageAuthRequired(function Profile({
     ) => void;
   }
 
-  const EditModal = React.memo(
+  const EditModal: React.FC<EditModalProps> = React.memo(
     ({
       showModal,
       handleCloseModal,
