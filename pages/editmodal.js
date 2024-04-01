@@ -80,7 +80,7 @@ const EditModal = ({
               type="text"
               placeholder="Tipo de registro"
               name="tipoRegistro"
-              value={formData.tipoRegistro}
+              value={localFormData.tipoRegistro}
               onChange={handleInputChange}
             />
             <Form.Label>Tipo de implementação</Form.Label>
@@ -88,7 +88,7 @@ const EditModal = ({
               type="text"
               placeholder="Tipo de implementação"
               name="tipoImplementacao"
-              value={formData.tipoImplementacao}
+              value={localFormData.tipoImplementacao}
               onChange={handleInputChange}
             />
             <Form.Label>Descrição</Form.Label>
@@ -96,7 +96,7 @@ const EditModal = ({
               type="text"
               placeholder="Descrição"
               name="descricao"
-              value={formData.descricao}
+              value={localFormData.descricao}
               onChange={handleInputChange}
             />
             <Form.Label>Data e hora</Form.Label>
@@ -104,7 +104,7 @@ const EditModal = ({
               type="datetime-local"
               placeholder="Data e hora"
               name="dataHora"
-              value={formData.dataHora}
+              value={localFormData.dataHora}
               onChange={handleInputChange}
             />
             <Form.Label>Status</Form.Label>
@@ -112,7 +112,7 @@ const EditModal = ({
               type="text"
               placeholder="Status"
               name="status"
-              value={formData.status}
+              value={localFormData.status}
               onChange={handleInputChange}
             />
             <Form.Label>Responsável</Form.Label>
@@ -120,7 +120,7 @@ const EditModal = ({
               type="text"
               placeholder="Responsável"
               name="responsavel"
-              value={formData.responsavel}
+              value={localFormData.responsavel}
               onChange={handleInputChange}
             />
             <Form.Label>Container ID GTM</Form.Label>
@@ -128,7 +128,7 @@ const EditModal = ({
               type="text"
               placeholder="Container ID GTM"
               name="containerIdGtm"
-              value={formData.containerIdGtm}
+              value={localFormData.containerIdGtm}
               onChange={handleInputChange}
             />
             <Form.Label>Propriedade GA4</Form.Label>
@@ -136,7 +136,7 @@ const EditModal = ({
               type="text"
               placeholder="Propriedade GA4"
               name="propriedadeIdGa4"
-              value={formData.propriedadeIdGa4}
+              value={localFormData.propriedadeIdGa4}
               onChange={handleInputChange}
             />
             <Form.Label>Impacto</Form.Label>
@@ -144,7 +144,7 @@ const EditModal = ({
               type="text"
               placeholder="Impacto"
               name="impacto"
-              value={formData.impacto}
+              value={localFormData.impacto}
               onChange={handleInputChange}
             />
             <Form.Label>Solução</Form.Label>
@@ -152,7 +152,7 @@ const EditModal = ({
               type="text"
               placeholder="Solução"
               name="solucao"
-              value={formData.solucao}
+              value={localFormData.solucao}
               onChange={handleInputChange}
             />
             <Form.Label>Data e hora da resolução</Form.Label>
@@ -160,7 +160,7 @@ const EditModal = ({
               type="datetime-local"
               placeholder="Data e hora da resolução"
               name="dataHoraResolucao"
-              value={formData.dataHoraResolucao}
+              value={localFormData.dataHoraResolucao}
               onChange={handleInputChange}
             />
           </Form.Group>
