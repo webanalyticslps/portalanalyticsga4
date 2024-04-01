@@ -118,7 +118,8 @@ export default withPageAuthRequired(function Profile({
     responsavel: any,
     container_id_gtm: any,
     propriedade_id_ga4: any,
-    impacto: any
+    impacto: any,
+    solucao: any
   ) => {
     try {
       const axios = require("axios");
