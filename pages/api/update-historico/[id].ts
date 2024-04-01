@@ -13,17 +13,17 @@ export default async function handler(
   const prisma = new PrismaClient();
   const {
     id, // Certifique-se de que o 'id' esteja sendo enviado na requisição
-    tipo_registro,
-    tipo_implementacao,
+    tipoRegistro,
+    tipoImplementacao,
     descricao,
-    data_hora,
+    dataHora,
     status,
     responsavel,
-    container_id_gtm,
-    propriedade_id_ga4,
+    containerIdGtm,
+    propriedadeIdGa4,
     impacto,
     solucao,
-    data_hora_resolucao,
+    dataHoraResolucao,
   } = req.body;
 
   // Função para transformar a data/hora recebida para o formato completo UTC
@@ -44,25 +44,25 @@ export default async function handler(
   }
 
   async function main() {
-    const data_hora_formatada = formatarDataParaUTC(data_hora);
-    const data_hora_resolucao_formatada =
-      formatarDataResolucaoParaUTC(data_hora_resolucao);
+    const dataHora_formatada = formatarDataParaUTC(dataHora);
+    const dataHoraResolucao_formatada =
+      formatarDataResolucaoParaUTC(dataHoraResolucao);
 
     try {
       const updateRegistro = await prisma.historicoImplementacoesBugs.update({
         where: { id: parseInt(id) }, // O 'id' é usado para localizar o registro a ser atualizado
         data: {
-          tipo_registro,
-          tipo_implementacao,
+          tipoRegistro,
+          tipoImplementacao,
           descricao,
-          data_hora: data_hora_formatada, // Usa a data formatada
+          dataHora: dataHora_formatada, // Usa a data formatada
           status,
           responsavel,
-          container_id_gtm,
-          propriedade_id_ga4,
+          containerIdGtm,
+          propriedadeIdGa4,
           impacto,
           solucao,
-          data_hora_resolucao: data_hora_resolucao_formatada,
+          dataHoraResolucao: dataHoraResolucao_formatada,
         },
       });
 
