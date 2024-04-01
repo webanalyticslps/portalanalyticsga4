@@ -32,7 +32,7 @@ interface PostProps {
 }
 
 interface SortConfig {
-  key: keyof FormData | null;
+  key: keyof HistoricoImplementacoesBugs | null; // Ajuste para corresponder aos nomes corretos
   direction: "ascending" | "descending";
 }
 
@@ -62,8 +62,8 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     direction: "ascending",
   });
 
-  const requestSort = (key: keyof FormData) => {
-    let direction: "ascending" | "descending" =
+  const requestSort = (key: keyof HistoricoImplementacoesBugs) => {
+    let direction =
       sortConfig.key === key && sortConfig.direction === "ascending"
         ? "descending"
         : "ascending";
@@ -73,24 +73,14 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   const sortedItems = useMemo(() => {
     let sortableItems = [...historicoImplementacoesBugs];
     if (sortConfig.key) {
-      // Verifica se sortConfig.key não é null
-      const key = sortConfig.key;
       sortableItems.sort((a, b) => {
-        // Assegura que a e b têm a propriedade definida por sortConfig.key
-        const aValue = a[key];
-        const bValue = b[key];
-
-        // Adiciona uma verificação de existência para a e bValue antes de comparar
-        if (aValue && bValue) {
-          return sortConfig.direction === "ascending"
-            ? aValue < bValue
-              ? -1
-              : 1
-            : aValue > bValue
-            ? -1
-            : 1;
+        const key = sortConfig.key; // Já está corretamente tipado
+        if (a[key] < b[key]) {
+          return sortConfig.direction === "ascending" ? -1 : 1;
         }
-
+        if (a[key] > b[key]) {
+          return sortConfig.direction === "ascending" ? 1 : -1;
+        }
         return 0;
       });
     }
