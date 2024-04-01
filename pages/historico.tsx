@@ -31,6 +31,11 @@ interface PostProps {
   historicoImplementacoesBugs: HistoricoImplementacoesBugs[];
 }
 
+interface SortConfig {
+  key: keyof FormData | null;
+  direction: "ascending" | "descending";
+}
+
 const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   const [formData, setFormData] = useState<FormData>({
     tipoRegistro: "",
@@ -51,7 +56,8 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     useState<HistoricoImplementacoesBugs | null>(null);
 
   // Ordenação dos dados
-  const [sortConfig, setSortConfig] = useState({
+
+  const [sortConfig, setSortConfig] = useState<SortConfig>({
     key: null,
     direction: "ascending",
   });
