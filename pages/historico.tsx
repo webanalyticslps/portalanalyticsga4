@@ -4,7 +4,7 @@ import {
   HistoricoImplementacoesBugs,
 } from "../lib/db";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Button } from "react-bootstrap";
 import EditModal from "./editmodal"; // Certifique-se de que o caminho esteja correto
 
@@ -27,7 +27,7 @@ const [formData, setFormData] = useState({
   dataHoraResolucao: "",
 });
 
-const handleInputChange = (event) => {
+const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
   const { name, value } = event.target;
   setFormData((prevState) => ({
     ...prevState,
