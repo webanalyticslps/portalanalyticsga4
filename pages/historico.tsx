@@ -196,7 +196,13 @@ export default withPageAuthRequired(function Profile({
   }
 
   const EditModal: React.FC<EditModalProps> = React.memo(
-    ({ showModal, handleCloseModal, handleSaveChanges }) => {
+    ({
+      showModal,
+      handleCloseModal,
+      handleSaveChanges,
+      formData,
+      handleInputChange,
+    }) => {
       return (
         <Modal
           show={showModal}
@@ -316,9 +322,7 @@ export default withPageAuthRequired(function Profile({
     }
   );
 
-  const MemoizedEditModal = React.memo(EditModal);
-
-  console.log(showModal);
+  console.log("Renderizou novamente" showModal);
 
   return (
     <div className="container-fluid ">
@@ -327,7 +331,7 @@ export default withPageAuthRequired(function Profile({
           HISTÓRICO DE BUGS E IMPLEMENTAÇÕES
         </p>
       </h2>
-      <MemoizedEditModal
+      <EditModal
         showModal={showModal}
         handleCloseModal={handleCloseModal}
         handleSaveChanges={handleSaveChanges}
