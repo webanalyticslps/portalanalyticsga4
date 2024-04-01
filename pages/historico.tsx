@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState, useMemo } from "react";
+import React, { ChangeEvent, useState, useMemo, useEffect } from "react";
 import { GetServerSideProps } from "next";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { Button } from "react-bootstrap";
@@ -63,17 +63,16 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   });
 
   const requestSort = (key: keyof FormData) => {
-    // Usando um tipo de asserção para garantir que direction é reconhecido como 'ascending' ou 'descending'
-    let direction: "ascending" | "descending" = "ascending";
-    if (sortConfig.key === key && sortConfig.direction === "ascending") {
-      direction = "descending";
-    }
+    let direction =
+      sortConfig.key === key && sortConfig.direction === "ascending"
+        ? "descending"
+        : "ascending";
     setSortConfig({ key, direction });
   };
 
   const sortedItems = useMemo(() => {
     let sortableItems = [...historicoImplementacoesBugs];
-    if (sortConfig !== null) {
+    if (sortConfig.key) {
       sortableItems.sort((a, b) => {
         if (a[sortConfig.key] < b[sortConfig.key]) {
           return sortConfig.direction === "ascending" ? -1 : 1;
