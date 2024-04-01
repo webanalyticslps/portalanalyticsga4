@@ -44,20 +44,17 @@ export default withPageAuthRequired(function Profile({
   });
 
   // Função para alterar um registro
-  const handleInputChange = useCallback(
-    (
-      e: React.ChangeEvent<
-        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-      >
-    ) => {
-      const { name, value } = e.target;
-      setFormData((prevState) => ({
-        ...prevState,
-        [name]: value,
-      }));
-    },
-    [] // Depende de algo que nunca muda entre renderizações.
-  );
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   // Função para abrir o modal com os dados do registro selecionado
   const handleOpenModal = (historico: any) => {
@@ -199,13 +196,7 @@ export default withPageAuthRequired(function Profile({
   }
 
   const EditModal: React.FC<EditModalProps> = React.memo(
-    ({
-      showModal,
-      handleCloseModal,
-      handleSaveChanges,
-      formData,
-      handleInputChange,
-    }) => {
+    ({ showModal, handleCloseModal, handleSaveChanges }) => {
       return (
         <Modal
           show={showModal}
