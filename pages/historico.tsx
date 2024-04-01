@@ -4,7 +4,7 @@ import {
   HistoricoImplementacoesBugs,
 } from "../lib/db";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-import React, { useState, useCallback } from "react"; // Adicionado useCallback
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import EditModal from "./editmodal"; // Certifique-se de que o caminho esteja correto
 
@@ -32,38 +32,10 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
     setSelectedHistorico(null);
   };
 
-  const handleSaveChanges = async () => {
-    if (!selectedHistorico) return; // Verifica se existe um historico selecionado
-
-    const updatedHistorico = {
-      id: selectedHistorico.id,
-      tipo_registro: formData.tipoRegistro,
-      tipo_implementacao: formData.tipoImplementacao,
-      descricao: formData.descricao,
-      data_hora: formData.dataHora,
-      status: formData.status,
-      responsavel: formData.responsavel,
-      container_id_gtm: formData.containerIdGtm,
-      propriedade_id_ga4: formData.propriedadeIdGa4,
-      impacto: formData.impacto,
-      solucao: formData.solucao,
-      data_hora_resolucao: formData.dataHoraResolucao,
-      // Adicione mais campos conforme necessário
-    };
-
-    try {
-      // Supondo que você use axios para a chamada de API
-      const axios = require("axios");
-      const response = await axios.put(
-        `/api/update-historico/${selectedHistorico.id}`,
-        updatedHistorico
-      );
-      console.log(response.data);
-      // Após a atualização, você pode querer fechar o modal ou atualizar o estado da página de alguma forma
-      handleCloseModal();
-    } catch (error) {
-      console.error("Erro ao salvar as alterações: ", error);
-    }
+  const handleSaveChanges = (formData: any) => {
+    console.log("Dados salvos", formData);
+    // Implemente a lógica de salvamento aqui
+    handleCloseModal();
   };
 
   return (
