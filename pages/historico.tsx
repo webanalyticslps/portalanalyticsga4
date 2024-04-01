@@ -63,7 +63,7 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   });
 
   const requestSort = (key: keyof FormData) => {
-    let direction =
+    let direction: "ascending" | "descending" =
       sortConfig.key === key && sortConfig.direction === "ascending"
         ? "descending"
         : "ascending";
@@ -73,11 +73,13 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   const sortedItems = useMemo(() => {
     let sortableItems = [...historicoImplementacoesBugs];
     if (sortConfig.key) {
+      // Garante que sortConfig.key não seja null
       sortableItems.sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) {
+        const key = sortConfig.key as keyof HistoricoImplementacoesBugs; // Afirmação de tipo para satisfazer o TypeScript
+        if (a[key] < b[key]) {
           return sortConfig.direction === "ascending" ? -1 : 1;
         }
-        if (a[sortConfig.key] > b[sortConfig.key]) {
+        if (a[key] > b[key]) {
           return sortConfig.direction === "ascending" ? 1 : -1;
         }
         return 0;
