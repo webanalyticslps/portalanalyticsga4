@@ -44,17 +44,22 @@ export default withPageAuthRequired(function Profile({
   });
 
   // Função para alterar um registro
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const handleInputChange = useCallback(
+    (
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >
+    ) => {
+      const { name, value } = e.target;
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    },
+    [setFormData]
+  );
+
+  // Aplique o useCallback de maneira similar para outras funções se necessário.
 
   // Função para abrir o modal com os dados do registro selecionado
   const handleOpenModal = (historico: any) => {
