@@ -26,8 +26,8 @@ const EditModal = ({
   const tipoImplementacaoOptions = ["N/A", "Hardcode", "GTM", "GA4", "Outro"];
   const statusOptions = ["Em análise", "Resolvido", "Pendente", "Publicado"];
   const impactoOptions = ["Baixo", "Médio", "Alto"];
-  const containerIdGtmOptions = ["GTM-NW5CWVM", "GTM-TLC7K75", "GTM-KV4S6DC", "GTM-W5XCPXHB"];
-  const propriedadeIdGa4Options = ["338885311", "428406499"];
+  const containerIdGtmOptions = ["N/A","GTM-NW5CWVM", "GTM-TLC7K75", "GTM-KV4S6DC", "GTM-W5XCPXHB"];
+  const propriedadeIdGa4Options = ["N/A","338885311", "428406499"];
 
   useEffect(() => {
     if (selectedHistorico) {
