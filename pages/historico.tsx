@@ -225,7 +225,7 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   return (
     <div className="container-fluid">
       <h2 className="text-center font-weight-bold">
-        HISTÓRICO DE BUGS E IMPLEMENTAÇÕES
+        HISTÓRICO DE IMPLEMENTAÇÕES E BUGS
       </h2>
 
       <div className="row text-light bg-lopes border border-dark">
