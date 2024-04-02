@@ -230,7 +230,7 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
 
       <div className="row text-light bg-lopes border border-dark">
         <div className="col" onClick={() => requestSort("tipoRegistro")}>
-          Tipo de Registro 2
+          Tipo de Registro 
         </div>
         <div className="col" onClick={() => requestSort("tipoImplementacao")}>
           Tipo de Implementação
