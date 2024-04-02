@@ -230,7 +230,7 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
 
       <div className="row text-light bg-lopes border border-dark">
         <div className="col" onClick={() => requestSort("tipoRegistro")}>
-          Tipo de Registro 
+          Tipo de Registro
         </div>
         <div className="col" onClick={() => requestSort("tipoImplementacao")}>
           Tipo de Implementação
@@ -272,9 +272,11 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
           className="row text-dark border border-dark"
           style={{
             backgroundColor:
-              historico.tipo_registro === "Implementação"
-                ? "#d4edda"
-                : "#f8d7da",
+              historico.tipo_registro === "Implementação" ||
+              (historico.tipo_registro === "Bug" &&
+                historico.status === "Resolvido")
+                ? "#d4edda" // Verde
+                : "#f8d7da", // Vermelho
           }}
         >
           <div className="col">{historico.tipo_registro}</div>
