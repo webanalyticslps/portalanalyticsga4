@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState, useMemo, useEffect } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { GetServerSideProps } from "next";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { Button } from "react-bootstrap";
@@ -31,11 +31,6 @@ interface PostProps {
   historicoImplementacoesBugs: HistoricoImplementacoesBugs[];
 }
 
-interface SortConfig {
-  key: keyof HistoricoImplementacoesBugs | null; // Ajuste para corresponder aos nomes corretos
-  direction: "ascending" | "descending";
-}
-
 const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   const [formData, setFormData] = useState<FormData>({
     tipoRegistro: "",
@@ -54,81 +49,6 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedHistorico, setSelectedHistorico] =
     useState<HistoricoImplementacoesBugs | null>(null);
-
-  // Ordenação dos dados
-
-  const formToDatabaseMapping: Record<
-    keyof FormData,
-    keyof HistoricoImplementacoesBugs | null
-  > = {
-    tipoRegistro: "tipo_registro",
-    tipoImplementacao: "tipo_implementacao",
-    descricao: "descricao",
-    dataHora: "data_hora",
-    status: "status",
-    responsavel: "responsavel",
-    containerIdGtm: "container_id_gtm",
-    propriedadeIdGa4: "propriedade_id_ga4",
-    impacto: "impacto",
-    solucao: "solucao",
-    dataHoraResolucao: "data_hora_resolucao",
-  };
-
-  const [sortConfig, setSortConfig] = useState<SortConfig>({
-    key: null,
-    direction: "ascending",
-  });
-
-  const requestSort = (formKey: keyof FormData) => {
-    // Converte a chave do formulário para a chave correspondente no banco de dados
-    const key = formToDatabaseMapping[formKey];
-
-    // Sair se a chave não é válida para o banco de dados
-    if (!key) return;
-
-    let direction: "ascending" | "descending" =
-      sortConfig.key === key && sortConfig.direction === "ascending"
-        ? "descending"
-        : "ascending";
-
-    // Atualiza o estado de ordenação com a chave do banco de dados e direção
-    setSortConfig({ key, direction });
-  };
-  const sortedItems = useMemo(() => {
-    let sortableItems = [...historicoImplementacoesBugs];
-    if (sortConfig.key) {
-      sortableItems.sort((a, b) => {
-        // Garante que a chave não é null
-        const key = sortConfig.key as keyof HistoricoImplementacoesBugs;
-
-        // Pega os valores de a e b, considerando um valor padrão se for undefined
-        const aValue = a[key] ?? ""; // ou outro valor padrão que faça sentido
-        const bValue = b[key] ?? ""; // ou outro valor padrão que faça sentido
-
-        // Se um dos valores for undefined, você pode definir como quer tratá-los na comparação
-        // Por exemplo, tratar undefined como o menor valor possível
-        if (aValue === undefined && bValue === undefined) return 0;
-        if (aValue === undefined) return -1;
-        if (bValue === undefined) return 1;
-
-        // A implementação da comparação permanece a mesma
-        return sortConfig.direction === "ascending"
-          ? aValue < bValue
-            ? -1
-            : aValue > bValue
-            ? 1
-            : 0
-          : aValue > bValue
-          ? -1
-          : aValue < bValue
-          ? 1
-          : 0;
-      });
-    }
-    return sortableItems;
-  }, [historicoImplementacoesBugs, sortConfig]);
-
-  // Fim das funções de ordenação
 
   const handleInputChange = (
     event: ChangeEvent<
@@ -227,46 +147,24 @@ const Profile: React.FC<PostProps> = ({ historicoImplementacoesBugs }) => {
       <h2 className="text-center font-weight-bold">
         HISTÓRICO DE BUGS E IMPLEMENTAÇÕES
       </h2>
-
       <div className="row text-light bg-lopes border border-dark">
-        <div className="col" onClick={() => requestSort("tipoRegistro")}>
-          Tipo de Registro 2
-        </div>
-        <div className="col" onClick={() => requestSort("tipoImplementacao")}>
-          Tipo de Implementação
-        </div>
-        <div className="col" onClick={() => requestSort("descricao")}>
-          Descrição
-        </div>
-        <div className="col" onClick={() => requestSort("dataHora")}>
-          Data e Hora
-        </div>
-        <div className="col" onClick={() => requestSort("status")}>
-          Status
-        </div>
-        <div className="col" onClick={() => requestSort("responsavel")}>
-          Responsável
-        </div>
-        <div className="col" onClick={() => requestSort("containerIdGtm")}>
-          Container ID GTM
-        </div>
-        <div className="col" onClick={() => requestSort("propriedadeIdGa4")}>
-          Propriedade ID GA4
-        </div>
-        <div className="col" onClick={() => requestSort("impacto")}>
-          Impacto
-        </div>
-        <div className="col" onClick={() => requestSort("solucao")}>
-          Solução
-        </div>
-        <div className="col" onClick={() => requestSort("dataHoraResolucao")}>
-          Data e Hora da Resolução
-        </div>
+        {/* Cabeçalhos da tabela aqui */}
+        <div className="col">Tipo de Registro</div>
+        <div className="col">Tipo de Implementação</div>
+        <div className="col">Descrição</div>
+        <div className="col">Data e Hora</div>
+        <div className="col">Status</div>
+        <div className="col">Responsável</div>
+        <div className="col">Container ID GTM</div>
+        <div className="col">Propriedade ID GA4</div>
+        <div className="col">Impacto</div>
+        <div className="col">Solução</div>
+        <div className="col">Data e Hora da Resolução</div>
         <div className="col">Editar</div>
-        {/* Repita para outras colunas conforme necessário */}
+        {/* Outros cabeçalhos da tabela */}
       </div>
-
-      {sortedItems.map((historico) => (
+      {/* Loop para renderizar cada linha baseada em historicoImplementacoesBugs */}
+      {historicoImplementacoesBugs.map((historico) => (
         <div
           key={historico.id}
           className="row text-dark border border-dark"
