@@ -104,7 +104,7 @@ export default withPageAuthRequired(function Profile({ user }) {
             <div className="card text-center">
               Mirela Souza (mvsouza@lopes.com.br)
               <Image
-                src="/mirela.jpeg"
+                src="/mirela.png"
                 alt=""
                 title=""
                 width="300"
