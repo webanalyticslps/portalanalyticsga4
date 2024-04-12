@@ -99,7 +99,7 @@ export default withPageAuthRequired(function Profile({ user }) {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row" style={{ paddingBottom: "100px" }}>
           <div className="col">
             <div className="card text-center">
               Mirela Souza (mvsouza@lopes.com.br)
