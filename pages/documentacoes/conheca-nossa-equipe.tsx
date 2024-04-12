@@ -28,7 +28,7 @@ export default withPageAuthRequired(function Profile({ user }) {
             <div className="card text-center">
               Tiago Dias
               <Image
-                src="/dias.jpeg"
+                src="/dias.png"
                 alt=""
                 title=""
                 width="300"
