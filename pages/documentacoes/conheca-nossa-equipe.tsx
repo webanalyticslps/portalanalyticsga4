@@ -12,60 +12,60 @@ export default withPageAuthRequired(function Profile({ user }) {
         <div className="row">
           <div className="col">
             <div className="card text-center">
-              Daniel Hein (dhein@lopes.com.br)
+              Eduardo Rozario (erozario@lopes.com.br)
               <Image
-                src="/hein.jpeg"
+                src="/dudu.jpeg"
                 alt=""
                 title=""
                 width="300"
                 height="300"
                 layout="responsive"
               />
-              Senior Engineering Manager
+              Engineering Manager
             </div>
           </div>
           <div className="col">
             <div className="card text-center">
-              Carlos Eduardo (csantanna@lopes.com.br)
+              Tiago Dias
               <Image
-                src="/kadu.jpeg"
+                src="/dias.jpeg"
                 alt=""
                 title=""
                 width="300"
                 height="300"
                 layout="responsive"
               />
-              Big Data Manager
+              Tech Lead
             </div>
           </div>
           <div className="col">
             <div className="card text-center">
-              Sandra Crevelin (screvelin@lopes.com.br)
+              Risielle Santos (rjsantos@lopes.com.br)
               <Image
-                src="/sandra.png"
+                src="/risi.jpeg"
                 alt=""
                 title=""
                 width="300"
                 height="300"
                 layout="responsive"
               />
-              Data Product Manager
+              Data Engineering
             </div>
           </div>
         </div>
         <div className="row">
           <div className="col">
             <div className="card text-center">
-              Yussif (ydutra@lopes.com.br)
+              Mariana Queiroz (mqueiroz@lopes.com.br)
               <Image
-                src="/yussif.jpeg"
+                src="/mariana.jpeg"
                 alt=""
                 title=""
                 width="300"
                 height="300"
                 layout="responsive"
               />
-              Tech Lead - Data Analytics
+              Data Engineering
             </div>
           </div>
           <div className="col">
@@ -79,44 +79,13 @@ export default withPageAuthRequired(function Profile({ user }) {
                 height="300"
                 layout="responsive"
               />
-              Web Analytics Specialist
+              Data Analytics
             </div>
           </div>
 
           <div className="col">
             <div className="card text-center">
-              Tiago Dias (raphael.silva@mazzatech.com.br)
-              <Image
-                src="/tiago.png"
-                alt=""
-                title=""
-                width="300"
-                height="300"
-                layout="responsive"
-              />
-              Data Analytics Specialist
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col">
-            <div className="card text-center">
-			Bianca (bferarezi@lopes.com.br)
-              <Image
-                src="/bianca.jpeg"
-                alt=""
-                title=""
-                width="300"
-                height="300"
-                layout="responsive"
-              />
-              Group Product Manager
-            </div>
-          </div>
-          <div className="col">
-            <div className="card text-center">
-			Raphael (raphael.silva@mazzatech.com.br)
+              Raphael Silva (raphael.silva@mazzatech.com.br)
               <Image
                 src="/rapha.jpeg"
                 alt=""
@@ -125,22 +94,24 @@ export default withPageAuthRequired(function Profile({ user }) {
                 height="300"
                 layout="responsive"
               />
-              Consultor de BI
+              Data Analytics
             </div>
           </div>
+        </div>
 
+        <div className="row">
           <div className="col">
             <div className="card text-center">
-			Lucas Aquino (laquino@credipronto.com.br)
+              Mirela Souza (mvsouza@lopes.com.br)
               <Image
-                src="/lucas.jpeg"
+                src="/mirela.jpeg"
                 alt=""
                 title=""
                 width="300"
                 height="300"
                 layout="responsive"
               />
-              Data Analytics Specialist
+              Group Product Manager
             </div>
           </div>
         </div>
