@@ -111,7 +111,32 @@ export default withPageAuthRequired(function Profile({ user }) {
                 height="300"
                 layout="responsive"
               />
-              Group Product Manager
+              Data Analytics
+            </div>
+          </div>
+          <div className="col">
+            <div className="card text-center">
+              <Image
+                src=""
+                alt=""
+                title=""
+                width="300"
+                height="300"
+                layout="responsive"
+              />
+            </div>
+          </div>
+
+          <div className="col">
+            <div className="card text-center">
+              <Image
+                src=""
+                alt=""
+                title=""
+                width="300"
+                height="300"
+                layout="responsive"
+              />
             </div>
           </div>
         </div>
