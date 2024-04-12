@@ -244,22 +244,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       <div className="accordion" id="accordionExample">
         <div className="accordion-item">
-          <h2 className="accordion-header" id="headingFour">
+          <h2 className="accordion-header" id="headingFive">
             <button
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#collapseFour"
+              data-bs-target="#collapseFive"
               aria-expanded="false"
-              aria-controls="collapseFour"
+              aria-controls="collapseFive"
             >
               Como implementar GTM Server Side
             </button>
           </h2>
           <div
-            id="collapseFour"
+            id="collapseFive"
             className="accordion-collapse collapse"
-            aria-labelledby="headingFour"
+            aria-labelledby="headingFive"
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
