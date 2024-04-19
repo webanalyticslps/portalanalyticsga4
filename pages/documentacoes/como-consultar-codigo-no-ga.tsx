@@ -85,7 +85,7 @@ export default withPageAuthRequired(function Profile({ user }) {
               aria-expanded="true"
               aria-controls="collapseTwo"
             >
-              Método 2: Criando uma Visualização Personalizada
+              Método 2: Criando uma Visão Personalizada no Relatório "Analisar"
             </button>
           </h2>
           <div
@@ -96,32 +96,35 @@ export default withPageAuthRequired(function Profile({ user }) {
           >
             <div className="accordion-body">
               <p>
-                Caso precise de uma análise mais detalhada ou deseje explorar
-                outros tipos de dados relacionados ao código de disparo, você
-                pode criar sua própria visualização no Looker.
+                Para uma análise mais detalhada ou para explorar dados
+                específicos relacionados ao código de disparo, você pode criar
+                uma visão personalizada no Explorar (Analisar) do GA4.
               </p>
-              <h3>Passos para criar uma visualização:</h3>
+              <h3>Passos para criar uma visão personalizada:</h3>
               <ol>
+                <li>No GA4, navegue até a seção "Explorar" ou "Analisar".</li>
                 <li>
-                  No Looker, vá até a área onde é possível criar ou editar
-                  relatórios e dashboards.
+                  Crie um novo relatório clicando em "Análise em branco" ou
+                  escolha um modelo de análise existente que deseja modificar.
                 </li>
                 <li>
-                  Adicione uma nova visualização (tabela, gráfico, etc.)
-                  conforme sua necessidade.
+                  Importe a dimensão "Código de Disparo" para o seu espaço de
+                  trabalho de análise.
                 </li>
                 <li>
-                  Insira a dimensão "Código de Disparo" no espaço designado para
-                  as dimensões.
+                  Selecione e adicione a métrica que deseja analisar em conjunto
+                  com o "Código de Disparo". Isso pode incluir métricas como
+                  usuários, sessões, eventos, entre outras.
                 </li>
                 <li>
                   Aplique um filtro para selecionar apenas o código de disparo
-                  específico que deseja analisar.
+                  específico que deseja examinar. Isso é feito adicionando um
+                  filtro no campo de filtro do relatório e inserindo o código
+                  desejado.
                 </li>
                 <li>
-                  Escolha e adicione as métricas desejadas, como usuários,
-                  sessões ou contagem de eventos, para entender como o código
-                  está se comportando.
+                  Visualize os resultados que serão gerados com base nas
+                  dimensões e métricas escolhidas.
                 </li>
               </ol>
             </div>
