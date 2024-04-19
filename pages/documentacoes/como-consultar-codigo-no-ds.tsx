@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { Container, Row, Card, Button } from "react-bootstrap";
 import Image from "next/image";
-import react from "react";
+import React from "react"; // Assegure-se que a importação de React está correta
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 export default withPageAuthRequired(function Profile({ user }) {
@@ -24,7 +24,7 @@ export default withPageAuthRequired(function Profile({ user }) {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Método 1: Utilizando o Relatório de Consulta de Código de Disparo{" "}
+              Método 1: Utilizando o Relatório de Consulta de Código de Disparo
             </button>
           </h2>
           <div
@@ -66,6 +66,11 @@ export default withPageAuthRequired(function Profile({ user }) {
                     <li>Gráfico histórico de disparo desse código</li>
                     <li>Entre outros indicadores relevantes.</li>
                   </ul>
+                  <img
+                    src="caminho_para_o_print_dos_indicadores.jpg"
+                    alt="Print dos indicadores do código de disparo"
+                    style={{ width: "100%", maxWidth: "600px" }}
+                  />
                 </li>
               </ol>
             </div>
