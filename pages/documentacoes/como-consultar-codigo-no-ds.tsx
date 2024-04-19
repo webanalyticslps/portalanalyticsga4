@@ -10,7 +10,7 @@ export default withPageAuthRequired(function Profile({ user }) {
     <div className="container">
       <h2>
         <p className="text-center font-weight-bold">
-          COMO CONSULTAR UM CÓDIGO NO DATA STUDIO
+          COMO CONSULTAR UM CÓDIGO NO LOOKER
         </p>
       </h2>
       <div className="accordion" id="accordionExample">

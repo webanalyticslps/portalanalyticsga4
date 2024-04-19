@@ -70,9 +70,9 @@ const Menu = () => {
               </NavDropdown.Item>
               <NavDropdown.Item
                 href="/documentacoes/como-consultar-codigo-no-ds"
-                title="Como consultar um código no DataStudio"
+                title="Como consultar um código no Looker"
               >
-                Como consultar um código no DataStudio
+                Como consultar um código no Looker
               </NavDropdown.Item>
               <NavDropdown.Item
                 href="/documentacoes/como-consultar-codigo-no-data-lake"
