@@ -67,7 +67,7 @@ export default withPageAuthRequired(function Profile({ user }) {
                     <li>Entre outros indicadores relevantes.</li>
                   </ul>
                   <img
-                    src="caminho_para_o_print_dos_indicadores.jpg"
+                    src="relatorio_consulta_codigo.png"
                     alt="Print dos indicadores do código de disparo"
                     style={{ width: "100%", maxWidth: "600px" }}
                   />
