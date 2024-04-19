@@ -51,6 +51,25 @@ export default withPageAuthRequired(function Profile({ user }) {
                     </li>
                   </ul>
                 </li>
+
+                <li>
+                  Adicionar Filtro:
+                  <ul>
+                    <li>
+                      Na página do relatório de eventos, localize e clique em
+                      'Adicionar filtro'.
+                    </li>
+                    <li>Selecione a dimensão 'Código de Disparo'.</li>
+                    <li>
+                      Insira o código de disparo específico que deseja filtrar
+                      nos dados.
+                    </li>
+                    <li>
+                      Aplique o filtro para ver os resultados filtrados por esse
+                      código de disparo específico.
+                    </li>
+                  </ul>
+                </li>
               </ol>
             </div>
           </div>
