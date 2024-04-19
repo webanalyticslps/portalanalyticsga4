@@ -38,10 +38,10 @@ export default withPageAuthRequired(function Profile({ user }) {
                 Você pode procurar um código nas nossas documentações do
                 Confluence na pasta{" "}
                 <ins>
-                  Data Analytics - Digital Analytics - Lista de Códigos de
-                  Disparo GA4
+                  Data Analytics - DA Web Analytics - Documentações GA4 - Portal
+                  Lopes
                 </ins>{" "}
-                dentro do espaço <ins>Big Data</ins>.
+                dentro do espaço <ins>Dados</ins>.
               </p>
               <p>
                 {" "}
