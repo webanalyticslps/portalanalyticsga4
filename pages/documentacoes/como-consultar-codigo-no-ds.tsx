@@ -69,7 +69,7 @@ export default withPageAuthRequired(function Profile({ user }) {
                   <img
                     src="/relatorio_consulta_codigo.png"
                     alt="Print dos indicadores do código de disparo"
-                    style={{ width: "100%", maxWidth: "600px" }}
+                    style={{ width: "100%", maxWidth: "1000px"}}
                   />
                 </li>
               </ol>
