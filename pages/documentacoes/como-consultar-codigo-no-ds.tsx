@@ -69,8 +69,65 @@ export default withPageAuthRequired(function Profile({ user }) {
                   <img
                     src="/relatorio_consulta_codigo.png"
                     alt="Print dos indicadores do código de disparo"
-					style={{ width: "100%", maxWidth: "1000px", marginTop: "20px" }} 
-					/>
+                    style={{
+                      width: "100%",
+                      maxWidth: "1000px",
+                      marginTop: "20px",
+                    }}
+                  />
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingTwo">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="true"
+              aria-controls="collapseTwo"
+            >
+              Método 2: Criando uma Visualização Personalizada
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div className="accordion-body">
+              <p>
+                Caso precise de uma análise mais detalhada ou deseje explorar
+                outros tipos de dados relacionados ao código de disparo, você
+                pode criar sua própria visualização no Looker.
+              </p>
+              <h3>Passos para criar uma visualização:</h3>
+              <ol>
+                <li>
+                  No Looker, vá até a área onde é possível criar ou editar
+                  relatórios e dashboards.
+                </li>
+                <li>
+                  Adicione uma nova visualização (tabela, gráfico, etc.)
+                  conforme sua necessidade.
+                </li>
+                <li>
+                  Insira a dimensão "Código de Disparo" no espaço designado para
+                  as dimensões.
+                </li>
+                <li>
+                  Aplique um filtro para selecionar apenas o código de disparo
+                  específico que deseja analisar.
+                </li>
+                <li>
+                  Escolha e adicione as métricas desejadas, como usuários,
+                  sessões ou contagem de eventos, para entender como o código
+                  está se comportando.
                 </li>
               </ol>
             </div>
